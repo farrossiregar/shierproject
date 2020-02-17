@@ -12,5 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+Route::get('index-mobile', 'ArticleController@indexMobile')->name('index-mobile');
+
+
+Route::get('detail', 'ArticleController@detail')->name('detail');
+Route::get('detail-mobile', 'ArticleController@detail-mobile')->name('detail-mobile');
