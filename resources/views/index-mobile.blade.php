@@ -71,18 +71,28 @@
         <br><br>
         <h4><b>Terbaru</b></h4>
         <hr style="color: black;">
+        
         <div class="row">
-          <div class="col-md-6" style="display: inline-block; width: 48%; height: 100%;">
-            <img style="width: 100%; border-radius: 10px; " src="https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg">
-            <h4>Only when the button is clicked, the navigation bar will be displayed.</h4>
-          </div>
-          <div class="col-md-6" style="display: inline-block; width: 48%; height: 100%;">
-            <img style="width: 100%; border-radius: 10px;" src="https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg">
-            <h4>Only when the button is clicked, the navigation bar will be displayed.</h4>
-          </div>
+          <?php
+            $no = 0;
+          ?>
+          @foreach($data as $item)
+          
+          <?php
+            $no = $no + 1; 
+          ?>
+          <a href="{{ $item->link }}">
+            <div class="col-md-6" style="display: inline-block; width: 48%; max-height: 30vh;">
+              <img style="width: 100%; border-radius: 10px; " src="https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg">
+              <h4>{{ $item->title }}</h4>
+            </div>
+          </a>
+          
+          @endforeach
         </div>
+        
         <hr>
-        <div class="row">
+        <!-- <div class="row">
           <div class="col-md-6" style="display: inline-block; width: 48%; height: 100%;">
             <img style="width: 100%; border-radius: 10px; " src="https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg">
             <h4>Only when the button is clicked, the navigation bar will be displayed.</h4>
@@ -91,7 +101,7 @@
             <img style="width: 100%; border-radius: 10px;" src="https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg">
             <h4>Only when the button is clicked, the navigation bar will be displayed.</h4>
           </div>
-        </div>
+        </div> -->
 
         <h3><b>Populer</b></h3>
         <hr>

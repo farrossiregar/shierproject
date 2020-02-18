@@ -10,7 +10,10 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class ArticleController extends Controller
 {
     public function indexMobile(){
-        return view('index-mobile');
+        $get_api = file_get_contents('http://cms-shierproject.local/api-index-article');
+        //dd(json_decode($get_api));
+        $params['data'] = json_decode($get_api);
+        return view('index-mobile')->with($params);
     }
 
     public function detail(){
