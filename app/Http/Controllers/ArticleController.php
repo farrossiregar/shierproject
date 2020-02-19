@@ -10,11 +10,18 @@ use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
+    public function index(){
+        $get_api = file_get_contents('http://cms-shierproject.local/api-index-article');
+        //dd(json_decode($get_api));
+        $params['data'] = json_decode($get_api);
+        return view('index-new')->with($params);
+    }
+
     public function indexMobile(){
         $get_api = file_get_contents('http://cms-shierproject.local/api-index-article');
         //dd(json_decode($get_api));
         $params['data'] = json_decode($get_api);
-        return view('index-mobile')->with($params);
+        return view('index-mobile-new')->with($params);
     }
 
     public function detail(){

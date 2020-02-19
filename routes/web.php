@@ -11,10 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('index-new');
+// });
 
+Route::get('/', 'ArticleController@index')->name('/');
 Route::get('index-mobile', 'ArticleController@indexMobile')->name('index-mobile');
 
 

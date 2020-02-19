@@ -19,11 +19,11 @@
                     <li><a href="#">Page 1-3</a></li>
                 </ul>
             </li>
-            <li><a href="#">Teknologi</a></li>
-            <li><a href="#">Entertainment</a></li>
-            <li><a href="#">Otomotif</a></li>
-            <li><a href="#">Traveling</a></li>
-            <li><a href="#">Games</a></li>
+            
+            <li><a href="#">Anti Gaptek</a></li>
+            <li><a href="#">Butuh Hiburan ?</a></li>
+            <li><a href="#">Jalan-jalan yuk !</a></li>
+            <li><a href="#">Belanja di mana</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <li><a href="#"><i class="fa fa-instagram" style="font-size: 20px;"></i></a></li>

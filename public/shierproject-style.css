@@ -1,0 +1,12 @@
+.terbaru-tile{
+    height: 36vh; background-image: url('https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg'); 
+    background-position: center; border-radius: 10px; background-size: cover; padding: 2%; margin: 2% 0;
+}
+
+.terbaru-tile-parent{
+    display: inline-block;
+}
+
+.terbaru-title-tile{
+    color: white; position: absolute; bottom: 2%; padding: 2%; font-size: 120%;
+}
