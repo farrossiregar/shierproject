@@ -62,11 +62,11 @@
   <div class="row">
     <!--  TERBARU -->
     <div class="col-md-8" style="border-right: 1px solid white;">
-      <h3><b>Judul Article</b></h3>
+      <h3><b>{{ $title }}</b></h3>
       <hr style="color: black;">
       <div class="row">
         <div class="col-md-12">
-          <img style="width: 100%; border-radius: 10px;" src="https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg">
+          <img style="width: 100%; border-radius: 10px;" src="{{ $foto_name }}">
           <p>Only when the button is clicked, the navigation bar will be displayed.</p>
         </div>
       </div>
@@ -77,75 +77,41 @@
 
         </div>
         <div class="col-md-8">
-          
-          <h3>Collapsible Navbar</h3>
-          <p>In this example, the navigation bar is hidden on small screens and replaced by a button in the top right corner (try to re-size this window).
-          <p>Only when the button is clicked, the navigation bar will be displayed.</p>
-          <p>  
-            TRIBUNNEWS - Pinkan Mambo menghadiri panggilan pemeriksaan dari Polda Jawa Timur untuk sebagai saksi investasi bodong MeMiles, Senin, (20/1/2020).
-
-            "Saya sebagai warga yang baik harus datang untuk diperiksa sebagai saksi," kata Pinkan dikutip dari Kompas.com.
-
-            Menurut keterangan Pinkan, dia hanya diundang untuk mengisi acara pada 15 Desember 2019 lalu.
-
-            Pinkan mengaku hanya diundang untuk bernyanyi.
-
-            "Saya datang tidak untuk mempromosikan produk tersebut melainkan saya cuma nyanyi sebagai jasa pengisi acara, nyanyi doang," jelas Pinkan.
-
-            Pinkan Mambo saat tiba di dalam ruang penyidik Ditreskrimsus Mapolda Jatim.
-            Pinkan Mambo saat tiba di dalam ruang penyidik Ditreskrimsus Mapolda Jatim. (ISTIMEWA)
-            Saat ditanya terkait keterlibatannya yang lain, Pinkan berkata, ia tidak menjadi member dari investasi berkedok aplikasi tersebut.
-
-            Beberapa kali diberi tawaran, tetapi dia menolaknya.
-
-            "Saya ditawarin dari dulu nggak pernah mau," katanya.
-
-            "Jadi kita harus pinter dalam memilih bisnis, saya ditawarin juga nggak mau." jelasnya.
-
-            "Tapi ada uang, ada panggilan nyanyi saya terima karena lumayan buat cicilan mobil ya," tuturnya.
+          <?php echo html_entity_decode($fulltexts); ?>
           </p>
 
-
+          <!-- <br><br>
           <div class="row">
             <div class="col-md-12">
-              <img style="width: 100%; border-radius: 10px;" src="https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg">
+              <img style="width: 100%; border-radius: 10px;" src="{{ $foto_name }}">
               <p>Only when the button is clicked, the navigation bar will be displayed.</p>
             </div>
-          </div>
+          </div> -->
+          <!-- <p>  
+            <?php //echo html_entity_decode($fulltexts); ?>
+          </p> -->
 
 
-          <p>  
-            TRIBUNNEWS - Pinkan Mambo menghadiri panggilan pemeriksaan dari Polda Jawa Timur untuk sebagai saksi investasi bodong MeMiles, Senin, (20/1/2020).
-
-            "Saya sebagai warga yang baik harus datang untuk diperiksa sebagai saksi," kata Pinkan dikutip dari Kompas.com.
-
-            Menurut keterangan Pinkan, dia hanya diundang untuk mengisi acara pada 15 Desember 2019 lalu.
-
-            Pinkan mengaku hanya diundang untuk bernyanyi.
-
-            "Saya datang tidak untuk mempromosikan produk tersebut melainkan saya cuma nyanyi sebagai jasa pengisi acara, nyanyi doang," jelas Pinkan.
-
-            Pinkan Mambo saat tiba di dalam ruang penyidik Ditreskrimsus Mapolda Jatim.
-            Pinkan Mambo saat tiba di dalam ruang penyidik Ditreskrimsus Mapolda Jatim. (ISTIMEWA)
-            Saat ditanya terkait keterlibatannya yang lain, Pinkan berkata, ia tidak menjadi member dari investasi berkedok aplikasi tersebut.
-
-            Beberapa kali diberi tawaran, tetapi dia menolaknya.
-
-            "Saya ditawarin dari dulu nggak pernah mau," katanya.
-
-            "Jadi kita harus pinter dalam memilih bisnis, saya ditawarin juga nggak mau." jelasnya.
-
-            "Tapi ada uang, ada panggilan nyanyi saya terima karena lumayan buat cicilan mobil ya," tuturnya.
-          </p>
           <br><br><br>
           <h3>Artikel Terkait</h3>
-          <ol>
-            <li><a href=""><u>Artikel 1</u></a></li>
-            <li><a href=""><u>Artikel 1</u></a></li>
-            <li><a href=""><u>Artikel 1</u></a></li>
-            <li><a href=""><u>Artikel 1</u></a></li>
-            <li><a href=""><u>Artikel 1</u></a></li>
-          </ol>
+          <hr>
+          <div class="row">
+            <div class="col-md-12">
+              <b><h3>1. Judul Artikel 1</h3></b>
+            </div>
+            <div class="col-md-12">
+              <b><h3>1. Judul Artikel 1</h3></b>
+            </div>
+            <div class="col-md-12">
+              <b><h3>1. Judul Artikel 1</h3></b>
+            </div>
+            <div class="col-md-12">
+              <b><h3>1. Judul Artikel 1</h3></b>
+            </div>
+            <div class="col-md-12">
+              <b><h3>1. Judul Artikel 1</h3></b>
+            </div>
+          </div>
         </div>
 
       </div>
@@ -173,47 +139,22 @@
           </div>
         </div>
 
-        <!-- ANTARA NEWS -->
-        <div class="col-md-12">
-          <h3><a href="https://www.antaranews.com"><b>Antara News Terkini</b></a></h3>
-          <hr style="color: black;">
-          <div id="antara_news_id" style="height:60vh; width: 100%; overflow-y: scroll;">
-
-          </div>
-          <br>
-        </div>
-        <!-- ANTARA NEWS -->
+        @include('layout.antaranewswidget')
 
       </div>
     </div>
     <!--  POPULER -->
 
   </div>
-<br><br><br>
-  <div class="row">
-    test
-  </div>
+  <br><br><br>
+
   
   
 </div>
 
-<!--  FOOTER  -->
-<div style="width: 100vw; height: 25vh; background-color: #101010;">
-  <div class="container">
-    <div class="row" style="margin-top:5%;">
-      <div class="col-md-4" onclick="alrt();">Shier Project</div>
-      <div class="col-md-4">Contact</div>
-      <div class="col-md-4"></div>
-    </div>
-  </div>
-</div>
-<!--  FOOTER  -->
 
 
 <script>
-  function alrt(){
-    alert('ok');
-  }
 
   $(document).ready(function(){
     var rss_antara = 'https://www.antaranews.com/rss/terkini';
