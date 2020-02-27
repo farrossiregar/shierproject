@@ -21,3 +21,8 @@ Route::get('index-mobile', 'ArticleController@indexMobile')->name('index-mobile'
 
 Route::get('detail', 'ArticleController@detail')->name('detail');
 Route::get('detail-mobile', 'ArticleController@detail-mobile')->name('detail-mobile');
+
+
+Route::get('get-menu', 'ArticleController@getMenu')->name('get-menu');
+
+

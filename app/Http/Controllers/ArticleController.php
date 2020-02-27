@@ -74,4 +74,10 @@ class ArticleController extends Controller
 
         return view('detail')->with($params);
     }
+
+
+    public function getMenu(){
+        $data = file_get_contents('http://cms-shierproject.local/api-menu');
+        echo $data;
+    }
 }
