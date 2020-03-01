@@ -8,3 +8,5 @@
 
 <script src="{{ asset('shierproject.js') }}"></script>
 <link rel="stylesheet" href="{{ asset('shierproject-style.css') }}">
+<link rel="stylesheet" href="{{ asset('shierproject-mobileslideshow-style.css') }}">
+<link rel="stylesheet" href="{{ asset('shierproject-desktopslideshow-style.css') }}">
