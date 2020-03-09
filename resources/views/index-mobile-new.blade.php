@@ -110,28 +110,23 @@ function showSlides(n) {
           </div>
         </div> -->
 
-        <h3><b>Populer</b></h3>
+        
         <hr>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="row">
-              <div class="col-md-6" style="display: inline-block; width: 45%;">
-                <img style="width: 100%;" src="https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg">
-              </div>
-              <div class="col-md-6" style="display: inline-block; width: 45%;">
-                <p>Only when the button is clicked, the navigation bar will be displayed</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6" style="display: inline-block; width: 45%;">
-                <img style="width: 100%;" src="https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg">
-              </div>
-              <div class="col-md-6" style="display: inline-block; width: 45%;">
-                <p>Only when the button is clicked, the navigation bar will be displayed</p>
+        <h3><b>Populer</b></h3>
+          @foreach($data as $key => $item)
+          <a href="" target="_blank">
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-4" style="display: inline-block; width: 35vw;">
+                <img src="https://images.pexels.com/photos/301703/pexels-photo-301703.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" style="width: 100%; border-radius: 8px;">
+                </div>
+                <div class="col-md-8" style="display: inline-block; width: 55vw;">
+                  <b><h4>{{ $key + 1}}. {{ $item->title }}</h4></b>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
+          </a><br>
+          @endforeach
       </div>
       <!--  TERBARU -->
     </div>
