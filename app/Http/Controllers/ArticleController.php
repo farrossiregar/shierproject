@@ -15,7 +15,8 @@ class ArticleController extends Controller
         $agent = new Agent();
         $device = $agent->device();
         
-        $get_api = file_get_contents('http://cms-shierproject.local/api-index-article');
+        //$get_api = file_get_contents('http://cms-shierproject.local/api-index-article');
+        $get_api = file_get_contents('http://clothezon.com/api.shierproject.com/public/api-index-article');
         //dd(json_decode($get_api));
         $params['data'] = json_decode($get_api);
         if($device == 'iPhone'){
@@ -75,7 +76,8 @@ class ArticleController extends Controller
         //$data = print json_encode($params);
 
 
-        $get_api = file_get_contents('http://cms-shierproject.local/api-index-article');
+        //$get_api = file_get_contents('http://cms-shierproject.local/api-index-article');
+        $get_api = file_get_contents('http://clothezon.com/api.shierproject.com/public/api-index-article');
         $params['artikelterkait'] = json_decode($get_api);
 
         $agent = new Agent();
@@ -90,7 +92,8 @@ class ArticleController extends Controller
 
 
     public function getMenu(){
-        $data = file_get_contents('http://cms-shierproject.local/api-menu');
+        //$data = file_get_contents('http://cms-shierproject.local/api-menu');
+        $data = file_get_contents('http://clothezon.com/api.shierproject.com/public/api-menu');
         echo $data;
     }
 }
