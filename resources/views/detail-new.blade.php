@@ -17,7 +17,16 @@
   <div class="row">
     <!--  TERBARU -->
     <div class="col-md-8" style="border-right: 1px solid white;">
-      <h3><b>{{ $title }}</b></h3>
+      <h2><b>{{ $title }}</b></h2>
+      <p style="color: lightgray;"><i class="fa fa-clock-o" style="font-size: 20px;"></i> {{ $publish_date }}</p>
+      <br>
+      <div class="row">
+        <div class="col-md-12">
+          <a href="facebook.com"><i class="fa fa-instagram" style="font-size: 30px;"></i></a>
+          <a href="instagram.com"><i class="fa fa-facebook" style="font-size: 30px;"></i></a>
+          <a href="twitter.com"><i class="fa fa-twitter" style="font-size: 30px;"></i></a>
+        </div>
+      </div>
       <hr style="color: black;">
       <div class="row">
         <div class="col-md-12">
@@ -31,9 +40,9 @@
         <div class="col-md-4">
 
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8" style="font-size: 20px;">
           <?php echo html_entity_decode($fulltexts); ?>
-          </p>
+
 
           <!-- <br><br>
           <div class="row">
@@ -44,11 +53,13 @@
           </div> -->
           <!-- <p>  
             <?php //echo html_entity_decode($fulltexts); ?>
-          </p> -->
+          </p> -->          
 
-
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
           @include('widget.artikel-terkait-widget')
-
         </div>
       </div>
     </div>
@@ -57,22 +68,6 @@
     <!--  POPULER -->
     <div class="col-md-4">
       <div class="row">
-        <div class="col-md-12">
-          <h3><b>Republika Ekonomi</b></h3>
-          <hr style="color: black;">
-          <div id="republika_news_id" style="height:60vh; width: 100%; overflow-y: scroll; overflow-x:visible;">
-            <div class="row">
-              <div class="col-md-4">
-                <img style="width: 100%;" src="https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg">
-              </div>
-              <div class="col-md-8">
-                <p>Only when the button is clicked, the navigation bar will be displayed.</p>
-              </div>
-            </div>
-            <br>
-          </div>
-        </div>
-
         @include('widget.antaranewswidget')
 
       </div>

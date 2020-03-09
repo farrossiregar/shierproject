@@ -7,21 +7,23 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
+use Jenssegers\Agent\Agent;
 
 class ArticleController extends Controller
 {
     public function index(){
+        $agent = new Agent();
+        $device = $agent->device();
+        
         $get_api = file_get_contents('http://cms-shierproject.local/api-index-article');
         //dd(json_decode($get_api));
         $params['data'] = json_decode($get_api);
-        return view('index-new')->with($params);
-    }
-
-    public function indexMobile(){
-        $get_api = file_get_contents('http://cms-shierproject.local/api-index-article');
-        //dd(json_decode($get_api));
-        $params['data'] = json_decode($get_api);
-        return view('index-mobile-new')->with($params);
+        if($device == 'iPhone'){
+            return view('index-mobile-new')->with($params);
+        }else{
+            return view('index-new')->with($params);
+        }
+        
     }
 
     public function detail(){
@@ -72,7 +74,18 @@ class ArticleController extends Controller
         krsort($datarep);
         //$data = print json_encode($params);
 
-        return view('detail')->with($params);
+
+        $get_api = file_get_contents('http://cms-shierproject.local/api-index-article');
+        $params['artikelterkait'] = json_decode($get_api);
+
+        $agent = new Agent();
+        $device = $agent->device();
+        if($device == 'iPhone'){
+            return view('detail-mobile')->with($params);
+        }else{
+            return view('detail-new')->with($params);
+        }
+
     }
 
 
