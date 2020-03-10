@@ -6,12 +6,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>                        
         </button>
-        <a class="navbar-brand" href="#">ShierProject</a>
+        <a class="navbar-brand" href="{{ route('/') }}">
+            <img src="{{ asset('image/shierproject-logo.jpeg') }}" alt="" style="width: 80px; height: auto;">
+        </a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <div class="container">
                 <ul class="nav navbar-nav" id="list-menu">
-                    <li class="active"><a href="#">Home</a></li>
+                    <li class="active"><a href="{{ route('/') }}">Home</a></li>
                     <!-- <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -23,10 +25,18 @@
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><i class="fa fa-instagram" style="font-size: 20px;"></i></a></li>
-                    <li><a href="#"><i class="fa fa-facebook" style="font-size: 20px;"></i></a></li>
-                    <!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> -->
+                    <!-- <li><a href="#"><i class="fa fa-instagram" style="font-size: 20px;"></i></a></li>
+                    <li><a href="#"><i class="fa fa-facebook" style="font-size: 20px;"></i></a></li> -->
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Daftar / Masuk<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                            <li><a href="#"><i class="glyphicon glyphicon-user"></i> Kontak Kami</a></li>
+                        </ul>
+                    </li>
+                    
+                    
                 </ul>
             </div>
             

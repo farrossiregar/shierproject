@@ -22,9 +22,9 @@
       <br>
       <div class="row">
         <div class="col-md-12">
-          <a href="facebook.com"><i class="fa fa-instagram" style="font-size: 25px;"></i></a>
-          <a href="instagram.com"><i class="fa fa-facebook" style="font-size: 25px;"></i></a>
-          <a href="twitter.com"><i class="fa fa-twitter" style="font-size: 25px;"></i></a>
+          <a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook" style="font-size: 25px;"></i></a>
+          <a href="https://www.instagram.com/shierproject" target="_blank"><i class="fa fa-instagram" style="font-size: 25px;"></i></a>
+          <a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter" style="font-size: 25px;"></i></a>
         </div>
       </div>
       <hr>
@@ -37,7 +37,7 @@
           <hr>
           <h4>Artikel Terkait</h4>
           @foreach($artikelterkait as $key => $item)
-          <a href="" target="_blank">
+          <a href="{{ route('detail', $item->alias) }}">
             <div class="col-md-12">
               <div class="row">
                 <div class="col-md-4" style="display: inline-block; width: 35vw;">

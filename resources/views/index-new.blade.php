@@ -155,10 +155,13 @@
           <hr style="color: black;">
           <div class="row">
             @foreach($data as $item)
-            <div class="col-md-3">
-              <img style="width: 100%; border-radius: 10px;" src="https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg">
-              <p>{{ $item->title }}</p>
-            </div>
+            <a href="{{ route('detail', $item->alias) }}">
+              <div class="col-md-3">
+                <img style="width: 100%; border-radius: 10px;" src="https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg">
+                <p>{{ $item->title }}</p>
+              </div>
+            </a>
+            
             @endforeach
             
           </div>
@@ -173,7 +176,7 @@
           <h3><b>Koleksi</b></h3>
           <hr style="color: black;">
           @foreach($data as $item)
-          <a href="" target="_blank">
+          <a href="{{ route('detail', $item->alias) }}">
             <div class="row">
               <div class="col-md-4">
                 <img style="width: 100%; border-radius: 5px;" src="https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg">
