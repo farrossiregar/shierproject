@@ -86,11 +86,11 @@ function showSlides(n) {
           <?php
             $no = $no + 1; 
           ?>
-          <a href="{{ $item->link }}">
+          <a href="{{ route('detail', $item->alias) }}">
             <div class="col-md-6" style="display: inline-block; width: 48%; height: 30vh;">
               <img style="width: 100%; border-radius: 10px; " src="https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg">
-              <div style="height: 5vh; border: 1px solid black;">
-                <!-- <h4>{{ $item->title }}</h4> -->
+              <div style="height: 5vh; border: 0px solid black;">
+                <h4>{{ $item->title }}</h4>
               </div>
             </div>
           </a>
@@ -114,7 +114,7 @@ function showSlides(n) {
         <hr>
         <h3><b>Populer</b></h3>
           @foreach($data as $key => $item)
-          <a href="" target="_blank">
+          <a href="{{ route('detail', $item->alias) }}">
             <div class="col-md-12">
               <div class="row">
                 <div class="col-md-4" style="display: inline-block; width: 35vw;">
