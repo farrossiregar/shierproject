@@ -12,25 +12,35 @@ use Jenssegers\Agent\Agent;
 class ArticleController extends Controller
 {
     public function index(){
+        //$params['populer'] = $this->populerArticle();
+        //print_r($top_article); die();
+
         $agent = new Agent();
         $device = $agent->device();
         
-        //$get_api = file_get_contents('http://cms-shierproject.local/api-index-article');
-        $get_api = file_get_contents('http://clothezon.com/api.shierproject.com/public/api-index-article');
-        //dd(json_decode($get_api));
+        $get_api = file_get_contents('http://api.shierproject.com/api-index-article/'.env('APP_KEY'));
         $params['data'] = json_decode($get_api);
         //if($device == 'iPhone'){$agent->isDesktop();
         if($agent->isPhone()){
             return view('index-mobile-new')->with($params);
         }else{
             return view('index-new')->with($params);
+            //return view('category')->with($params);
         }
         
     }
 
+    public function populerArticle(){
+        $id = 'ga%3A211662009';
+        $top_article = file_get_contents('https://www.googleapis.com/analytics/v3/data/ga?ids='.$id.'&start-date=30daysAgo&end-date=yesterday&metrics=ga%3Ausers&dimensions=ga%3ApagePath&sort=ga%3Ausers%2C-ga%3ApagePath&segment=gaid%3A%3A-1&access_token=ya29.a0Adw1xeVSNT1c3C2Bl_9VHPwaX1s7d3Ak6b_p133VXMKZ4hkowjskaGv6ImnIJJVRxeWbjZNmpghEXD0JJ0MyoZfFjHiboWu5NWmfkuxTz5D16vD7OTq1-kGsBiKrTgns3oTh8SQoEsv7Yobv9MjaCXRjbTJbv9lKXzds');
+        $top = json_encode(json_decode($top_article), TRUE);
+        $row = json_decode($top, true)['rows'];
+        return $row;
+    }
+
     public function detail($alias){
 
-        $article = file_get_contents('http://clothezon.com/api.shierproject.com/public/api-detail-article/'.$alias.'');
+        $article = file_get_contents('http://api.shierproject.com/api-detail-article/'.env('APP_KEY').'/'.$alias);
         $arr = json_encode(json_decode($article), TRUE);
 
         $params['id'] = json_decode($article, true)['id'];
@@ -40,7 +50,7 @@ class ArticleController extends Controller
         $params['publish_date'] = json_decode($article, true)['publish_date'];
         $params['foto_name'] = 'test';
 
-        $get_api = file_get_contents('http://clothezon.com/api.shierproject.com/public/api-index-article');
+        $get_api = file_get_contents('http://api.shierproject.com/api-index-article/'.env('APP_KEY'));
         $params['artikelterkait'] = json_decode($get_api);
 
         $agent = new Agent();
@@ -59,8 +69,11 @@ class ArticleController extends Controller
 
 
     public function getMenu(){
-        //$data = file_get_contents('http://cms-shierproject.local/api-menu');
-        $data = file_get_contents('http://clothezon.com/api.shierproject.com/public/api-menu');
+        $data = file_get_contents('http://api.shierproject.com/api-menu/'.env('APP_KEY'));
         echo $data;
+    }
+
+    public function category(){
+        return view('category');
     }
 }
