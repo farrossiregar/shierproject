@@ -107,21 +107,9 @@
         </div>
 
         <hr>
-        <h3><b>Populer</b></h3>
-          @foreach($data as $key => $item)
-          <a href="{{ route('detail', $item->alias) }}">
-            <div class="col-md-12">
-              <div class="row" style="vertical-align: text-top;">
-                <div class="col-md-4" style="display: inline-block; width: 35vw; vertical-align: text-top;">
-                  <img src="https://images.pexels.com/photos/301703/pexels-photo-301703.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" style="width: 100%; border-radius: 8px;">
-                </div>
-                <div class="col-md-8" style="display: inline-block; width: 55vw; vertical-align: text-top;">
-                  <b><h4>{{ $key + 1}}. {{ $item->title }}</h4></b>
-                </div>
-              </div>
-            </div>
-          </a><br>
-          @endforeach
+        <div class="artikel_terkait row">
+          @include('widget.artikel-terkait-widget-mobile')
+        </div>
       </div>
       <!--  TERBARU -->
     </div>

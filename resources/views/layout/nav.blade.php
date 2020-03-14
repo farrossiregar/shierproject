@@ -72,6 +72,7 @@
                         ?>
                         <ul class="nav navbar-nav" id="list-menu">
                             <li class="active"><a href="{{ route('/') }}">Home</a></li>
+
                             <!-- <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
@@ -114,7 +115,11 @@
             dataType: 'json',
             success: function(result){
                 for(var i = 0; i <= result.length; i++){
-                    $("#list-menu").append("<li><a href='{{ route('category') }}'>"+ result[i]['title'] +"</a></li>");
+                    
+                    var url = '{{ route("get-category", ":category") }}';
+                    url = url.replace(':category', result[i]['id']);
+                    url = url.replace('?', '/');
+                    $('#list-menu').append('<li><a href="'+url+'">'+ result[i]['title'] +' </a></li>');
                 }
             }
         });

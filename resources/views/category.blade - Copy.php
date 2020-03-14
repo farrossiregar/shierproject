@@ -1,6 +1,6 @@
 @extends('layout.app')
 
-@section('title', 'Category')
+@section('title', 'category')
 
 @section('content')
 
@@ -36,22 +36,7 @@
           <h3><b>Terbaru</b></h3>
           <hr style="color: black;">
           <div class="row">
-            @foreach($data as $key => $item)
-            <a href="{{ route('detail', $item->alias) }}">            
-              <div class="col-md-6" style="margin-bottom: 30px;">
-                <div class="row">
-                  <div class="col-md-6">
-                    <img style="width: 100%; border-radius: 10px;" src="https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg">
-                  </div>
-                  <div class="col-md-6">
-                    <h4>{{ $item->title }}</h4>
-                  </div>
-                </div>
-              </div>
-            </a>
-            
-            @endforeach
-            <!--div class="col-md-6">
+            <div class="col-md-6">
               <div class="row">
                 <div class="col-md-6">
                   <img style="width: 100%; border-radius: 10px;" src="https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg">
@@ -60,9 +45,19 @@
                   <p>Only when the button is clicked, the navigation bar will be displayed.</p>
                 </div>
               </div>
-            </!--div> -->
+            </div>
+            <div class="col-md-6">
+              <div class="row">
+                <div class="col-md-6">
+                  <img style="width: 100%; border-radius: 10px;" src="https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg">
+                </div>
+                <div class="col-md-6">
+                  <p>Only when the button is clicked, the navigation bar will be displayed.</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <!-- <br>
+          <br>
           <div class="row">
             <div class="col-md-6">
               <div class="row">
@@ -84,7 +79,7 @@
                 </div>
               </div>
             </div>
-          </div> -->
+          </div>
         </div>
       </div>
 
@@ -125,17 +120,27 @@
 
     <!--  TERBARU -->
 
-    <!-- ANTARA NEWS -->
+    <!--  POPULER -->
     <div class="col-md-4">
-    <br>
       <div class="row">
-        @include('widget.antaranewswidget')
+
+        <!-- ANTARA NEWS -->
+        <div class="col-md-12">
+          <h3><a href="https://www.antaranews.com"><b>Antara News Terkini</b></a></h3>
+          <hr style="color: black;">
+          <div id="antara_news_id" style="height:60vh; width: 100%;">
+
+          </div>
+          <br>
+        </div>
+        <!-- ANTARA NEWS -->
 
       </div>
     </div>
-    <!-- ANTARA NEWS -->
+    <!--  POPULER -->
 
   </div>
+  
   
 </div>
 

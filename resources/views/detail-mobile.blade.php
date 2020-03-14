@@ -32,30 +32,25 @@
         <div class="col-md-12" style="font-size: 17px;">
           <?php echo html_entity_decode($fulltexts); ?>
 
+          <br><br>
+          <?php
+            if($link != ''){
+          ?>
+            <a href="{{$link}}" target="_blank">
+              <p style="color: gray;">Sumber : {{ $source }}</p>
+            </a>            
+          <?php
+            }
+          ?>
 
           <br><br><br>
           <hr>
-          <h4>Artikel Terkait</h4>
-          @foreach($artikelterkait as $key => $item)
-          <a href="{{ route('detail', $item->alias) }}">
-            <div class="col-md-12">
-              <div class="row">
-                <div class="col-md-4" style="display: inline-block; width: 35vw;">
-                <img src="https://images.pexels.com/photos/301703/pexels-photo-301703.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" style="width: 100%; border-radius: 8px;">
-                </div>
-                <div class="col-md-8" style="display: inline-block; width: 55vw;">
-                  <b><h4>{{ $key + 1}}. {{ $item->title }}</h4></b>
-                </div>
-              </div>
-            </div>
-          </a><br>
-          @endforeach
-          
+          <div class="artikel_terkait row">
+            @include('widget.artikel-terkait-widget-mobile', $artikelterkait)
+          </div>
         </div>
 
       </div>
-
-
     </div>
     <!--  TERBARU -->
 

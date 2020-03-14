@@ -20,12 +20,14 @@ class ArticleController extends Controller
         
         $get_api = file_get_contents('http://api.shierproject.com/api-index-article/'.env('APP_KEY'));
         $params['data'] = json_decode($get_api);
-        //if($device == 'iPhone'){$agent->isDesktop();
+
+        //$params['artikelterkait'] = $this->relatedArticle('2', '3');
+        $params['artikelterkait'] = $this->articleTerkait();
+
         if($agent->isPhone()){
             return view('index-mobile-new')->with($params);
         }else{
             return view('index-new')->with($params);
-            //return view('category')->with($params);
         }
         
     }
@@ -38,6 +40,12 @@ class ArticleController extends Controller
         return $row;
     }
 
+    public function articleTerkait(){
+        $get_api = file_get_contents('http://api.shierproject.com/api-index-article/'.env('APP_KEY'));
+        $data = json_decode($get_api);
+        return $data;
+    }
+
     public function detail($alias){
 
         $article = file_get_contents('http://api.shierproject.com/api-detail-article/'.env('APP_KEY').'/'.$alias);
@@ -47,11 +55,13 @@ class ArticleController extends Controller
         $params['alias'] = json_decode($article, true)['alias'];
         $params['fulltexts'] = json_decode($article, true)['description'];
         $params['title'] = json_decode($article, true)['title'];
+        //$params['category'] = json_decode($article, true)['category_id'];
         $params['publish_date'] = json_decode($article, true)['publish_date'];
+        $params['source'] = json_decode($article, true)['source'];
+        $params['link'] = json_decode($article, true)['link'];
         $params['foto_name'] = 'test';
 
-        $get_api = file_get_contents('http://api.shierproject.com/api-index-article/'.env('APP_KEY'));
-        $params['artikelterkait'] = json_decode($get_api);
+        $params['artikelterkait'] = $this->relatedArticle('2', '1');
 
         $agent = new Agent();
         $device = $agent->device();
@@ -69,11 +79,21 @@ class ArticleController extends Controller
 
 
     public function getMenu(){
-        $data = file_get_contents('http://api.shierproject.com/api-menu/'.env('APP_KEY'));
-        echo $data;
+        $menu = file_get_contents('http://api.shierproject.com/api-menu/'.env('APP_KEY'));
+        echo $menu;
+        //return view('layout.nav');
     }
 
-    public function category(){
-        return view('category');
+    public function getCategory($category){
+        $get_api = file_get_contents('http://api.shierproject.com/category/'.env('APP_KEY').'/'.$category);
+        $params['data'] = json_decode($get_api);
+        //return $params;
+        return view('category')->with($params);
+    }
+
+    public function relatedArticle($category, $id_category){
+        $get_api = file_get_contents('http://api.shierproject.com/related-article/'.env('APP_KEY').'/'.$category.'/'.$id_category);  
+        $params['data'] = json_decode($get_api);
+        return $params;
     }
 }

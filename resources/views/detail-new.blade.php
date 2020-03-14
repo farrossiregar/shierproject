@@ -44,23 +44,22 @@
         <div class="col-md-8" style="font-size: 20px;">
           <?php echo html_entity_decode($fulltexts); ?>
 
-
-          <!-- <br><br>
-          <div class="row">
-            <div class="col-md-12">
-              <img style="width: 100%; border-radius: 10px;" src="{{ $foto_name }}">
-              <p>Only when the button is clicked, the navigation bar will be displayed.</p>
-            </div>
-          </div> -->
-          <!-- <p>  
-            <?php //echo html_entity_decode($fulltexts); ?>
-          </p> -->          
-
+          <br><br>
+          <?php
+            if($link != ''){
+          ?>
+            <a href="{{$link}}" target="_blank">
+              <p style="color: gray;">Sumber : {{ $source }}</p>
+            </a>            
+          <?php
+            }
+          ?>
+          
         </div>
       </div>
       <div class="row">
         <div class="col-md-12">
-          @include('widget.artikel-terkait-widget')
+          @include('widget.artikel-terkait-widget', $artikelterkait)
         </div>
       </div>
     </div>
@@ -68,9 +67,9 @@
 
     <!--  POPULER -->
     <div class="col-md-4">
+    <br>
       <div class="row">
         @include('widget.antaranewswidget')
-
       </div>
     </div>
     <!--  POPULER -->

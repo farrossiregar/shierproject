@@ -22,6 +22,8 @@ Route::get('detail/{alias}', 'ArticleController@detail')->name('detail');
 
 Route::get('get-menu', 'ArticleController@getMenu')->name('get-menu');
 
-Route::get('category', 'ArticleController@category')->name('category');
+Route::get('get-category/{category}', 'ArticleController@getCategory')->name('get-category');
+
+Route::get('related-article/{category}/{id_article}', 'ArticleController@relatedArticle')->name('related-article');
 
 
