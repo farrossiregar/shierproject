@@ -26,4 +26,6 @@ Route::get('get-category/{category}', 'ArticleController@getCategory')->name('ge
 
 Route::get('related-article/{category}/{id_article}', 'ArticleController@relatedArticle')->name('related-article');
 
+Route::get('contact-us', 'ArticleController@contactUs')->name('contact-us');
+
 

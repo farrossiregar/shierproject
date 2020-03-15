@@ -1,12 +1,12 @@
 @extends('layout.app')
 
-@section('title', 'Category')
+@section('title', 'Category Mobile')
 
 @section('content')
 
 
-<div style="height: 30vh;" class="row">
-  <div class="col-md-12" style="background-image: url('https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/B328284533D1C776C141B676F54E8D626B19DC9327F399BB99F196A8DE0A2AF8/scale?aspectRatio=1.78&format=jpeg'); background-size: cover; width: 100vw; height: 100%; background-repeat: no-repeat; background-position: center; padding: 0 2px;"></div>
+<div style="height: 30vh; width: 104vw; overflow: hidden;" class="row">
+  <div class="col-md-12" style="background-image: url('https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/B328284533D1C776C141B676F54E8D626B19DC9327F399BB99F196A8DE0A2AF8/scale?aspectRatio=1.78&format=jpeg'); background-size: cover; width: 110vw; height: 100%; background-repeat: no-repeat; background-position: center;"></div>
 </div>
 
 
@@ -19,7 +19,7 @@
     <div class="col-md-8" style="border-right: 1px solid lightgray;">
       <div class="row">
         <div class="col-md-12">
-          <h3><b>Terbarusss</b></h3>
+          <h3><b>Terbaru</b></h3>
           <hr style="color: black;">
           <div class="row">
             @foreach($data as $key => $item)

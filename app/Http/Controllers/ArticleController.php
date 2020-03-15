@@ -81,19 +81,29 @@ class ArticleController extends Controller
     public function getMenu(){
         $menu = file_get_contents('http://api.shierproject.com/api-menu/'.env('APP_KEY'));
         echo $menu;
-        //return view('layout.nav');
     }
 
     public function getCategory($category){
         $get_api = file_get_contents('http://api.shierproject.com/category/'.env('APP_KEY').'/'.$category);
         $params['data'] = json_decode($get_api);
-        //return $params;
         return view('category')->with($params);
+
+        $agent = new Agent();
+        $device = $agent->device();
+        if($agent->isPhone()){
+            return view('category-mobile-new')->with($params);
+        }else{
+            return view('category')->with($params);
+        }
     }
 
     public function relatedArticle($category, $id_category){
         $get_api = file_get_contents('http://api.shierproject.com/related-article/'.env('APP_KEY').'/'.$category.'/'.$id_category);  
         $params['data'] = json_decode($get_api);
         return $params;
+    }
+
+    public function contactUs(){
+        return view('contact-us');
     }
 }
