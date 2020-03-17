@@ -19,8 +19,12 @@
     <div class="col-md-8" style="border-right: 1px solid lightgray;">
       <div class="row">
         <div class="col-md-12">
-          <h3><b>Terbaru</b></h3>
-          <hr style="color: black;">
+        <br>
+        <div style="padding: 1px 6px; background-color: black; width: 115px; border-radius: 10px 10px 0px 0px; color: white;">
+          <h4><b>Terbaru</b></h4>
+        </div>
+        <div style="border: 2px solid black;"></div>
+        <br>
           <div class="row">
             @foreach($data as $key => $item)
             <a href="{{ route('detail', $item->alias) }}">            

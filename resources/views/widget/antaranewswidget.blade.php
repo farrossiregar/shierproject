@@ -15,7 +15,7 @@
 </div>
 <!-- ANTARA NEWS -->
 
-
+<!-- 
 
 <div class="col-md-12">
     <h3><a href="https://www.antaranews.com"><b>Antara News Terkini</b></a></h3>
@@ -24,4 +24,4 @@
 
     </div>
     <br>
-</div>
+</div> -->

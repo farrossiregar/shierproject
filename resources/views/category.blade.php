@@ -19,8 +19,12 @@
     <div class="col-md-8" style="border-right: 1px solid lightgray;">
       <div class="row">
         <div class="col-md-12">
-          <h3><b>Terbarusss</b></h3>
-          <hr style="color: black;">
+          <br>
+          <div style="padding: 1px 6px; background-color: black; width: 115px; border-radius: 10px 10px 0px 0px; color: white;">
+            <h4><b>Terbaru</b></h4>
+          </div>
+          <div style="border: 2px solid black;"></div>
+          <br>
           <div class="row">
             @foreach($data as $key => $item)
             <a href="{{ route('detail', $item->alias) }}">            
@@ -75,8 +79,13 @@
       </div>
 
       <br><br><br>
-      <h3>Film</h3>
-      <hr>
+      
+      <br>
+      <div style="padding: 1px 6px; background-color: black; width: 115px; border-radius: 10px 10px 0px 0px; color: white;">
+        <h4><b>Film</b></h4>
+      </div>
+      <div style="border: 2px solid black;"></div>
+      <br>
       <div class="row" style="padding: 10px;">
         <div class="col-md-3" style="padding: 4px; overflow:hidden;">
           <div style="background-image: url('https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg'); height: 15vw; border-radius: 10px; margin-left: auto; margin-right: auto; display: block; background-position: center; overflow: hidden;">

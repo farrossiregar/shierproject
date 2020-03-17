@@ -20,3 +20,10 @@
 <link rel="stylesheet" href="{{ asset('shierproject-style.css') }}">
 <link rel="stylesheet" href="{{ asset('shierproject-mobileslideshow-style.css') }}">
 <link rel="stylesheet" href="{{ asset('shierproject-desktopslideshow-style.css') }}">
+
+<style>
+  body{
+    /*font-family: Comfortaa,cursive,sans-serif;*/
+    text-decoration: none;
+  }
+</style>

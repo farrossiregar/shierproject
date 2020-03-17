@@ -37,10 +37,6 @@
         <img class="demo cursor" src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/B328284533D1C776C141B676F54E8D626B19DC9327F399BB99F196A8DE0A2AF8/scale?aspectRatio=1.78&format=jpeg" style="width:100%" onclick="currentSlide(1)" alt="{{ $item->title }}">
       </div>
       @endforeach
-
-      <div class="column">
-        <img class="demo cursor" src="https://images.pexels.com/photos/301703/pexels-photo-301703.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
-      </div>
     
     </div>
   </div>
@@ -86,24 +82,30 @@
         <div class="row">
           <div class="col-md-12">
             <br><br>
-            <h4><b>Terbaru</b></h4>
-            <hr style="color: black;">
+            <br>
+            <div style="padding: 1px 6px; background-color: black; width: 115px; border-radius: 10px 10px 0px 0px; color: white;">
+              <h4><b>Terbaru</b></h4>
+            </div>
+            <div style="border: 2px solid black;"></div>
+            <br>
           </div>
         </div>
         
         
         <div class="row">
-          @foreach($data as $key => $item)
-          <?php
-            if($key >= 4){
-              break;
-            }
-          ?>
-          <a href="{{ route('detail', $item->alias) }}" style="display: inline-block; width: 48vw; vertical-align: text-top; margin: 0 2px;">
-            <img style="width: 100%; border-radius: 10px; " src="https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg">
-            <h4>{{ $item->title }}</h4>
-          </a> 
-          @endforeach
+          <div class="col-md-12">
+            @foreach($data as $key => $item)
+            <?php
+              if($key >= 4){
+                break;
+              }
+            ?>
+            <a href="{{ route('detail', $item->alias) }}" style="display: inline-block; width: 42vw; vertical-align: text-top; margin: 0 2px;">
+              <img style="width: 100%; border-radius: 10px; " src="https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg">
+              <h4>{{ $item->title }}</h4>
+            </a> 
+            @endforeach
+          </div>
         </div>
 
         <hr>

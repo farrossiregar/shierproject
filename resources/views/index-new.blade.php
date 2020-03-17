@@ -81,17 +81,24 @@
       <div class="col-md-8">
         <div  class="col-md-12">
           <!--  TERBARU -->
-          <h3><b>Terbaru</b></h3>
-          <hr style="color: black;">
+          <br>
+          <div style="padding: 1px 6px; background-color: black; width: 85px; border-radius: 10px 10px 0px 0px; color: white;">
+              <h4><b>Terbaru</b></h4>
+          </div>
+          <div style="border: 2px solid black;"></div>
+          <br>
           <div class="row">
             @foreach($data as $item)
-            <div class="col-md-6 terbaru-tile-parent" >
-              <div class="terbaru-tile">
-                <div class="terbaru-title-tile">
-                  <a href=""><b>{{ $item->title }}</b></a>
+            <a href="{{ route('detail', $item->alias) }}">
+              <div class="col-md-6 terbaru-tile-parent" >
+                <div class="terbaru-tile">
+                  <div class="terbaru-title-tile">
+                    <b>{{ $item->title }}</b>
+                  </div>
                 </div>
               </div>
-            </div>
+            </a>
+            
             @endforeach
           </div>
           <!--  TERBARU -->
@@ -111,8 +118,12 @@
     <div class="row">
       <div class="col-md-12">
         <div class="col-md-12">
-          <h3><b>Terpopuler</b></h3>
-          <hr style="color: black;">
+          <br>
+          <div style="padding: 1px 6px; background-color: black; width: 115px; border-radius: 10px 10px 0px 0px; color: white;">
+            <h4><b>Terpopuler</b></h4>
+          </div>
+          <div style="border: 2px solid black;"></div>
+          <br>
           <div class="row" style="vertical-align: text-top;">
             @foreach($data as $key => $item)
             <?php
@@ -142,8 +153,12 @@
     <div class="row">
       <div class="col-md-12">
         <div class="col-md-8">
-          <h3><b>Koleksi</b></h3>
-          <hr style="color: black;">
+          <br>
+          <div style="padding: 1px 6px; background-color: black; width: 85px; border-radius: 10px 10px 0px 0px; color: white;">
+              <h4><b>Koleksi</b></h4>
+          </div>
+          <div style="border: 2px solid black;"></div>
+          <br>
           @foreach($data as $item)
           <a href="{{ route('detail', $item->alias) }}">
             <div class="row">
