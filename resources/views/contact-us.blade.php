@@ -39,9 +39,9 @@
             <div class="col-md-12">
               <table>
                 <tr>
-                  <td style="width:10%;">Alamat</td>
+                  <td style="width:10%;"><h4>Alamat</h4></td>
                   <td>:</td>
-                  <td>Jalan Melati No 130, Blok C-A, RT/RW 003/006, Perumahan Ciputat Baru, Tangerang Selatan, Banten, 15413.</td>
+                  <td><h4>Jalan Melati No 130, Blok C-A, RT/RW 003/006, Perumahan Ciputat Baru, Tangerang Selatan, Banten, 15413.</h4></td>
                 </tr>
                 <tr>
                   <td>&nbsp</td>
@@ -49,15 +49,15 @@
                   <td>&nbsp</td>
                 </tr>
                 <tr>
-                  <td style="width:10%;">Email</td>
+                  <td style="width:10%;"><h4>Email</h4></td>
                   <td>:</td>
                   <td>
-                    <a href="https://mail.google.com/mail/?subject=Pemasangan Iklan / Kerjasama&view=cm&fs=1&tf=1&to=shier.projectapp@gmail.com
+                    <h4><a href="https://mail.google.com/mail/?subject=Pemasangan Iklan / Kerjasama&view=cm&fs=1&tf=1&to=shier.projectapp@gmail.com
                         &cc=farrosashiddiq@gmail.com
                         &body=Dear Marketing Shier Project,%0D%0ASaya tertarik memasang iklan / bekerjasama dengan Shierproject.com." target="_blank" 
                         style="color: white; background-color: #cf3f30; text-decoration: none; padding: 4px; border-radius: 5px;">
                           <i class="fa fa-envelope"></i> shier.projectapp@gmail.com
-                    </a>
+                    </a></h4>
                   </td>
                 </tr>
                 <tr>
@@ -66,12 +66,12 @@
                   <td>&nbsp</td>
                 </tr>
                 <tr>
-                  <td style="width:10%;">Telepon</td>
+                  <td style="width:10%;"><h4>Telepon</h4></td>
                   <td>:</td>
                   <td>
-                    <a href="https://api.whatsapp.com/send?phone=6287871200923&text=Saya tertarik memasang iklan / bekerjasama dengan Shierproject.com." target="_blank" style="color: white; background-color: #32a852; text-decoration: none; padding: 4px; border-radius: 5px;">
-                            <i class="fa fa-whatsapp"></i> 087871200923 
-                    </a>
+                    <h4><a href="https://api.whatsapp.com/send?phone=6287871200923&text=Saya tertarik memasang iklan / bekerjasama dengan Shierproject.com." target="_blank" style="color: white; background-color: #32a852; text-decoration: none; padding: 4px; border-radius: 5px;">
+                            <i class="fa fa-whatsapp"></i> 087871200923
+                    </a></h4>
                   </td>
                 </tr>
                 <tr>
@@ -80,12 +80,12 @@
                   <td>&nbsp</td>
                 </tr>
                 <tr>
-                  <td style="width:10%;">Instagram</td>
+                  <td style="width:10%;"><h4>Instagram</h4></td>
                   <td>:</td>
                   <td>
-                    <a href="https://www.instagram.com/shierproject" target="_blank" style="color: white; background-color: #cf0ec8; text-decoration: none; padding: 4px; border-radius: 5px;">
-                      <i class="fa fa-instagram"></i> Shier Project 
-                    </a>
+                    <h4><a href="https://www.instagram.com/shierproject" target="_blank" style="color: white; background-color: #cf0ec8; text-decoration: none; padding: 4px; border-radius: 5px;">
+                      <i class="fa fa-instagram"></i> Shier Project
+                    </a></h4>
                   </td>
                   <br>
                 </tr>
@@ -101,8 +101,9 @@
           </div>
           <div class="row">
             <div class="col-md-12">
-              <h5>Shierproject.com terbuka untuk pemasangan iklan produk maupun jasa.
-              Untuk pemasangan, silakan kontak kami.</h5>
+            <br><br>
+              <h4>Shierproject.com terbuka untuk pemasangan iklan produk maupun jasa.
+              Untuk pemasangan, silakan kontak kami.</h4>
             </div>
           </div>
           

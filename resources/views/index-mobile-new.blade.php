@@ -18,10 +18,25 @@
   <?php
     $no = $no + 1;
   ?>
-    <div class="mySlides headlineSlide">
-      <div class="numbertext"><?php echo $no; ?></div>
-      <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/B328284533D1C776C141B676F54E8D626B19DC9327F399BB99F196A8DE0A2AF8/scale?aspectRatio=1.78&format=jpeg" style="width:100%">
-    </div>
+    <a href="{{ route('detail', $item->alias) }}">
+      <div class="mySlides headlineSlide">
+        <div class="numbertext"><?php echo $no; ?></div>
+          <?php
+            if($item->image_name != ''){
+          ?>
+          <img src="{{asset('image/content').'/'.$item->image_name}}" style="width:100%; height: 35vh;">
+          <?php
+            }else{
+          ?>
+          <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/B328284533D1C776C141B676F54E8D626B19DC9327F399BB99F196A8DE0A2AF8/scale?aspectRatio=1.78&format=jpeg" style="width:100%; height: 35vh;">
+          <?php
+            }
+          ?>
+          <div style="position: relative; top: -70px; left: 0px; width: 100vw; padding: 5px; color: white; background-color: rgba(0,0,0,0.6);">
+            <h5><b>{{ $item->title }}</b></h5>
+          </div>
+      </div>
+    </a>
   @endforeach
 
     <a class="prev" onclick="plusSlides(-1)">❮</a>
@@ -32,9 +47,25 @@
     </div>
 
     <div class="row" style="overflow: hidden;">
+      <?php
+        $no = 0;
+      ?>
       @foreach($data as $key => $item)
+      <?php
+        $no = $no + 1;
+      ?>
       <div class="column">
-        <img class="demo cursor" src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/B328284533D1C776C141B676F54E8D626B19DC9327F399BB99F196A8DE0A2AF8/scale?aspectRatio=1.78&format=jpeg" style="width:100%" onclick="currentSlide(1)" alt="{{ $item->title }}">
+        <?php
+          if($item->image_name != ''){
+        ?>
+          <img class="demo cursor" src="{{asset('image/content').'/'.$item->image_name}}" style="width:100%; height: 40px;" onclick="currentSlide(<?php echo $no; ?>)">
+        <?php
+          }else{
+        ?>
+          <img class="demo cursor" src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/B328284533D1C776C141B676F54E8D626B19DC9327F399BB99F196A8DE0A2AF8/scale?aspectRatio=1.78&format=jpeg" style="width:100%; height: 40px;" onclick="currentSlide(<?php echo $no; ?>)" >
+        <?php
+          }
+        ?>
       </div>
       @endforeach
     
@@ -101,7 +132,17 @@
               }
             ?>
             <a href="{{ route('detail', $item->alias) }}" style="display: inline-block; width: 42vw; vertical-align: text-top; margin: 0 2px;">
+            <?php
+              if($item->image_name != ''){
+            ?>
+              <img style="width: 100%; border-radius: 10px; " src="{{asset('image/content').'/'.$item->image_name}}">
+            <?php
+              }else{
+            ?>
               <img style="width: 100%; border-radius: 10px; " src="https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg">
+            <?php
+              }
+            ?>
               <h4>{{ $item->title }}</h4>
             </a> 
             @endforeach

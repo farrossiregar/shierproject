@@ -55,13 +55,15 @@ class ArticleController extends Controller
         $params['alias'] = json_decode($article, true)['alias'];
         $params['fulltexts'] = json_decode($article, true)['description'];
         $params['title'] = json_decode($article, true)['title'];
-        //$params['category'] = json_decode($article, true)['category_id'];
+        $params['category'] = json_decode($article, true)['category_id'];
         $params['publish_date'] = json_decode($article, true)['publish_date'];
         $params['source'] = json_decode($article, true)['source'];
         $params['link'] = json_decode($article, true)['link'];
-        $params['foto_name'] = 'test';
+        $params['foto_name'] = json_decode($article, true)['image_name'];
+        $params['image_source'] = json_decode($article, true)['image_source'];
+        $params['image_caption'] = json_decode($article, true)['image_caption'];
 
-        $params['artikelterkait'] = $this->relatedArticle('2', '1');
+        $params['artikelterkait'] = $this->relatedArticle($params['category'], $params['id']);
 
         $agent = new Agent();
         $device = $agent->device();
@@ -86,7 +88,8 @@ class ArticleController extends Controller
     public function getCategory($category){
         $get_api = file_get_contents('http://api.shierproject.com/category/'.env('APP_KEY').'/'.$category);
         $params['data'] = json_decode($get_api);
-        return view('category')->with($params);
+        $params['id_category'] = $category;
+        //return view('category')->with($params);
 
         $agent = new Agent();
         $device = $agent->device();

@@ -30,9 +30,20 @@
       <hr style="color: black;">
       <div class="row">
         <div class="col-md-12">
-          <!-- <img style="width: 100%; border-radius: 10px;" src="{{ $foto_name }}"> -->
-          <img style="width: 100%; border-radius: 10px;" src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/B328284533D1C776C141B676F54E8D626B19DC9327F399BB99F196A8DE0A2AF8/scale?aspectRatio=1.78&format=jpeg">
-          <p>Only when the button is clicked, the navigation bar will be displayed.</p>
+        <?php
+          if($foto_name != ''){
+        ?>
+          <img style="width: 100%; border-radius: 10px;" src="{{asset('image/content').'/'.$foto_name}}">
+        <?php
+          }else{
+            $img_src = 'https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/B328284533D1C776C141B676F54E8D626B19DC9327F399BB99F196A8DE0A2AF8/scale?aspectRatio=1.78&format=jpeg';
+        ?>
+          <img style="width: 100%; border-radius: 10px;" src="<?php echo $img_src; ?>">
+        <?php
+          }
+        ?>
+          
+          <p>{{ $image_caption }}</p>
         </div>
       </div>
       <hr>

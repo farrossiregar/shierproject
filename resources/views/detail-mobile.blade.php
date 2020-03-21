@@ -5,7 +5,18 @@
 @section('content')
 
   <!--    MAIN    -->
-<img style="width: 100%;" src="https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg">
+  <?php
+    if($foto_name != ''){
+  ?>
+    <img style="width: 100%;" src="{{asset('image/content').'/'.$foto_name}}">
+  <?php
+    }else{
+  ?>
+    <img style="width: 100%;" src="https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg">
+  <?php
+    }
+  ?>
+
 <!-- <div class="row" style="overflow: hidden;">
   <div class="col-md-12" style="overflow: hidden;">
     <h5>Only when the button is clicked, the navigation bar will be displayed.</h5>

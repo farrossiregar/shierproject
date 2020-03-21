@@ -16,7 +16,17 @@
         @foreach($data as $key => $item)
         <div class="mySlides">
           <div class="numbertext"><?php echo $key + 1; ?></div>
+          <?php
+            if($item->image_name != ''){
+          ?>
+          <img src="{{asset('image/content').'/'.$item->image_name}}" style="width:100%">
+          <?php
+            }else{
+          ?>
           <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/B328284533D1C776C141B676F54E8D626B19DC9327F399BB99F196A8DE0A2AF8/scale?aspectRatio=1.78&format=jpeg" style="width:100%">
+          <?php
+            }
+          ?>
         </div>
         @endforeach
           
@@ -91,7 +101,17 @@
             @foreach($data as $item)
             <a href="{{ route('detail', $item->alias) }}">
               <div class="col-md-6 terbaru-tile-parent" >
-                <div class="terbaru-tile">
+              <?php
+                if($item->image_name != ''){
+              ?>
+                <div class="terbaru-tile" style="background-image: url('{{asset('image/content').'/'.$item->image_name}}'); ">
+              <?php
+                }else{
+              ?>
+                <div class="terbaru-tile" style="background-image: url('https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg'); ">
+              <?php
+                }
+              ?>
                   <div class="terbaru-title-tile">
                     <b>{{ $item->title }}</b>
                   </div>
@@ -139,7 +159,17 @@
             </a> -->
             <a href="{{ route('detail', $item->alias) }}" >
               <div class="col-md-3" style="display: inline-block; vertical-align: text-top;">
-                <img style="width: 100%; border-radius: 10px;" src="https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg">
+                <?php
+                  if($item->image_name != ''){
+                ?>
+                  <img style="width: 100%; border-radius: 10px;  height: 160px;" src="{{ asset('image/content').'/'.$item->image_name }}">
+                <?php
+                  }else{
+                ?>
+                  <img style="width: 100%; border-radius: 10px;  height: 160px;" src="https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg">
+                <?php
+                  }
+                ?>
                 <p>{{ $item->title }}</p>
               </div>
             </a>
@@ -163,7 +193,17 @@
           <a href="{{ route('detail', $item->alias) }}">
             <div class="row">
               <div class="col-md-4">
-                <img style="width: 100%; border-radius: 5px;" src="https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg">
+                <?php
+                if($item->image_name != ''){
+                ?>
+                <img style="width: 100%; border-radius: 5px; height: 135px;" src="{{ asset('image/content').'/'.$item->image_name }}">
+                <?php
+                }else{
+                ?>
+                <img style="width: 100%; border-radius: 5px; height: 135px;" src="https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg">
+                <?php
+                }
+                ?>
               </div>
               <div class="col-md-8">
                 <h4>{{ $item->title }}</h4>

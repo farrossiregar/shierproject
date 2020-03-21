@@ -13,7 +13,19 @@
         <div class="col-md-12">
             <div class="row">
                 <div class="col-md-3">
-                    <img src="https://images.pexels.com/photos/301703/pexels-photo-301703.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" style="width: 90%; border-radius: 8px;">
+                    <?php
+                        if($item->image_name != ''){
+                    ?>
+                        <img src="{{asset('image/content').'/'.$item->image_name}}" alt="" style="width: 90%; border-radius: 8px;">
+                    <?php
+                        }else{
+                    ?>
+                        <img src="https://images.pexels.com/photos/301703/pexels-photo-301703.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" style="width: 90%; border-radius: 8px;">
+                    <?php
+
+                        }
+                    ?>
+                    
                 </div>
                 <div class="col-md-9">
                     <b><h4>{{ $item->title }}</h4></b>
