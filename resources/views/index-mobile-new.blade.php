@@ -131,7 +131,7 @@
                 break;
               }
             ?>
-            <a href="{{ route('detail', $item->alias) }}" style="display: inline-block; width: 42vw; vertical-align: text-top; margin: 0 2px;">
+            <a href="{{ route('detail', $item->alias) }}" style="display: inline-block; width: 44vw; vertical-align: text-top; margin: 0 2px;">
             <?php
               if($item->image_name != ''){
             ?>
