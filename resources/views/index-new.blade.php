@@ -36,16 +36,6 @@
         <div class="caption-container">
           <p id="caption"></p>
         </div>
-
-        <!-- <div class="row" style="overflow: hidden;">
-        @foreach($data as $key => $item)
-          <div class="column">
-            <img class="demo cursor" src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/B328284533D1C776C141B676F54E8D626B19DC9327F399BB99F196A8DE0A2AF8/scale?aspectRatio=1.78&format=jpeg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
-          </div>
-        @endforeach
-        <div class="column">
-          <img class="demo cursor" src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/B328284533D1C776C141B676F54E8D626B19DC9327F399BB99F196A8DE0A2AF8/scale?aspectRatio=1.78&format=jpeg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
-        </div> -->
           
         </div>
       </div>
@@ -98,7 +88,12 @@
           <div style="border: 2px solid black;"></div>
           <br>
           <div class="row">
-            @foreach($data as $item)
+            @foreach($data as $key => $item)
+            <?php
+              if($key >= 10){
+                break;
+              }
+            ?>
             <a href="{{ route('detail', $item->alias) }}">
               <div class="col-md-6 terbaru-tile-parent" >
               <?php

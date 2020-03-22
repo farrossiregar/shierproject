@@ -8,36 +8,43 @@
   <?php
     if($foto_name != ''){
   ?>
-    <img style="width: 100%;" src="{{asset('image/content').'/'.$foto_name}}">
+    <div style="margin-top: -20px; background-image: url('{{asset('image/content').'/'.$foto_name}}'); height: 65vh; width: 100vw; background-position: center; ">
+    <!-- <img style="width: auto; height: 60vh;" src="{{asset('image/content').'/'.$foto_name}}"> -->
   <?php
     }else{
   ?>
-    <img style="width: 100%;" src="https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg">
+    <div style="margin-top: -20px; background-image: url('https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg'); height: 65vh; width: 100vw; background-position: center; ">
+    <!-- <img style="width: auto; height: 60vh;" src="https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg"> -->
   <?php
     }
   ?>
+    <div style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.3) , rgba(255,255,255,1)); height: 100%;">
+      <div style="position: relative; top: 20px; right: -130px; color: white; width: 60vw; text-align: right;">
+        <h1><b>{{ $title }}</b></h1>
+        <p style="color: white;"><i class="fa fa-clock-o" style="font-size: 18px;"></i> {{ $publish_date }}</p>
+      </div>
 
-<!-- <div class="row" style="overflow: hidden;">
-  <div class="col-md-12" style="overflow: hidden;">
-    <h5>Only when the button is clicked, the navigation bar will be displayed.</h5>
-  </div>
-</div> -->
+      <div style="position: relative; bottom: 100px;">
+        <div class="row" style="position: relative; top: 180px; left: 20px;">
+          <div class="col-md-12">
+            <a href="https://www.facebook.com" target="_blank"><div style="padding: 7px 13px; background-color: blue; border-radius: 20px; width: 41px;"><i class="fa fa-facebook" style="font-size: 25px; color: white;"></i></div></a>
+            <br>
+            <a href="https://www.instagram.com/shierproject" target="_blank"><div style="padding: 6px 10px; background: linear-gradient(to bottom right, #515BD4, #8134AF, #DD2A7B, #FEDA77, #F58529); border-radius: 20px; width: 41px;"><i class="fa fa-instagram" style="font-size: 25px; color: white;"></i></div></a>
+            <br>
+            <a href="https://www.twitter.com" target="_blank"><div style="padding: 6px 10px; background-color: #00ACEE; border-radius: 20px; width: 41px;"><i class="fa fa-twitter" style="font-size: 25px; color: white;"></i></div></a>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
 <!--    END MAIN    -->
 
 <div class="container" style="background-color: white; overflow-x: hidden;">
   <div class="row">
     <!--  TERBARU -->
     <div class="col-md-12" style="border-right: 1px solid white;">
-      <h3><b>{{ $title }}</b></h3>
-      <p style="color: lightgray;"><i class="fa fa-clock-o" style="font-size: 18px;"></i> {{ $publish_date }}</p>
       <br>
-      <div class="row">
-        <div class="col-md-12">
-          <a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook" style="font-size: 25px;"></i></a>
-          <a href="https://www.instagram.com/shierproject" target="_blank"><i class="fa fa-instagram" style="font-size: 25px;"></i></a>
-          <a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter" style="font-size: 25px;"></i></a>
-        </div>
-      </div>
       <hr>
       <div class="row">
         <div class="col-md-12" style="font-size: 17px;">

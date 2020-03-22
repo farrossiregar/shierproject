@@ -13,11 +13,11 @@
 <?php
     }else{
 ?>
-  <div class="col-md-12" style="background-image: url('https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/B328284533D1C776C141B676F54E8D626B19DC9327F399BB99F196A8DE0A2AF8/scale?aspectRatio=1.78&format=jpeg'); background-size: cover; width: 110vw; height: 100%; background-repeat: no-repeat; background-position: center;"></div>
+  <div class="col-md-12" style="background-image: url('{{ asset('image/shierproject-logo-black.jpg') }}'); background-size: cover; width: 110vw; height: 100%; background-repeat: no-repeat; background-position: center;"></div>
 <?php
     }
 ?>
-  <div class="col-md-12" style="background-image: url('https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/B328284533D1C776C141B676F54E8D626B19DC9327F399BB99F196A8DE0A2AF8/scale?aspectRatio=1.78&format=jpeg'); background-size: cover; width: 100vw; height: 100%; background-repeat: no-repeat; background-position: center;"></div>
+  <div class="col-md-12" style="background-image: url('{{ asset('image/shierproject-logo-black.jpg') }}'); background-size: cover; width: 100vw; height: 100%; background-repeat: no-repeat; background-position: center;"></div>
 </div>
 
 

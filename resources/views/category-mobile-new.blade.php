@@ -23,7 +23,9 @@
       $image = 'woman-walking-on-pathway-while-strolling-luggage-1008155.jpg';
     }
   ?>
-  <div class="col-md-12" style="background-image: url('{{ asset('image/category').'/'.$image }}'); background-size: cover; width: 110vw; height: 100%; background-repeat: no-repeat; background-position: center;"></div>
+  <div class="col-md-12" style="background-image: url('{{ asset('image/category').'/'.$image }}'); background-size: cover; width: 110vw; height: 100%; background-repeat: no-repeat; background-position: center;">
+    <div style="background-image: linear-gradient(to bottom, rgba(0,0,0,0) , rgba(255,255,255,1)); height: 105%;"></div>
+  </div>
 </div>
 
 
