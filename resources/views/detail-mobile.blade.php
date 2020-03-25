@@ -18,48 +18,36 @@
   <?php
     }
   ?>
-    <div style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.4) , rgba(255,255,255,1)); height: 100%;">
+    <div style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.3), rgba(0,0,0,0.1), rgba(255,255,255,0.4), rgba(255,255,255,1)); height: 100%;">
       
       <div style="position: relative; top: 20px; left: 10px;">
         <div class="row">
           <div style="width: 20vw; display: inline-block; padding: 15px;">
-            <div style="position: absolute; bottom: -175px;">
-              <a href="https://www.facebook.com" target="_blank"><div style="padding: 7px 13px; background-color: blue; border-radius: 20px; width: 41px;"><i class="fa fa-facebook" style="font-size: 25px; color: white;"></i></div></a>
-              <br>
-              <a href="https://www.instagram.com/shierproject" target="_blank"><div style="padding: 6px 10px; background: linear-gradient(to bottom right, #515BD4, #8134AF, #DD2A7B, #FEDA77, #F58529); border-radius: 20px; width: 41px;"><i class="fa fa-instagram" style="font-size: 25px; color: white;"></i></div></a>
-              <br>
-              <a href="https://www.twitter.com" target="_blank"><div style="padding: 6px 10px; background-color: #00ACEE; border-radius: 20px; width: 41px;"><i class="fa fa-twitter" style="font-size: 25px; color: white;"></i></div></a>
-            </div>
           </div>
           <div style="width: 80vw; display: inline-block;color: white; text-align: right; padding: 10px;">
             <h1><b>{{ $title }}</b></h1>
             <p style="color: white;"><i class="fa fa-clock-o" style="font-size: 18px;"></i> {{ $publish_date }}</p>
           </div>
         </div>
-      </div>
-
-      <!-- <div style="position: relative; top: 20px; right: -138px; color: white; width: 60vw; text-align: right;">
-        <h1><b>{{ $title }}</b></h1>
-        <p style="color: white;"><i class="fa fa-clock-o" style="font-size: 18px;"></i> {{ $publish_date }}</p>
-      </div> -->
-
-      <!-- <div style="position: relative; bottom: -30px; left: 10px;">
-        <div class="row">
-          <div class="col-md-12">
-            <a href="https://www.facebook.com" target="_blank"><div style="padding: 7px 13px; background-color: blue; border-radius: 20px; width: 41px;"><i class="fa fa-facebook" style="font-size: 25px; color: white;"></i></div></a>
-            <br>
-            <a href="https://www.instagram.com/shierproject" target="_blank"><div style="padding: 6px 10px; background: linear-gradient(to bottom right, #515BD4, #8134AF, #DD2A7B, #FEDA77, #F58529); border-radius: 20px; width: 41px;"><i class="fa fa-instagram" style="font-size: 25px; color: white;"></i></div></a>
-            <br>
-            <a href="https://www.twitter.com" target="_blank"><div style="padding: 6px 10px; background-color: #00ACEE; border-radius: 20px; width: 41px;"><i class="fa fa-twitter" style="font-size: 25px; color: white;"></i></div></a>
-          </div>
-        </div>
-      </div> -->
+      </div>     
     </div>
 </div>
+
 
 <!--    END MAIN    -->
 
 <div class="container" style="background-color: white; overflow-x: hidden;">
+<div class="row" style="padding: 10px;">
+  <div class="col-md-3" style="display: inline-block;">
+    <a href="https://www.facebook.com" target="_blank"><div style="padding: 7px 13px; background-color: blue; border-radius: 20px; width: 41px;"><i class="fa fa-facebook" style="font-size: 25px; color: white;"></i></div></a>
+  </div>
+  <div class="col-md-3"  style="display: inline-block;">
+    <a href="https://www.instagram.com/shierproject" target="_blank"><div style="padding: 6px 10px; background: linear-gradient(to bottom right, #515BD4, #8134AF, #DD2A7B, #FEDA77, #F58529); border-radius: 20px; width: 41px;"><i class="fa fa-instagram" style="font-size: 25px; color: white;"></i></div></a>
+  </div>
+  <div class="col-md-3"  style="display: inline-block;">
+    <a href="https://www.twitter.com" target="_blank"><div style="padding: 6px 10px; background-color: #00ACEE; border-radius: 20px; width: 41px;"><i class="fa fa-twitter" style="font-size: 25px; color: white;"></i></div></a>
+  </div>
+</div>
   <div class="row">
     <!--  TERBARU -->
     <div class="col-md-12" style="border-right: 1px solid white;">
