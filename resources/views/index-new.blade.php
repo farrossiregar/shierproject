@@ -8,8 +8,9 @@
 <!--    MAIN    -->
 <div style="height: 60vh;" class="row">
     <!-- <div class="col-md-6" style="width: auto%; height: 100%; background-image: url('https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/B328284533D1C776C141B676F54E8D626B19DC9327F399BB99F196A8DE0A2AF8/scale?aspectRatio=1.78&format=jpeg'); background-size: cover; background-repeat: no-repeat; background-position: center; padding: 0 2px; display: inline-block; overflow: hidden;"></div> -->
-    <div class="col-md-6" style="padding: 0px;">
-      <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/B328284533D1C776C141B676F54E8D626B19DC9327F399BB99F196A8DE0A2AF8/scale?aspectRatio=1.78&format=jpeg" style="width: 100%; height: auto; margin: 0px;" alt="">
+    <div class="col-md-6" style="padding: 0px; overflow: hidden;">
+      <!-- <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/B328284533D1C776C141B676F54E8D626B19DC9327F399BB99F196A8DE0A2AF8/scale?aspectRatio=1.78&format=jpeg" style="width: 100%; height: auto; margin: 0px;" alt=""> -->
+      <img src="{{ asset('image/slide-corona.png') }}" style="width: 100%; height: auto; margin: 0px;" alt="">
     </div>
     <div class="col-md-6" style="width: 50vw; height: 100%; padding: 0 2px; display: inline-block; overflow: hidden;">
       <div style="width: 100%;">
