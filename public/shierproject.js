@@ -27,7 +27,7 @@ $(document).ready(function(){
                                         '<div class="col-md-4">'+
                                           '<img style="width: 100%; border-radius: 5px;" src="'+ image_antara_source +'">'+
                                         '</div>'+
-                                        '<div class="col-md-8">'+
+                                        '<div class="col-md-8" style=" text-decoration: none; color: black;">'+
                                           '<p>'+ xmlDoc.getElementsByTagName("title")[i].childNodes[0].nodeValue +'</p>'+
                                         '</div>'+
                                       '</div>'+

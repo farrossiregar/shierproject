@@ -25,7 +25,7 @@
             
             </div>
             <div class="col-md-8" style="display: inline-block; width: 55vw; vertical-align: text-top;">
-            <b><h5 style="font-size: 110%;">{{ $item->title }}</h5></b>
+            <b><h5 style="font-size: 90%; text-decoration: none; color: black;">{{ $item->title }}</h5></b>
             </div>
         </div>
     </div>

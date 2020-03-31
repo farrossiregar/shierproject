@@ -28,7 +28,7 @@
                     
                 </div>
                 <div class="col-md-9">
-                    <b><h4>{{ $item->title }}</h4></b>
+                    <b style="text-decoration: none; color: black;"><h4>{{ $item->title }}</h4></b>
                 </div>
             </div>
             <br><br>

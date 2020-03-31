@@ -53,8 +53,19 @@
     <div class="col-md-12" style="border-right: 1px solid white;">
       <br>
       <hr>
+
+      <!-- ADS BANNER 1 -->
       <div class="row">
-        <div class="col-md-12" style="font-size: 17px;">
+        <div class="col-md-12" style="width: 320px; height: 100px; background: lightgray; text-align: center; margin: auto;">
+          <h2>Available Space 320 X 100</h3>
+        </div>
+      </div>
+      <!-- ADS BANNER 1 -->
+      <br><br>
+
+
+      <div class="row">
+        <div class="col-md-12" style="font-size: 17px; padding: 20px;">
           <?php echo html_entity_decode($fulltexts); ?>
 
           <br><br>

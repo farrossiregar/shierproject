@@ -15,25 +15,37 @@
     <div class="col-md-6" style="width: 50vw; height: 100%; padding: 0 2px; display: inline-block; overflow: hidden;">
       <div style="width: 100%;">
         @foreach($data as $key => $item)
-        <div class="mySlides">
-          <div class="numbertext"><?php echo $key + 1; ?></div>
-          <?php
-            if($item->image_name != ''){
-          ?>
-          <img src="{{asset('image/content').'/'.$item->image_name}}" style="width:100%">
-          <?php
-            }else{
-          ?>
-          <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/B328284533D1C776C141B676F54E8D626B19DC9327F399BB99F196A8DE0A2AF8/scale?aspectRatio=1.78&format=jpeg" style="width:100%">
-          <?php
-            }
-          ?>
-        </div>
+        <a href="{{ route('detail', $item->alias) }}">
+          <div class="mySlides">
+            <div class="numbertext" style="color: white; background-color: rgba(0,0,0,0.5); height: 100%; width: 50%;">
+              <h1><b><?php echo $item->title; ?></b></h1>
+              <br><br><br><br><br><br><br><br>
+              <?php
+                $intro = html_entity_decode($item->description);
+              ?>
+              <h4><?php echo substr($intro, 0, 150).'...'; ?></h4>
+              <h4>Cek Selengkapnya...</h4>
+            </div>
+            <?php
+              if($item->image_name != ''){
+            ?>
+            <img src="{{asset('image/content').'/'.$item->image_name}}" style="width:100%">
+            <?php
+              }else{
+            ?>
+            <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/B328284533D1C776C141B676F54E8D626B19DC9327F399BB99F196A8DE0A2AF8/scale?aspectRatio=1.78&format=jpeg" style="width:100%">
+            <?php
+              }
+            ?>
+          </div>
+          
+        </a>
+        
         @endforeach
           
         <a class="prev" onclick="plusSlides(-1)">❮</a>
         <a class="next" onclick="plusSlides(1)">❯</a>
-
+        
         <div class="caption-container">
           <p id="caption"></p>
         </div>
@@ -108,8 +120,8 @@
               <?php
                 }
               ?>
-                  <div class="terbaru-title-tile">
-                    <b>{{ $item->title }}</b>
+                  <div class="terbaru-title-tile" style="color: white;">
+                    <h3><b>{{ $item->title }}</b></h3>
                   </div>
                 </div>
               </div>
@@ -131,6 +143,17 @@
       <!-- ANTARA NEWS -->
     </div>
   
+    <br><br><br>           
+    <!-- ADS BANNER INDEX DESKTOP -->
+    <div class="row" style="padding-left: 90px;">
+      <div class="col-md-12" style="width: 970px; height: 250px; background: lightgray; text-align: center; padding: auto;">
+        <h1 style="margin-top: 90px;">Available Space 970 X 250</h1>
+      </div>
+    </div>
+    <!-- ADS BANNER INDEX DESKTOP -->
+    <br><br>  
+    
+
     <div class="row">
       <div class="col-md-12">
         <div class="col-md-12">
@@ -166,7 +189,7 @@
                 <?php
                   }
                 ?>
-                <p>{{ $item->title }}</p>
+                <h5 style="text-decoration: none; color: black;">{{ $item->title }}</h5>
               </div>
             </a>
             @endforeach
@@ -187,7 +210,7 @@
           <br>
           @foreach($data as $item)
           <a href="{{ route('detail', $item->alias) }}">
-            <div class="row">
+            <div class="row ">
               <div class="col-md-4">
                 <?php
                 if($item->image_name != ''){
@@ -201,8 +224,13 @@
                 }
                 ?>
               </div>
-              <div class="col-md-8">
+              <div class="col-md-8" style="text-decoration: none; color: black;">
                 <h4>{{ $item->title }}</h4>
+                <p style="color: gray;"><i class="fa fa-clock-o"></i> {{ $item->created_at }}</p>
+                <?php
+                  $intro = html_entity_decode($item->description);
+                ?>
+                <p><?php echo substr($intro, 0, 150).'...'; ?></p>
               </div>
             </div>
           </a><br>

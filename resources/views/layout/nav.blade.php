@@ -16,12 +16,12 @@
                     </a>
                 </div>
                 <div class="col-md-6" style="padding-top: 30px;">
-                    <form class="form-inline">
+                    <!-- <form class="form-inline">
                         <div class="form-group col-md-6 input-group-lg">
                             <input type="text" class="form-control" id="" placeholder="Search...">
                         </div>
                         <div type="submit" class="btn btn-primary" style="padding: 9px 12px;"><i class="fa fa-search" style="font-size: 25px;"></i></div>
-                    </form>
+                    </form> -->
                 </div>
             </div>
         </div>
@@ -56,12 +56,12 @@
                         ?>
                         <br>
                         <div class="row">
-                            <div class="col-md-10" style="display: inline-block;">
+                            <!-- <div class="col-md-10" style="display: inline-block;">
                                 <input type="text" class="form-control" id="" placeholder="Search...">
                             </div>
                             <div class="col-md-2" style="display: inline-block;">
                                 <div class="btn btn-primary"><i class="fa fa-search"></i></div>
-                            </div>
+                            </div> -->
                         </div>
                         <?php
                             }

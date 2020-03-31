@@ -65,14 +65,25 @@
         ?>
           <p>{{ $image_caption }}</p>
         </div>
+      
+
+        <!-- ADS BANNER 1 -->
+        <div class="row">
+          <div class="col-md-12">
+            <div class="col-md-12">
+              <div class="col-md-12" style="width: 729px; height: 90px; background: lightgray; text-align: center; margin: auto;">
+                <h1>Available Space 729 X 90</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- ADS BANNER 1 -->
       </div>
       <hr>
       
       <div class="row">
-        <div class="col-md-4">
-
-        </div>
-        <div class="col-md-8" style="font-size: 20px;">
+        <div class="col-md-12" style="font-size: 20px;">
           <?php echo html_entity_decode($fulltexts); ?>
 
           <br><br>

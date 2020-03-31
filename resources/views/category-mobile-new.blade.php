@@ -59,15 +59,15 @@
             <?php
               if($item->image_name != ''){
             ?>
-              <img style="width: 100%; border-radius: 10px; " src="{{asset('image/content').'/'.$item->image_name}}">
+              <img style="width: 100%; height: 120px; border-radius: 10px; " src="{{asset('image/content').'/'.$item->image_name}}">
             <?php
               }else{
             ?>
-              <img style="width: 100%; border-radius: 10px; " src="https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg">
+              <img style="width: 100%; height: 120px; border-radius: 10px; " src="https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg">
             <?php
               }
             ?>
-              <h4>{{ $item->title }}</h4>
+              <h4 style="text-decoration: none; color: black;">{{ $item->title }}</h4>
             </a> 
             @endforeach
           </div>
