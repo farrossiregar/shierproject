@@ -8,9 +8,73 @@
 <!--    MAIN    -->
 <div style="height: 60vh;" class="row">
     <!-- <div class="col-md-6" style="width: auto%; height: 100%; background-image: url('https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/B328284533D1C776C141B676F54E8D626B19DC9327F399BB99F196A8DE0A2AF8/scale?aspectRatio=1.78&format=jpeg'); background-size: cover; background-repeat: no-repeat; background-position: center; padding: 0 2px; display: inline-block; overflow: hidden;"></div> -->
-    <div class="col-md-6" style="padding: 0px; overflow: hidden;">
+    <!-- <div class="col-md-6" style="padding: 0px; overflow: hidden;"> -->
+    <div class="col-md-6" style="padding: 0px; overflow: hidden; background-color: #f8f9fa; height: 100%;">
       <!-- <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/B328284533D1C776C141B676F54E8D626B19DC9327F399BB99F196A8DE0A2AF8/scale?aspectRatio=1.78&format=jpeg" style="width: 100%; height: auto; margin: 0px;" alt=""> -->
-      <img src="{{ asset('image/slide-corona.png') }}" style="width: 100%; height: auto; margin: 0px;" alt="">
+      <a href="https://api.kawalcorona.com/indonesia/" target="_blank">
+        <div class="row" style="padding-top: 50px; ">
+          <div class="row" style="text-align: center;">
+            <div class="col-md-4"></div>
+            <div class="col-4">
+              <h2 style="text-decoration: none; color: black;">DATA CORONA DI INDONESIA</h2>
+              <p  style="text-decoration: none; color: black;">Sumber : api.kawalcorona.com/indonesia/</p>
+            </div>
+            <div class="col-md-4"></div>
+          </div>
+          <br><br>
+          @foreach($parse as $key => $item)
+          
+          <div class="col-md-4" >
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-8" style="background-color: #dc3545; border-radius: 10px; text-align: center; height: 240px;">
+                <div class="row">
+                  <h4  style="text-decoration: none; color: black;"><u><b>Positif</b></u></h4>
+                </div>
+                <div class="row">
+                <br><br><br>
+                  <h2  style="text-decoration: none; color: black;"><b><?php echo $item['positif']; ?></b></h2>
+                </div>
+              </div>
+              <div class="col-md-2"></div>
+            </div>
+          </div>
+          <div class="col-md-4" >
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-8" style="background-color: #ffc107; border-radius: 10px; text-align: center; height: 240px;">
+                <div class="row">
+                  <h4 style="text-decoration: none; color: black;"><u><b>Meninggal</b></u></h4>
+                </div>
+                <div class="row">
+                <br><br><br>
+                  <h2 style="text-decoration: none; color: black;"><b><?php echo $item['meninggal']; ?></b></h2>
+                </div>
+              </div>
+              <div class="col-md-2"></div>
+            </div>
+          </div>
+          <div class="col-md-4" >
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-8" style="background-color: #28a745; border-radius: 10px; text-align: center; height: 240px;">
+                <div class="row">
+                  <h4 style="text-decoration: none; color: black;"><u><b>Sembuh</b></u></h4>
+                </div>
+                <div class="row">
+                <br><br><br>
+                  <h2 style="text-decoration: none; color: black;"><b><?php echo $item['sembuh']; ?></b></h2>
+                </div>
+              </div>
+              <div class="col-md-2"></div>
+            </div>
+          </div>
+          @endforeach
+          
+        </div>
+      </a>
+      
+      <!-- <img src="{{ asset('image/slide-corona.png') }}" style="width: 100%; height: auto; margin: 0px;" alt=""> -->
     </div>
     <div class="col-md-6" style="width: 50vw; height: 100%; padding: 0 2px; display: inline-block; overflow: hidden;">
       <div style="width: 100%;">

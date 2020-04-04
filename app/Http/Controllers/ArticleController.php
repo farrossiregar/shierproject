@@ -15,6 +15,9 @@ class ArticleController extends Controller
         //$params['populer'] = $this->populerArticle();
         //print_r($top_article); die();
 
+        $api_kawal_corona = file_get_contents('https://api.kawalcorona.com/indonesia');
+        $params['parse'] = json_decode($api_kawal_corona, true);
+
         $agent = new Agent();
         $device = $agent->device();
         
