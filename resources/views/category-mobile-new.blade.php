@@ -59,7 +59,7 @@
             <?php
               if($item->image_name != ''){
             ?>
-              <img style="width: 100%; height: 120px; border-radius: 10px; " src="{{asset('image/content').'/'.$item->image_name}}">
+              <img style="width: 100%; height: 120px; border-radius: 10px; " src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>">
             <?php
               }else{
             ?>

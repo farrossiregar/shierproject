@@ -15,5 +15,7 @@
         <!--    END MAIN    -->
 
         @yield('content')
+
+        @include('layout/scroll-to-top')
   </body>
 </html>

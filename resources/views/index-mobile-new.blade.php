@@ -6,10 +6,12 @@
 
 <style>
   .headlineSlide{
-    height: 30vh;
+    height: 65vh;
   }
 </style>
 <div class="col-md-12" style="width: 100vw; height: 100%; padding: 0 2px; display: inline-block; overflow: hidden;">
+
+
   <div style="width: 100%;">
   <?php
     $no = 0;
@@ -24,7 +26,7 @@
           <?php
             if($item->image_name != ''){
           ?>
-          <img src="{{asset('image/content').'/'.$item->image_name}}" style="width:100%; height: 35vh;">
+          <img src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>" style="width:auto; height: 65vh;">
           <?php
             }else{
           ?>
@@ -32,8 +34,10 @@
           <?php
             }
           ?>
-          <div style="position: relative; top: -70px; left: 0px; width: 100vw; padding: 5px; color: white; background-color: rgba(0,0,0,0.6);">
-            <h5><b>{{ $item->title }}</b></h5>
+          <div style="height: 100%; width: 100vw;">
+            <div style="text-align: right; height: 100%; width: 65%; position: relative; top: -415px; left: -1px; padding: 30px 10px; color: white; background-color: rgba(0,0,0,0.6);">
+              <h3><b>{{ $item->title }}</b></h3>
+            </div>
           </div>
       </div>
     </a>
@@ -58,7 +62,7 @@
         <?php
           if($item->image_name != ''){
         ?>
-          <img class="demo cursor" src="{{asset('image/content').'/'.$item->image_name}}" style="width:100%; height: 40px;" onclick="currentSlide(<?php echo $no; ?>)">
+          <img class="demo cursor" src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>" style="width:100%; height: 40px;" onclick="currentSlide(<?php echo $no; ?>)">
         <?php
           }else{
         ?>
@@ -103,10 +107,10 @@
         }
       </script>
 <br>
-<!-- <div style="background-image: url('https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/B328284533D1C776C141B676F54E8D626B19DC9327F399BB99F196A8DE0A2AF8/scale?aspectRatio=1.78&format=jpeg'); background-size: cover; width: 100vw; height: 30vh; background-repeat: no-repeat; background-position: center; display: inline-block;"></div> -->
   <!--    END MAIN    -->
 
   <div class="container" style="background-color: white;">
+
     <div class="row">
       <!--  TERBARU -->
       <div class="col-md-12" style="border-right: 1px solid lightgray;">
@@ -114,7 +118,7 @@
           <div class="col-md-12">
             <br><br>
             <br>
-            <div style="padding: 1px 6px; background-color: black; width: 115px; border-radius: 10px 10px 0px 0px; color: white;">
+            <div class="title-list" style="background-color: black; width: 85px;">
               <h4><b>Terbaru</b></h4>
             </div>
             <div style="border: 2px solid black;"></div>
@@ -127,7 +131,7 @@
           <div class="col-md-12">
             @foreach($data as $key => $item)
             <?php
-              if($key >= 4){
+              if($key >= 8){
                 break;
               }
             ?>
@@ -135,7 +139,7 @@
             <?php
               if($item->image_name != ''){
             ?>
-              <img style="width: 100%; height: 120px; border-radius: 10px; " src="{{asset('image/content').'/'.$item->image_name}}">
+              <img style="width: 100%; height: 120px; border-radius: 10px; " src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>">
             <?php
               }else{
             ?>
@@ -152,8 +156,8 @@
         <hr>
         <div class="artikel_terkait row">
           <div class="col-md-12">
-            <div style="padding: 1px 10px; background-color: black; color: white; width: 80px; border-radius: 10px 10px 0px 0px;">
-                <h5><b>Koleksi</b></h5>
+            <div class="title-list" style="background-color: black; width: 80px;">
+                <h4><b>Koleksi</b></h4>
             </div>
             <div style="border: 2px solid black;">
             </div>
@@ -167,7 +171,7 @@
                       <?php
                           if($item->image_name != ''){
                       ?>
-                          <img src="{{ asset('image/content').'/'.$item->image_name }}" alt="" style="width: 100%; border-radius: 8px;">
+                          <img src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>" alt="" style="width: 100%; border-radius: 8px;">
                       <?php
                           }else{
                       ?>

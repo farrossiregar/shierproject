@@ -28,7 +28,7 @@
             <?php
               if($item->image_name != ''){
             ?>
-            <img src="{{asset('image/content').'/'.$item->image_name}}" style="width:100%">
+            <img src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>" style="width:100%">
             <?php
               }else{
             ?>
@@ -56,31 +56,6 @@
         var slideIndex = 1;
         showSlides(slideIndex);
 
-        function plusSlides(n) {
-          showSlides(slideIndex += n);
-        }
-
-        function currentSlide(n) {
-          showSlides(slideIndex = n);
-        }
-
-        function showSlides(n) {
-          var i;
-          var slides = document.getElementsByClassName("mySlides");
-          var dots = document.getElementsByClassName("demo");
-          var captionText = document.getElementById("caption");
-          if (n > slides.length) {slideIndex = 1}
-          if (n < 1) {slideIndex = slides.length}
-          for (i = 0; i < slides.length; i++) {
-              slides[i].style.display = "none";
-          }
-          for (i = 0; i < dots.length; i++) {
-              dots[i].className = dots[i].className.replace(" active", "");
-          }
-          slides[slideIndex-1].style.display = "block";
-          dots[slideIndex-1].className += " active";
-          captionText.innerHTML = dots[slideIndex-1].alt;
-        }
       </script>
 
     </div>
@@ -94,7 +69,7 @@
         <div  class="col-md-12">
           <!--  TERBARU -->
           <br>
-          <div style="padding: 1px 6px; background-color: black; width: 85px; border-radius: 10px 10px 0px 0px; color: white;">
+          <div class="title-list" style="width: 92px; background-color: black;">
               <h4><b>Terbaru</b></h4>
           </div>
           <div style="border: 2px solid black;"></div>
@@ -108,19 +83,11 @@
             ?>
             <a href="{{ route('detail', $item->alias) }}">
               <div class="col-md-6 terbaru-tile-parent" >
-              <?php
-                if($item->image_name != ''){
-              ?>
-                <div class="terbaru-tile" style="background-image: url('{{asset('image/content').'/'.$item->image_name}}'); ">
-              <?php
-                }else{
-              ?>
-                <div class="terbaru-tile" style="background-image: url('https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg'); ">
-              <?php
-                }
-              ?>
-                  <div class="terbaru-title-tile" style="color: white;">
-                    <h3><b>{{ $item->title }}</b></h3>
+                <div class="terbaru-tile" style="background-image: url('<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>'); ">
+                  <div style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.6)); height: 100%; width: 100%; padding: -10px;">
+                    <div class="terbaru-title-tile" style="color: white;">
+                      <h3><b>{{ $item->title }}</b></h3>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -157,7 +124,7 @@
       <div class="col-md-12">
         <div class="col-md-12">
           <br>
-          <div style="padding: 1px 6px; background-color: black; width: 115px; border-radius: 10px 10px 0px 0px; color: white;">
+          <div class="title-list" style="background-color: black; width: 122px;">
             <h4><b>Terpopuler</b></h4>
           </div>
           <div style="border: 2px solid black;"></div>
@@ -169,18 +136,13 @@
                 break;
               }
             ?>
-            <!-- <a href="{{ route('detail', $item->alias) }}" >
-              <div style="display: inline-block; width: 20%;  vertical-align: text-top;">
-                <img style="width: 100%; border-radius: 10px;" src="https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg">
-                <p>{{ $item->title }}</p>
-              </div>
-            </a> -->
+
             <a href="{{ route('detail', $item->alias) }}" >
               <div class="col-md-3" style="display: inline-block; vertical-align: text-top;">
                 <?php
                   if($item->image_name != ''){
                 ?>
-                  <img style="width: 100%; border-radius: 10px;  height: 160px;" src="{{ asset('image/content').'/'.$item->image_name }}">
+                  <img style="width: 100%; border-radius: 10px;  height: 160px;" src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>">
                 <?php
                   }else{
                 ?>
@@ -202,7 +164,7 @@
       <div class="col-md-12">
         <div class="col-md-8">
           <br>
-          <div style="padding: 1px 6px; background-color: black; width: 85px; border-radius: 10px 10px 0px 0px; color: white;">
+          <div class="title-list" style="background-color: black; width: 85px;">
               <h4><b>Koleksi</b></h4>
           </div>
           <div style="border: 2px solid black;"></div>
@@ -214,22 +176,23 @@
                 <?php
                 if($item->image_name != ''){
                 ?>
-                <img style="width: 100%; border-radius: 5px; height: 135px;" src="{{ asset('image/content').'/'.$item->image_name }}">
+                <img class="image-list" src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>">
                 <?php
                 }else{
                 ?>
-                <img style="width: 100%; border-radius: 5px; height: 135px;" src="https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg">
+                <img class="image-list"  src="https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg">
                 <?php
                 }
                 ?>
               </div>
               <div class="col-md-8" style="text-decoration: none; color: black;">
-                <h4>{{ $item->title }}</h4>
-                <p style="color: gray;"><i class="fa fa-clock-o"></i> {{ $item->created_at }}</p>
+                
+                <p style="color: gray; font-size: 12px;"><i class="fa fa-clock-o"></i> {{ $item->created_at }}</p>
+                <h4><b>{{ $item->title }}</b></h4>
                 <?php
                   $intro = html_entity_decode($item->description);
                 ?>
-                <p><?php echo substr($intro, 0, 150).'...'; ?></p>
+                <p style="color: gray;"><?php echo substr($intro, 0, 150).'...'; ?></p>
               </div>
             </div>
           </a><br>

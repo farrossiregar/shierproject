@@ -37,7 +37,8 @@
   <div class="row">
     <!--  TERBARU -->
     <div class="col-md-8" style="border-right: 1px solid white;">
-      <h2><b>{{ $title }}</b></h2>
+      <!-- <p style="font-size: 12px;"><b><a href="{{ route('/') }}" style="text-decoration: none; color: black;"><?php echo strtoupper('Shierproject'); ?></a>  | <a href="{{ route('get-category', $category) }}" style="text-decoration: none; color: black;"><?php echo strtoupper('Hiburan'); ?></a> | <?php echo strtoupper($title); ?></b></p> -->
+      <h1><b>{{ $title }}</b></h1>
       <p style="color: lightgray;"><i class="fa fa-clock-o" style="font-size: 20px;"></i> {{ $publish_date }}</p>
       <div class="row">
         <div class="col-md-12" style="top: -130px;">
@@ -54,7 +55,7 @@
         <?php
           if($foto_name != ''){
         ?>
-          <img style="width: 100%; border-radius: 10px;" src="{{asset('image/content').'/'.$foto_name}}">
+          <img style="width: 100%; border-radius: 10px;" src="<?php echo "http://cms.shierproject.com/image/content/".$foto_name; ?>">
         <?php
           }else{
             $img_src = 'https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/B328284533D1C776C141B676F54E8D626B19DC9327F399BB99F196A8DE0A2AF8/scale?aspectRatio=1.78&format=jpeg';
@@ -64,6 +65,13 @@
           }
         ?>
           <p>{{ $image_caption }}</p>
+          <p>
+            <?php
+              if($image_source != ''){
+                echo "Sumber Foto : ".$image_source;
+              }
+            ?>
+          </p>
         </div>
       
 
@@ -110,6 +118,39 @@
     <!--  POPULER -->
     <div class="col-md-4">
     <br>
+      <!-- <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-4">
+              <div style="width: 100%; height: 100%;">
+                <img src="http://clothezon.com/allaboutme-farros.com/img/logo-shillouette.jpg" alt="" style="width: 100%;">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <h3><b>Farros Shier</b></h3>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-12">
+              <div>
+              <p>
+                I consider myself as an IT Business Artisan. Or Consultant CTO if you prefer. 
+                I'm a self-taught Web Developper, coach and teacher. My main work is helping and
+                guiding digital startups.
+                </p>
+              </div>
+              
+            </div>
+          </div>
+          
+          </div>
+        </div>
+      </div> -->
+
+      <br><br>
       <div class="row">
         @include('widget.antaranewswidget')
       </div>

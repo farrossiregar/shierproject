@@ -1,7 +1,5 @@
 $(document).ready(function(){
     var rss_antara = 'https://www.antaranews.com/rss/terkini';
-    //var rss_republika = 'http://www.republika.co.id/rss/ekonomi/';
-    //var rss_republika = 'http://sindikasi.okezone.com/index.php/celebrity/RSS2.0';
     var rss_republika = 'https://www.youtube.com/feeds/videos.xml?channel_id=UCvC4D8onUfXzvjTOM-dBfEA';
 
     var xmlhttp = new XMLHttpRequest();
