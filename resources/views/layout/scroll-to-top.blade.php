@@ -8,15 +8,15 @@
     }
 
     function abcd() {
-    var y1 = window.scrollY;
-    y1 = y1 - 1000;
-    //window.scrollTo(0, y1);
-    window.scrollTo({top: 0, behavior: 'smooth'});
-    if (y1 > 60) {
-        t1 = setTimeout("abcd()", 200);
-    } else {
-        clearTimeout(t1);
-    }
+        var y1 = window.scrollY;
+        y1 = y1 - 1000;
+        //window.scrollTo(0, y1);
+        window.scrollTo({top: 0, behavior: 'smooth'});
+        if (y1 > 60) {
+            t1 = setTimeout("abcd()", 400);
+        } else {
+            clearTimeout(t1);
+        }
     }
 </script>
 
@@ -46,10 +46,10 @@
         position: fixed;
         bottom: 20px;
         right: 20px;
-        font-size: 48px;
+        font-size: 36px;
         border-radius: 32px;
         background-color: black;
-        padding: 0 18px;
+        padding: 0 14px;
     }
 </style>
 <?php
