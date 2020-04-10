@@ -35,7 +35,7 @@
             }
           ?>
           <div style="height: 100%; width: 100vw;">
-            <div style="text-align: right; height: 100%; width: 65%; position: relative; top: -415px; left: -1px; padding: 30px 10px; color: white; background-color: rgba(0,0,0,0.6);">
+            <div style="text-align: right; height: 105%; width: 65%; position: relative; top: -425px; left: -1px; padding: 30px 10px; color: white; background-color: rgba(0,0,0,0.6);">
               <h3><b>{{ $item->title }}</b></h3>
             </div>
           </div>
@@ -192,27 +192,6 @@
       </div>
       <!--  TERBARU -->
     </div>
-
-    <!-- <div class="row"> -->
-      <!--  POPULER -->
-      <!-- <div class="col-md-12">
-        <div class="row"> -->
-          <!-- ANTARA NEWS -->
-          <!-- <div class="col-md-12">
-            <h3><a href="https://www.antaranews.com"><b>Antara News Terkini</b></a></h3>
-            <hr style="color: black;">
-            <div id="antara_news_id" style="height:60vh; width: 100%; overflow-y: scroll;">
-
-            </div>
-            <br>
-          </div> -->
-          <!-- ANTARA NEWS -->
-
-        <!-- </div>
-      </div> -->
-      <!--  POPULER -->
-    <!-- </div> -->
-    
     
   </div>
 
