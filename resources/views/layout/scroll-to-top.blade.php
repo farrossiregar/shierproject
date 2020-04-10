@@ -73,5 +73,13 @@
         opacity: 1;
     }
 </style>
-<div id="toTop" onclick="abcd()" ><i class="fa fa-angle-up"></i></div>
+<!-- <div id="toTop" onclick="abcd()" ><i class="fa fa-angle-up"></i></div> -->
+
+<a href="#top">
+    <div id="toTop">
+        <span>
+            <i class="fa fa-angle-up"></i>
+        </span>
+    </div>
+</a>
 <!-- <img id="toTop" src="http://via.placeholder.com/50x50" onclick="abcd()" title="Go To Top"> -->

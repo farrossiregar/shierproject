@@ -36,4 +36,8 @@
     /* font-family: "Open Sans",arial,sans-serif; */
     text-decoration: none;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
 </style>
