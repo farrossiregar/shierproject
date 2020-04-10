@@ -22,7 +22,7 @@
   ?>
     <a href="{{ route('detail', $item->alias) }}">
       <div class="mySlides headlineSlide">
-        <div class="numbertext"><?php echo $no; ?></div>
+        <div class="numbertext"><?php //echo $no; ?></div>
           <?php
             if($item->image_name != ''){
           ?>
