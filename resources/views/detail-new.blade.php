@@ -25,8 +25,8 @@
       $image = 'woman-walking-on-pathway-while-strolling-luggage-1008155.jpg';
     }
   ?>
-  <div class="col-md-12" style="background-image: url('{{ asset('image/category').'/'.$image }}'); background-size: cover; width: 100vw; height: 100%; background-repeat: no-repeat; background-position: center; padding: 0 2px;">
-    <div style="background-image: linear-gradient(to bottom, rgba(0,0,0,0) , rgba(255,255,255,1)); height: 100%;"></div>
+  <div class="col-md-12 main_img_web" style="background-image: url('{{ asset('image/category').'/'.$image }}');">
+    <div class="main_img_web_filter"></div>
   </div>
 </div>
 
@@ -41,29 +41,22 @@
       <h1><b>{{ $title }}</b></h1>
       <p style="color: lightgray;"><i class="fa fa-clock-o" style="font-size: 20px;"></i> {{ $publish_date }}</p>
       <div class="row">
-        <div class="col-md-12" style="top: -130px;">
-          <div class="row" style="position: relative; top: 180px; left: 20px;">
-            <div class="col-md-12">
-              <a href="https://www.facebook.com" target="_blank"><div style="padding: 7px 13px; background-color: blue; border-radius: 20px; width: 41px;"><i class="fa fa-facebook" style="font-size: 25px; color: white;"></i></div></a>
+        <div class="col-md-12" style="top: -200px;">
+          <div class="row share_btn_article_pos">
+            <div class="col-md-12" style="">
+              <a href="https://www.facebook.com/sharer/sharer.php?u={{ route('detail', $alias) }}" target="_blank"><div class="fb_share share_btn_article"><i class="fa fa-facebook" style="font-size: 25px; color: white;"></i></div></a>
               <br>
-              <a href="https://www.instagram.com/shierproject" target="_blank"><div style="padding: 6px 10px; background: linear-gradient(to bottom right, #515BD4, #8134AF, #DD2A7B, #FEDA77, #F58529); border-radius: 20px; width: 41px;"><i class="fa fa-instagram" style="font-size: 25px; color: white;"></i></div></a>
+              <a href="https://www.instagram.com/shierproject" target="_blank"><div class="ig_share share_btn_article"><i class="fa fa-instagram" style="font-size: 25px; color: white;"></i></div></a>
               <br>
-              <a href="https://www.twitter.com" target="_blank"><div style="padding: 6px 10px; background-color: #00ACEE; border-radius: 20px; width: 41px;"><i class="fa fa-twitter" style="font-size: 25px; color: white;"></i></div></a>
-            
+              <a href="https://twitter.com/share?url={{ route('detail', $alias) }}" target="_blank"><div class="twr_share share_btn_article"><i class="fa fa-twitter" style="font-size: 25px; color: white;"></i></div></a>
+              <br>
+              <a href="https://api.whatsapp.com/send?&text={{ route('detail', $alias) }}" target="_blank"><div class="wa_share share_btn_article"><i class="fa fa-whatsapp" style="font-size: 25px; color: white;"></i></div></a>
             </div>
           </div>
-        <?php
-          if($foto_name != ''){
-        ?>
-          <img style="width: 100%; border-radius: 10px;" src="<?php echo "http://cms.shierproject.com/image/content/".$foto_name; ?>">
-        <?php
-          }else{
-            $img_src = 'https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/B328284533D1C776C141B676F54E8D626B19DC9327F399BB99F196A8DE0A2AF8/scale?aspectRatio=1.78&format=jpeg';
-        ?>
-          <img style="width: 100%; border-radius: 10px;" src="<?php echo $img_src; ?>">
-        <?php
-          }
-        ?>
+          <div style="border-radius: 10px; overflow: hidden;">
+            <img style="width: 100%;" src="<?php echo "http://cms.shierproject.com/image/content/".$foto_name; ?>">
+          </div>
+          <!-- <img style="width: 100%; border-radius: 10px;" src="<?php echo "http://cms.shierproject.com/image/content/".$foto_name; ?>"> -->
           <p>{{ $image_caption }}</p>
           <p>
             <?php
@@ -76,7 +69,7 @@
       
 
         <!-- ADS BANNER 1 -->
-        <div class="row">
+        <!-- <div class="row">
           <div class="col-md-12">
             <div class="col-md-12">
               <div class="col-md-12" style="width: 729px; height: 90px; background: lightgray; text-align: center; margin: auto;">
@@ -84,14 +77,14 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
         
         <!-- ADS BANNER 1 -->
       </div>
       <hr>
       
       <div class="row">
-        <div class="col-md-12" style="font-size: 20px;">
+        <div class="col-md-12 txt-article">
           <?php echo html_entity_decode($fulltexts); ?>
 
           <br><br>
@@ -118,37 +111,8 @@
     <!--  POPULER -->
     <div class="col-md-4">
     <br>
-      <!-- <div class="row">
-        <div class="col-md-12">
-          <div class="row">
-            <div class="col-md-4">
-              <div style="width: 100%; height: 100%;">
-                <img src="http://clothezon.com/allaboutme-farros.com/img/logo-shillouette.jpg" alt="" style="width: 100%;">
-              </div>
-            </div>
-            <div class="col-md-4">
-              <h3><b>Farros Shier</b></h3>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-          <div class="row">
-            <div class="col-md-12">
-              <div>
-              <p>
-                I consider myself as an IT Business Artisan. Or Consultant CTO if you prefer. 
-                I'm a self-taught Web Developper, coach and teacher. My main work is helping and
-                guiding digital startups.
-                </p>
-              </div>
-              
-            </div>
-          </div>
-          
-          </div>
-        </div>
-      </div> -->
+      @include('layout.about-author')
+      
 
       <br><br>
       <div class="row">

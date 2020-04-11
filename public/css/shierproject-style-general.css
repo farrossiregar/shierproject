@@ -10,3 +10,56 @@
 .image-list{
     width: 100%; border-radius: 5px; height: 135px;
 }
+
+.fb_share{
+    padding: 7px 13px; background-color: #3B5998;
+}
+
+.twr_share{
+    padding: 7px 10px; background-color: #00ACEE;
+}
+
+.ig_share{
+    padding: 7px 10px; background: linear-gradient(to bottom right, #515BD4, #8134AF, #DD2A7B, #FEDA77, #F58529);
+}
+
+.wa_share{
+    padding: 7px 10px; background-color: #25D366; 
+}
+
+
+.share_btn_article{
+    border-radius: 20px; width: 41px;
+}
+
+.share_btn_article_pos{
+    position: relative; top: 240px; left: 20px;
+}
+
+.txt-article{
+    font-size: 20px;
+}
+
+/* Mobile   */
+
+.main_img_mobile{
+    overflow: hidden; margin-top: -20px; height: 65vh; width: 100vw; background-position: center; 
+}
+
+.main_img_filter{
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.3), rgba(0,0,0,0.1), rgba(255,255,255,0.4), rgba(255,255,255,1)); height: 100%;
+}
+
+.title_article_mobile{
+    width: 100vw; float: left; display: inline-block;color: white; text-align: right; padding: 10px;
+}
+
+/*          desktop          */
+
+.main_img_web{
+    background-size: cover; width: 100vw; height: 100%; background-repeat: no-repeat; background-position: center; padding: 0 2px;
+}
+
+.main_img_web_filter{
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) , rgba(255,255,255,1)); height: 100%;
+}

@@ -6,12 +6,10 @@
 
 <style>
   .headlineSlide{
-    height: 65vh;
+    height: 70vh;
   }
 </style>
 <div class="col-md-12" style="width: 100vw; height: 100%; padding: 0 2px; display: inline-block; overflow: hidden;">
-
-
   <div style="width: 100%;">
   <?php
     $no = 0;
@@ -22,33 +20,25 @@
   ?>
     <a href="{{ route('detail', $item->alias) }}">
       <div class="mySlides headlineSlide">
-        <div class="numbertext"><?php //echo $no; ?></div>
-          <?php
-            if($item->image_name != ''){
-          ?>
-          <img src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>" style="width:auto; height: 65vh;">
-          <?php
-            }else{
-          ?>
-          <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/B328284533D1C776C141B676F54E8D626B19DC9327F399BB99F196A8DE0A2AF8/scale?aspectRatio=1.78&format=jpeg" style="width:100%; height: 35vh;">
-          <?php
-            }
-          ?>
-          <div style="height: 100%; width: 100vw;">
+        <div class="numbertext" style="color: white; background-color: rgba(0,0,0,0.5); height: 92%; width: 75%; padding-right: 5px; padding-left: 20px;">
+          <h2><b><?php echo $item->title; ?></b></h2>
+        </div>
+        <img src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>" style="width:auto; height: 70vh;">
+          <!-- <div style="height: 100%; width: 100vw;">
             <div style="text-align: right; height: 105%; width: 65%; position: relative; top: -425px; left: -1px; padding: 30px 10px; color: white; background-color: rgba(0,0,0,0.6);">
               <h3><b>{{ $item->title }}</b></h3>
             </div>
-          </div>
+          </div> -->
       </div>
     </a>
   @endforeach
 
-    <a class="prev" onclick="plusSlides(-1)">❮</a>
-    <a class="next" onclick="plusSlides(1)">❯</a>
+    <a class="prev" style="margin-top: 120px;" onclick="plusSlides(-1)">❮</a>
+    <a class="next" style="margin-top: 120px;" onclick="plusSlides(1)">❯</a>
 
-    <div class="caption-container">
+    <!-- <div class="caption-container">
       <p id="caption"></p>
-    </div>
+    </div> -->
 
     <div class="row" style="overflow: hidden;">
       <?php
@@ -59,17 +49,7 @@
         $no = $no + 1;
       ?>
       <div class="column">
-        <?php
-          if($item->image_name != ''){
-        ?>
-          <img class="demo cursor" src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>" style="width:100%; height: 40px;" onclick="currentSlide(<?php echo $no; ?>)">
-        <?php
-          }else{
-        ?>
-          <img class="demo cursor" src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/B328284533D1C776C141B676F54E8D626B19DC9327F399BB99F196A8DE0A2AF8/scale?aspectRatio=1.78&format=jpeg" style="width:100%; height: 40px;" onclick="currentSlide(<?php echo $no; ?>)" >
-        <?php
-          }
-        ?>
+      <img class="demo cursor" src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>" style="width:100%; height: 40px;" onclick="currentSlide(<?php echo $no; ?>)">
       </div>
       @endforeach
     
@@ -106,7 +86,6 @@
           captionText.innerHTML = dots[slideIndex-1].alt;
         }
       </script>
-<br>
   <!--    END MAIN    -->
 
   <div class="container" style="background-color: white;">
@@ -117,7 +96,6 @@
         <div class="row">
           <div class="col-md-12">
             <br><br>
-            <br>
             <div class="title-list" style="background-color: black; width: 85px;">
               <h4><b>Terbaru</b></h4>
             </div>

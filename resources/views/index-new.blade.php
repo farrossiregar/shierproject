@@ -16,7 +16,7 @@
         @foreach($data as $key => $item)
         <a href="{{ route('detail', $item->alias) }}">
           <div class="mySlides">
-            <div class="numbertext" style="color: white; background-color: rgba(0,0,0,0.5); height: 100%; width: 50%;">
+            <div class="numbertext" style="color: white; background-color: rgba(0,0,0,0.5); height: 100%; width: 50%; padding-left: 3vw;">
               <h1><b><?php echo $item->title; ?></b></h1>
               <br><br><br><br><br><br><br><br>
               <?php
@@ -25,17 +25,7 @@
               <h4><?php echo substr($intro, 0, 150).'...'; ?></h4>
               <h4>Cek Selengkapnya...</h4>
             </div>
-            <?php
-              if($item->image_name != ''){
-            ?>
             <img src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>" style="width:100%">
-            <?php
-              }else{
-            ?>
-            <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/B328284533D1C776C141B676F54E8D626B19DC9327F399BB99F196A8DE0A2AF8/scale?aspectRatio=1.78&format=jpeg" style="width:100%">
-            <?php
-              }
-            ?>
           </div>
           
         </a>
@@ -111,11 +101,11 @@
   
     <br><br><br>           
     <!-- ADS BANNER INDEX DESKTOP -->
-    <div class="row" style="padding-left: 90px;">
+    <!-- <div class="row" style="padding-left: 90px;">
       <div class="col-md-12" style="width: 970px; height: 250px; background: lightgray; text-align: center; padding: auto;">
         <h1 style="margin-top: 90px;">Available Space 970 X 250</h1>
       </div>
-    </div>
+    </div> -->
     <!-- ADS BANNER INDEX DESKTOP -->
     <br><br>  
     
@@ -188,11 +178,11 @@
               <div class="col-md-8" style="text-decoration: none; color: black;">
                 
                 <p style="color: gray; font-size: 12px;"><i class="fa fa-clock-o"></i> {{ $item->created_at }}</p>
-                <h4><b>{{ $item->title }}</b></h4>
+                <h3><b>{{ $item->title }}</b></h3>
                 <?php
                   $intro = html_entity_decode($item->description);
                 ?>
-                <p style="color: gray;"><?php echo substr($intro, 0, 150).'...'; ?></p>
+                <!-- <p style="color: gray;"><?php echo substr($intro, 0, 150).'...'; ?></p> -->
               </div>
             </div>
           </a><br>
