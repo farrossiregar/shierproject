@@ -36,10 +36,16 @@
 
   <div class="row">
     <!--  TERBARU -->
-    <div class="col-md-8" style="border-right: 1px solid white;">
+    <div class="col-md-12">
       <!-- <p style="font-size: 12px;"><b><a href="{{ route('/') }}" style="text-decoration: none; color: black;"><?php echo strtoupper('Shierproject'); ?></a>  | <a href="{{ route('get-category', $category) }}" style="text-decoration: none; color: black;"><?php echo strtoupper('Hiburan'); ?></a> | <?php echo strtoupper($title); ?></b></p> -->
-      <h1><b>{{ $title }}</b></h1>
+      <div class="row">
+        <div class="col-md-8">
+          <h1><b>{{ $title }}</b></h1>
+        </div>
+      </div>
       <p style="color: lightgray;"><i class="fa fa-clock-o" style="font-size: 20px;"></i> {{ $publish_date }}</p>
+    </div>
+    <div class="col-md-8" style="border-right: 1px solid white;">
       <div class="row">
         <div class="col-md-12" style="top: -200px;">
           <div class="row share_btn_article_pos">
