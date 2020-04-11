@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-12">
-        <div class="row" style="border-radius: 5px; border: 1px solid lightgrey; padding: 5px; margin-top: 140px; margin-left: 2px; margin-right: 2px;">
+        <div class="row" style="border-radius: 5px; border: 1px solid lightgrey; padding: 5px; margin-left: 2px; margin-right: 2px;">
             <?php
                 use Jenssegers\Agent\Agent;
                 $agent = new Agent();
