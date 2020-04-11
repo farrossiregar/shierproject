@@ -21,7 +21,7 @@
 
 
 <link rel="stylesheet" href="{{ asset('shierproject-style.css') }}">
-<link rel="stylesheet" href="{{ asset('css/shierproject-style-general.css') }}">
+<link rel="stylesheet" href="{{ asset('shierproject-style-general.css') }}">
 <link rel="stylesheet" href="{{ asset('shierproject-mobileslideshow-style.css') }}">
 <link rel="stylesheet" href="{{ asset('shierproject-desktopslideshow-style.css') }}">
 
