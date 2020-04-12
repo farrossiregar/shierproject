@@ -16,6 +16,10 @@
 // });
 
 Route::get('/', 'ArticleController@index')->name('/');
+
+
+
+
 Route::get('index-mobile', 'ArticleController@indexMobile')->name('index-mobile');
 
 Route::get('detail/{alias}', 'ArticleController@detail')->name('detail');
@@ -28,4 +32,7 @@ Route::get('related-article/{category}/{id_article}', 'ArticleController@related
 
 Route::get('contact-us', 'ArticleController@contactUs')->name('contact-us');
 
+Route::get('/{category}', 'ArticleController@category')->name('/{category}');
+
+Route::get('/{category}/{alias}', 'ArticleController@detailArticle')->name('/{category}/{alias}');
 

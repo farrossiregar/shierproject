@@ -14,7 +14,10 @@
     <div class="col-md-6" style="width: 50vw; height: 100%; padding: 0 2px; display: inline-block; overflow: hidden;">
       <div style="width: 100%;">
         @foreach($data as $key => $item)
-        <a href="{{ route('detail', $item->alias) }}">
+        <?php
+          $url_detail = route('/', $item->url_category.'/'.$item->alias);
+        ?>
+        <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
           <div class="mySlides">
             <div class="numbertext" style="color: white; background-color: rgba(0,0,0,0.5); height: 100%; width: 50%; padding-left: 3vw;">
               <h1><b><?php echo $item->title; ?></b></h1>
@@ -71,7 +74,10 @@
                 break;
               }
             ?>
-            <a href="{{ route('detail', $item->alias) }}">
+            <?php
+              $url_detail = route('/', $item->url_category.'/'.$item->alias);
+            ?>
+            <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
               <div class="col-md-6 terbaru-tile-parent" >
                 <div class="terbaru-tile" style="background-image: url('<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>'); ">
                   <div style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.6)); height: 100%; width: 100%; padding: -10px;">
@@ -127,7 +133,10 @@
               }
             ?>
 
-            <a href="{{ route('detail', $item->alias) }}" >
+            <?php
+              $url_detail = route('/', $item->url_category.'/'.$item->alias);
+            ?>
+            <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
               <div class="col-md-3" style="display: inline-block; vertical-align: text-top;">
                 <?php
                   if($item->image_name != ''){
@@ -160,7 +169,10 @@
           <div style="border: 2px solid black;"></div>
           <br>
           @foreach($data as $item)
-          <a href="{{ route('detail', $item->alias) }}">
+          <?php
+            $url_detail = route('/', $item->url_category.'/'.$item->alias);
+          ?>
+          <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
             <div class="row ">
               <div class="col-md-4">
                 <?php

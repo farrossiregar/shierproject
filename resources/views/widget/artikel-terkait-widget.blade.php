@@ -8,24 +8,14 @@
 <hr>
 <div class="row">
     @foreach($data as $key => $item)
-    
-    <a href="{{ route('detail', $item->alias) }}">
+    <?php
+        $url_detail = route('/', $url_category.'/'.$item->alias);
+    ?>
+    <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
         <div class="col-md-12">
             <div class="row">
                 <div class="col-md-3">
-                    <?php
-                        if($item->image_name != ''){
-                    ?>
-                        <img src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>" alt="" style="width: 90%; border-radius: 8px;">
-                    <?php
-                        }else{
-                    ?>
-                        <img src="https://images.pexels.com/photos/301703/pexels-photo-301703.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" style="width: 90%; border-radius: 8px;">
-                    <?php
-
-                        }
-                    ?>
-                    
+                    <img src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>" alt="" style="width: 90%; border-radius: 8px;">
                 </div>
                 <div class="col-md-9">
                     <b style="text-decoration: none; color: black;"><h4>{{ $item->title }}</h4></b>

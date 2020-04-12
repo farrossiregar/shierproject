@@ -113,8 +113,9 @@
             success: function(result){
                 for(var i = 0; i <= result.length; i++){
                     
-                    var url = '{{ route("get-category", ":category") }}';
-                    url = url.replace(':category', result[i]['id']);
+                    //var url = '{{ route("get-category", ":category") }}';
+                    var url = '{{ route("/{category}", ":category") }}';
+                    url = url.replace(':category', result[i]['url_title']);
                     url = url.replace('?', '/');
                     $('#list-menu').append('<li><a href="'+url+'">'+ result[i]['title'] +' </a></li>');
                 }

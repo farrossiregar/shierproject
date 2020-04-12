@@ -1,29 +1,12 @@
 @extends('layout.app')
 
-@section('title', 'Category')
+@section('title', $title_category .' - Shier Project')
 
 @section('content')
 
 
 <div style="height: 45vh;" class="row">
-  <?php
-    if($id_category == '1'){
-      $image = 'woman-walking-on-pathway-while-strolling-luggage-1008155.jpg';
-    }elseif($id_category == '3'){
-      $image = 'grayscale-photography-of-mosque-2863202.jpg';
-    }elseif($id_category == '4'){
-      $image = 'men-working-at-night-256219.jpg';
-    }elseif($id_category == '5'){
-      $image = 'app-entertainment-ipad-mockup-265685.jpg';
-    }elseif($id_category == '6'){
-      $image = 'brown-shopping-bags-5956.jpg';
-    }elseif($id_category == '7'){
-      $image = 'man-riding-bicycle-on-city-street-310983.jpg';
-    }else{
-      $image = 'woman-walking-on-pathway-while-strolling-luggage-1008155.jpg';
-    }
-  ?>
-  <div class="col-md-12" style="background-image: url('{{ asset('image/category').'/'.$image }}'); background-size: cover; width: 100vw; height: 100%; background-repeat: no-repeat; background-position: center; padding: 0 2px;">
+  <div class="col-md-12" style="background-image: url('{{ asset('image/category').'/'.$image_category }}'); background-size: cover; width: 100vw; height: 100%; background-repeat: no-repeat; background-position: center; padding: 0 2px;">
     <div style="background-image: linear-gradient(to bottom, rgba(0,0,0,0) , rgba(255,255,255,1)); height: 100%;"></div>
   </div>
 </div>
@@ -45,32 +28,42 @@
           <div style="border: 2px solid black;"></div>
           <br>
           <div class="row">
-            @foreach($data as $key => $item)
-            <a href="{{ route('detail', $item->alias) }}">            
-              <div class="col-md-6" style="margin-bottom: 30px;">
-                <div class="row">
-                  <div class="col-md-6">
-                    <?php
-                      if($item->image_name != ''){
-                    ?>
-                      <img style="width: 100%; height: 120px; border-radius: 10px;" src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>">
-                    <?php
-                      }else{
-                    ?>
-                      <img style="width: 100%; height: 120px; border-radius: 10px;" src="https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg">
-                    <?php
-                      }
-                    ?>
-                    
-                  </div>
-                  <div class="col-md-6">
-                    <h4 style="text-decoration: none; color: black;">{{ $item->title }}</h4>
+            <?php
+              if($data){
+            ?>
+              @foreach($data as $key => $item)
+              <?php
+                $url_detail = route('/', $url_category.'/'.$item->alias);
+              ?>
+              <a href="<?php echo str_replace('?', '/', $url_detail); ?>">            
+                <div class="col-md-6" style="margin-bottom: 30px;">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <?php
+                        if($item->image_name != ''){
+                      ?>
+                        <img style="width: 100%; height: 120px; border-radius: 10px;" src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>">
+                      <?php
+                        }else{
+                      ?>
+                        <img style="width: 100%; height: 120px; border-radius: 10px;" src="https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg">
+                      <?php
+                        }
+                      ?>
+                      
+                    </div>
+                    <div class="col-md-6">
+                      <h4 style="text-decoration: none; color: black;">{{ $item->title }}</h4>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </a>
+              </a>
+              
+              @endforeach
+            <?php
+              }
+            ?>
             
-            @endforeach
           </div>
           
         </div>

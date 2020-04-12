@@ -1,29 +1,12 @@
 @extends('layout.app')
 
-@section('title', 'Category Mobile')
+@section('title', $title_category .' - Shier Project')
 
 @section('content')
 
 
 <div style="height: 30vh; width: 104vw; overflow: hidden;" class="row">
-  <?php
-    if($id_category == '1'){
-      $image = 'woman-walking-on-pathway-while-strolling-luggage-1008155.jpg';
-    }elseif($id_category == '3'){
-      $image = 'grayscale-photography-of-mosque-2863202.jpg';
-    }elseif($id_category == '4'){
-      $image = 'men-working-at-night-256219.jpg';
-    }elseif($id_category == '5'){
-      $image = 'app-entertainment-ipad-mockup-265685.jpg';
-    }elseif($id_category == '6'){
-      $image = 'brown-shopping-bags-5956.jpg';
-    }elseif($id_category == '7'){
-      $image = 'man-riding-bicycle-on-city-street-310983.jpg';
-    }else{
-      $image = 'woman-walking-on-pathway-while-strolling-luggage-1008155.jpg';
-    }
-  ?>
-  <div class="col-md-12" style="background-image: url('{{ asset('image/category').'/'.$image }}'); background-size: cover; width: 110vw; height: 100%; background-repeat: no-repeat; background-position: center;">
+  <div class="col-md-12" style="background-image: url('{{ asset('image/category').'/'.$image_category }}'); background-size: cover; width: 110vw; height: 100%; background-repeat: no-repeat; background-position: center;">
     <div style="background-image: linear-gradient(to bottom, rgba(0,0,0,0) , rgba(255,255,255,1)); height: 105%;"></div>
   </div>
 </div>

@@ -1,31 +1,13 @@
 @extends('layout.app')
 
-@section('title', 'Shier Project')
+@section('title', $title .' - Shier Project')
 
 @section('content')
 
 
 <!--    MAIN    -->
 <div style="height: 30vh;" class="row">
-  <?php
-    $id_category = $category;
-    if($id_category == '1'){
-      $image = 'woman-walking-on-pathway-while-strolling-luggage-1008155.jpg';
-    }elseif($id_category == '3'){
-      $image = 'grayscale-photography-of-mosque-2863202.jpg';
-    }elseif($id_category == '4'){
-      $image = 'men-working-at-night-256219.jpg';
-    }elseif($id_category == '5'){
-      $image = 'app-entertainment-ipad-mockup-265685.jpg';
-    }elseif($id_category == '6'){
-      $image = 'brown-shopping-bags-5956.jpg';
-    }elseif($id_category == '7'){
-      $image = 'man-riding-bicycle-on-city-street-310983.jpg';
-    }else{
-      $image = 'woman-walking-on-pathway-while-strolling-luggage-1008155.jpg';
-    }
-  ?>
-  <div class="col-md-12 main_img_web" style="background-image: url('{{ asset('image/category').'/'.$image }}');">
+  <div class="col-md-12 main_img_web" style="background-image: url('{{ asset('image/category').'/'.$image_category }}');">
     <div class="main_img_web_filter"></div>
   </div>
 </div>
@@ -49,14 +31,18 @@
       <div class="row">
         <div class="col-md-12" style="top: -200px;">
           <div class="row share_btn_article_pos">
+          <?php
+            $url_detail = route('/', $url_category.'/'.$alias);
+            $url_detail = str_replace('?', '/', $url_detail);
+          ?>
             <div class="col-md-12" style="">
-              <a href="https://www.facebook.com/sharer/sharer.php?u={{ route('detail', $alias) }}" target="_blank"><div class="fb_share share_btn_article"><i class="fa fa-facebook" style="font-size: 25px; color: white;"></i></div></a>
+              <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $url_detail; ?>" target="_blank"><div class="fb_share share_btn_article"><i class="fa fa-facebook" style="font-size: 25px; color: white;"></i></div></a>
               <br>
               <a href="https://www.instagram.com/shierproject" target="_blank"><div class="ig_share share_btn_article"><i class="fa fa-instagram" style="font-size: 25px; color: white;"></i></div></a>
               <br>
-              <a href="https://twitter.com/share?url={{ route('detail', $alias) }}" target="_blank"><div class="twr_share share_btn_article"><i class="fa fa-twitter" style="font-size: 25px; color: white;"></i></div></a>
+              <a href="https://twitter.com/share?url=<?php echo $url_detail; ?>" target="_blank"><div class="twr_share share_btn_article"><i class="fa fa-twitter" style="font-size: 25px; color: white;"></i></div></a>
               <br>
-              <a href="https://api.whatsapp.com/send?&text={{ route('detail', $alias) }}" target="_blank"><div class="wa_share share_btn_article"><i class="fa fa-whatsapp" style="font-size: 25px; color: white;"></i></div></a>
+              <a href="https://api.whatsapp.com/send?&text=<?php echo $url_detail; ?>" target="_blank"><div class="wa_share share_btn_article"><i class="fa fa-whatsapp" style="font-size: 25px; color: white;"></i></div></a>
             </div>
           </div>
           <div style="border-radius: 10px; overflow: hidden;">

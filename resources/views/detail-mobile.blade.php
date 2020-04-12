@@ -1,6 +1,6 @@
 @extends('layout.app')
 
-@section('title', 'Shier Project - Detail Mobile')
+@section('title', $title .' - Shier Project')
 
 @section('content')
 
@@ -27,19 +27,22 @@
 <!--    END MAIN    -->
 
 <div class="container" style="background-color: white; overflow-x: hidden;">
-  
+  <?php
+    $url_detail = route('/', $url_category.'/'.$alias);
+    $url_detail = str_replace('?', '/', $url_detail);
+  ?>
   <div class="row" style="padding: 10px;">
     <div class="col-md-3" style="display: inline-block;">
-      <a href="https://www.facebook.com/sharer/sharer.php?u={{ route('detail', $alias) }}" target="_blank"><div class="fb_share share_btn_article"><i class="fa fa-facebook" style="font-size: 25px; color: white;"></i></div></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $url_detail; ?>" target="_blank"><div class="fb_share share_btn_article"><i class="fa fa-facebook" style="font-size: 25px; color: white;"></i></div></a>
     </div>
     <div class="col-md-3"  style="display: inline-block;">
       <a href="https://www.instagram.com/shierproject" target="_blank"><div class="ig_share share_btn_article"><i class="fa fa-instagram" style="font-size: 25px; color: white;"></i></div></a>
     </div>
     <div class="col-md-3"  style="display: inline-block;">
-      <a href="https://twitter.com/share?url={{ route('detail', $alias) }}" target="_blank"><div class="twr_share share_btn_article"><i class="fa fa-twitter" style="font-size: 25px; color: white;"></i></div></a>
+      <a href="https://twitter.com/share?url=<?php echo $url_detail; ?>" target="_blank"><div class="twr_share share_btn_article"><i class="fa fa-twitter" style="font-size: 25px; color: white;"></i></div></a>
     </div>
     <div class="col-md-3"  style="display: inline-block;">
-      <a href="https://api.whatsapp.com/send?&text={{ route('detail', $alias) }}" target="_blank"><div class="wa_share share_btn_article"><i class="fa fa-whatsapp" style="font-size: 25px; color: white;"></i></div></a>
+      <a href="https://api.whatsapp.com/send?&text=<?php echo $url_detail; ?>" target="_blank"><div class="wa_share share_btn_article"><i class="fa fa-whatsapp" style="font-size: 25px; color: white;"></i></div></a>
     </div>
   </div>
   <div class="row">
