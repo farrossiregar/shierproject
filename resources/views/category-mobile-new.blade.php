@@ -38,7 +38,11 @@
         <div class="row">
           <div class="col-md-12">
             @foreach($data as $key => $item)
-            <a href="{{ route('detail', $item->alias) }}" style="display: inline-block; width: 42vw; vertical-align: text-top; margin: 0 2px;">
+            <?php
+              $url_detail = route('/', $url_category.'/'.$item->alias);
+            ?>
+            <a href="<?php echo str_replace('?', '/', $url_detail); ?>" style="display: inline-block; width: 42vw; vertical-align: text-top; margin: 0 2px;">
+            
             <?php
               if($item->image_name != ''){
             ?>
