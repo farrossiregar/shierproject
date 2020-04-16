@@ -15,21 +15,25 @@ class ArticleController extends Controller
         //$params['populer'] = $this->populerArticle();
         //print_r($top_article); die();
 
-        $api_kawal_corona = file_get_contents('https://api.kawalcorona.com/indonesia');
-        $params['parse'] = json_decode($api_kawal_corona, true);
-
         $agent = new Agent();
         $device = $agent->device();
         
         $get_api = file_get_contents('http://api.shierproject.com/api-index-article/'.env('APP_KEY'));
         $params['data'] = json_decode($get_api);
 
-        //$params['artikelterkait'] = $this->relatedArticle('2', '3');
         $params['artikelterkait'] = $this->articleTerkait();
 
         if($agent->isPhone()){
             return view('index-mobile-new')->with($params);
         }else{
+            //$api_kawal_corona = file_get_contents('https://api.kawalcorona.com/indonesia');
+
+            // if($api_kawal_corona == false){
+            //     $params['parse'] = '';
+            // }else{
+            //     $params['parse'] = json_decode($api_kawal_corona, true);
+            // }
+
             return view('index-new')->with($params);
         }
     }

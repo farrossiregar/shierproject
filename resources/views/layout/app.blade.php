@@ -5,6 +5,10 @@
     </head>
 
     <body style='background-color: white; width: 100vw; overflow-x: hidden;'>
+      <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N46NT7F"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
 
         @include('layout.nav')
 

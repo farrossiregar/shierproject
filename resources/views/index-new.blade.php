@@ -5,57 +5,66 @@
 @section('content')
 
 
+
 <!--    MAIN    -->
-<div style="height: 60vh;" class="row">
-    <!-- <div class="col-md-6" style="width: auto%; height: 100%; background-image: url('https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/B328284533D1C776C141B676F54E8D626B19DC9327F399BB99F196A8DE0A2AF8/scale?aspectRatio=1.78&format=jpeg'); background-size: cover; background-repeat: no-repeat; background-position: center; padding: 0 2px; display: inline-block; overflow: hidden;"></div> -->
-    <!-- <div class="col-md-6" style="padding: 0px; overflow: hidden;"> -->
-    @include('widget.index-banner-corona')
-    
-    <div class="col-md-6" style="width: 50vw; height: 100%; padding: 0 2px; display: inline-block; overflow: hidden;">
-      <div style="width: 100%;">
-        @foreach($data as $key => $item)
-        <?php
-          $url_detail = route('/', $item->url_category.'/'.$item->alias);
-        ?>
-        <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
-          <div class="mySlides">
-            <div class="numbertext" style="color: white; background-color: rgba(0,0,0,0.5); height: 100%; width: 50%; padding-left: 3vw;">
-              <h1><b><?php echo $item->title; ?></b></h1>
-              <br><br><br><br><br><br><br><br>
-              <?php
-                $intro = html_entity_decode($item->description);
-              ?>
-              <h4><?php echo substr($intro, 0, 150).'...'; ?></h4>
-              <h4>Cek Selengkapnya...</h4>
+<div style="width: 100vw; background-color: #242424; padding: 80px 0;" class="row">
+
+  <!-- include('widget.index-banner-corona') -->
+  <div class="col-md-6" style="height: 60vh; padding: 0 2px; overflow: hidden; background-image: url('{{ asset('image/shierproject-logo-black.jpg') }}')"></div>
+  
+  <div class="col-md-6" style="height: 60vh; padding: 0 2px; overflow: hidden;">
+    <div style="width: 100%;">
+      @foreach($data as $key => $item)
+      <?php
+        if($key >= 3){
+          break;
+        }
+
+        $url_detail = route('/', $item->url_category.'/'.$item->alias);
+      ?>
+      <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
+        <div class="mySlides">
+          <div class="numbertext" style="color: white; background-color: rgba(0,0,0,0.5); height: 100%; width: 50%; padding-left: 3vw;">
+            <div class="row">
+              <div class="col-md-4" style="display: inline-block;">
+                <div style="background-color: black; border-radius: 5px; text-align: center; min-width">
+                  <h4 style="padding: 4px 4px; "><b><?php echo $item->title_category; ?></b></h4>
+                </div>
+              </div>
+              <div class="col-md-4" style="display: inline-block;"></div>
+              <div class="col-md-4" style="display: inline-block;"></div>
             </div>
-            <img src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>" style="width:100%">
+            <h1><b><?php echo $item->title; ?></b></h1>
+            <br><br><br><br><br><br><br><br>
+            <?php
+              $intro = html_entity_decode($item->description);
+            ?>
           </div>
-          
-        </a>
-        
-        @endforeach
-          
-        <a class="prev" onclick="plusSlides(-1)">❮</a>
-        <a class="next" onclick="plusSlides(1)">❯</a>
-        
-        <div class="caption-container">
-          <p id="caption"></p>
+          <img src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>" style="width:100%">
         </div>
-          
-        </div>
+      </a>
+        
+      @endforeach
+        
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+      
+      <div class="caption-container">
+        <p id="caption"></p>
       </div>
-
-      <script>
-        var slideIndex = 1;
-        showSlides(slideIndex);
-
-      </script>
-
+        
     </div>
+  </div>
+
+    <script>
+      var slideIndex = 1;
+      showSlides(slideIndex);
+    </script>
 </div>
 <br>
 <!--    END MAIN    -->
-  
+
+<section>
   <div class="container" >
     <div class="row">
       <div class="col-md-8">
@@ -68,26 +77,48 @@
           <div style="border: 2px solid black;"></div>
           <br>
           <div class="row">
+            <?php
+              $idx = 0;
+            ?>
             @foreach($data as $key => $item)
             <?php
-              if($key >= 10){
-                break;
+              if($key >= 3){
+
+                $idx = $idx + 1;
+
+                $url_detail = route('/', $item->url_category.'/'.$item->alias);
+
+                if(($idx == 1) or ($idx % 5 == 1)){
+           ?>
+                  <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
+                    <div class="col-md-12 terbaru-tile-parent" >
+                      <div class="terbaru-tile" style="background-image: url('<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>'); ">
+                        <div style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.6)); height: 100%; width: 100%; padding: -10px;">
+                          <div class="terbaru-title-tile" style="color: white;">
+                            <h3><b>{{ $item->title }}</b></h3>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+           <?php 
+                }else{
+            ?>
+                  <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
+                    <div class="col-md-6 terbaru-tile-parent" >
+                      <div class="terbaru-tile" style="background-image: url('<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>'); ">
+                        <div style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.6)); height: 100%; width: 100%; padding: -10px;">
+                          <div class="terbaru-title-tile" style="color: white;">
+                            <h3><b>{{ $item->title }}</b></h3>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+            <?php
+                }
               }
             ?>
-            <?php
-              $url_detail = route('/', $item->url_category.'/'.$item->alias);
-            ?>
-            <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
-              <div class="col-md-6 terbaru-tile-parent" >
-                <div class="terbaru-tile" style="background-image: url('<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>'); ">
-                  <div style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.6)); height: 100%; width: 100%; padding: -10px;">
-                    <div class="terbaru-title-tile" style="color: white;">
-                      <h3><b>{{ $item->title }}</b></h3>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
             
             @endforeach
           </div>
@@ -104,6 +135,9 @@
       </div>
       <!-- ANTARA NEWS -->
     </div>
+  </div>
+</section>
+
   
     <br><br><br>           
     <!-- ADS BANNER INDEX DESKTOP -->
@@ -115,7 +149,8 @@
     <!-- ADS BANNER INDEX DESKTOP -->
     <br><br>  
     
-
+<section style="width: 100vw; background-color: #242424; padding: 80px 0;">
+  <div class="container">
     <div class="row">
       <div class="col-md-12">
         <div class="col-md-12">
@@ -138,18 +173,8 @@
             ?>
             <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
               <div class="col-md-3" style="display: inline-block; vertical-align: text-top;">
-                <?php
-                  if($item->image_name != ''){
-                ?>
-                  <img style="width: 100%; border-radius: 10px;  height: 160px;" src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>">
-                <?php
-                  }else{
-                ?>
-                  <img style="width: 100%; border-radius: 10px;  height: 160px;" src="https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg">
-                <?php
-                  }
-                ?>
-                <h5 style="text-decoration: none; color: black;">{{ $item->title }}</h5>
+                <img style="width: 100%; border-radius: 10px;  height: 160px;" src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>">
+                <h5 style="text-decoration: none; color: white;">{{ $item->title }}</h5>
               </div>
             </a>
             @endforeach
@@ -157,7 +182,12 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
   
+
+<section>
+  <div class="container">
     <!--    Koleksi   -->
     <div class="row">
       <div class="col-md-12">
@@ -175,17 +205,7 @@
           <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
             <div class="row ">
               <div class="col-md-4">
-                <?php
-                if($item->image_name != ''){
-                ?>
                 <img class="image-list" src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>">
-                <?php
-                }else{
-                ?>
-                <img class="image-list"  src="https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg">
-                <?php
-                }
-                ?>
               </div>
               <div class="col-md-8" style="text-decoration: none; color: black;">
                 
@@ -204,7 +224,8 @@
         <div class="col-md-4"></div>
       </div>
     </div>
-  
+  </div>
+</section>
     <!--    Koleksi   -->
 
     @endsection

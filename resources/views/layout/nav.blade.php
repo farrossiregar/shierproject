@@ -96,10 +96,25 @@
                 </div>
             </div>
         </nav>
-
     </div>
     
+    <?php
+        if(!$agent->isPhone()){
+    ?>
+    <div id="container_nav" style="background-color: black; width: 100vw; padding: 80px 0; height: 50vh; position: absolute; z-index: 1; display: none;">
+        <div class="container" id="dropdown_hover">
+        <br><br>
+            
+        </div>
+    </div>
+    <?php
+        }
+    ?>
 </div>
+
+<style>
+
+</style>
 
 
 
@@ -113,14 +128,63 @@
             success: function(result){
                 for(var i = 0; i <= result.length; i++){
                     
-                    //var url = '{{ route("get-category", ":category") }}';
                     var url = '{{ route("/{category}", ":category") }}';
                     url = url.replace(':category', result[i]['url_title']);
                     url = url.replace('?', '/');
-                    $('#list-menu').append('<li><a href="'+url+'">'+ result[i]['title'] +' </a></li>');
+
+                    var nav_container_hover =   '<div class="row" id="menu'+ result[i]['id'] +'" style="display: none;">'+
+                                                    '<div class="col-md-4" >'+
+                                                        '<div style="width: 100%; overflow: hidden; border-radius: 20px; display: inline-block;">'+
+                                                            '<img src="http://shierproject.local/image/category/'+ result[i]['image'] +'" alt=""  style="width: 90%;">'+
+                                                        '</div>'+
+                                                    '</div>'+
+                                                    '<div class="col-md-8" style="display: inline-block;"><h3>'+
+                                                        '<div class="row" id="article_category_div'+ result[i]['id'] +'"></div>'
+                                                    '</h3></div>'+
+
+                                                    // '<div class="col-md-4" style="display: inline-block;"><h3>'+ result[i]['title'] +'</h3></div>'+
+                                                    // '<div class="col-md-4"  style="display: inline-block;"><h3>'+ result[i]['title'] +'</div>'+
+                                                '</div>'
+                    var user_agent = "<?php echo $agent->isPhone(); ?>";
+                    var image_category = 'http://shierproject.local/image/category/'+result[i]['image'];
+                    if(!user_agent){
+                        $('#list-menu').append('<li onmouseenter="hover_menu('+ result[i]['id'] +')" onmouseleave="unhover_menu('+ result[i]['id'] +')" class="nav_hover"><a href="'+url+'">'+ result[i]['title'] +' </a></li>');
+                    }else{
+                        $('#list-menu').append('<li id="menu_mobile'+result[i]['id']+'" style="text-align: left; color: white; background-image: url(""); background-position: center;"><a href="'+url+'"><b style="color: black;">'+ result[i]['title'] +' </b></a></li>');
+                        $('#menu_mobile'+result[i]['id']).css("background-image", "url('"+image_category+"')"); 
+                    }
+                    
+                    $('#dropdown_hover').append(nav_container_hover);
+
+                    $.ajax({
+                        type: 'get',
+                        url: 'http://api.shierproject.com/data-category/base64:rx5lQkMlm1ZEKJRBp31M9rcLb5GPfhvXgTwyAYePVHs=/' + result[i]['url_title'],
+                        dataType: 'json',
+                        success: function(result_cat){
+
+                            for(var i = 0; i <= 6; i++){    
+                                var article_category = '<div class="col-md-6" style="display: inline-block;"><h4><b><a href=""> '+ result_cat[i]['title'] +'</a></b></h4></div>';
+                                $('#article_category_div' + result[i]['id']).append(article_category);
+                            }
+                        }
+                    });
+
+
                 }
             }
         });
     });
+
+    function hover_menu(id){
+        $('#container_nav').show();
+        $('#menu' + id).show();
+    }
+
+    function unhover_menu(id){
+        $('#container_nav').hide();
+        $('#menu' + id).hide();
+    }
+
+
     
 </script>

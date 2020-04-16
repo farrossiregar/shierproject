@@ -6,7 +6,7 @@
 
 <style>
   .headlineSlide{
-    height: 70vh;
+    height: 80vh;
   }
 </style>
 <div class="col-md-12" style="width: 100vw; height: 100%; padding: 0 2px; display: inline-block; overflow: hidden;">
@@ -16,6 +16,9 @@
   ?>
   @foreach($data as $key => $item)
   <?php
+    if($key >= 3){
+      break;
+    }
     $no = $no + 1;
   ?>
       <?php
@@ -23,10 +26,26 @@
       ?>
       <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
       <div class="mySlides headlineSlide">
-        <div class="numbertext" style="color: white; background-color: rgba(0,0,0,0.5); height: 92%; width: 75%; padding-right: 5px; padding-left: 20px;">
+        <div class="numbertext" style="color: white; background-color: rgba(0,0,0,0.5); height: 100%; width: 75%; padding-right: 5px; padding-left: 20px;">
+          <div class="row">
+            <div class="col-md-6" style="display: inline-block;">
+              <div style="background-color: black; border-radius: 5px; text-align: center; min-width">
+                <h5 style="padding: 2px 4px; "><b><?php echo $item->title_category; ?></b></h5>
+              </div>
+            </div>
+            <div class="col-md-6" style="display: inline-block;"></div>
+            
+          </div>
           <h2><b><?php echo $item->title; ?></b></h2>
         </div>
-        <img src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>" style="width:auto; height: 70vh;">
+
+
+        <div style="width:100%; height: 80vh; overflow: hidden;">
+          <!-- <div style="background-image: url('<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?> ?>'); background-position: center; background-size: cover;">
+          </div> -->
+          <img src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>" style="width: auto; height: 120%;">
+        </div>
+        <!-- <img src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>" style="width:auto; height: 70vh;"> -->
           <!-- <div style="height: 100%; width: 100vw;">
             <div style="text-align: right; height: 105%; width: 65%; position: relative; top: -425px; left: -1px; padding: 30px 10px; color: white; background-color: rgba(0,0,0,0.6);">
               <h3><b>{{ $item->title }}</b></h3>
@@ -49,11 +68,15 @@
       ?>
       @foreach($data as $key => $item)
       <?php
+      if($key >= 6){
+        break;
+      }
+
         $no = $no + 1;
       ?>
-      <div class="column">
-      <img class="demo cursor" src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>" style="width:100%; height: 40px;" onclick="currentSlide(<?php echo $no; ?>)">
-      </div>
+      <!-- <div class="column">
+        <img class="demo cursor" src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>" style="width:100%; height: 40px;" onclick="currentSlide(<?php echo $no; ?>)">
+      </div> -->
       @endforeach
     
     </div>
@@ -110,29 +133,45 @@
         
         <div class="row">
           <div class="col-md-12">
+            <?php
+              $idx = 0;
+            ?>
             @foreach($data as $key => $item)
+            
             <?php
-              if($key >= 8){
-                break;
+              if($key >= 3){
+
+                $idx = $idx + 1;
+
+                $url_detail = route('/', $item->url_category.'/'.$item->alias);
+
+                if(($idx == 1) or ($idx % 5 == 1)){
+
+            ?>
+                  
+                  <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
+                    <div style="width: 100%; background-image: url('<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>'); background-position: center; background-size: cover; height: 175px; border-radius: 10px; overflow: hidden; margin-bottom: 10px;">
+                      <div style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.6)); height: 100%; width: 120%; padding-right: 50px;">
+                        <div style="color: white; padding: 10px;">
+                          <h4><b>{{ $item->title }}</b></h4>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+            
+            <?php 
+                }else{
+            ?>
+                  <a href="<?php echo str_replace('?', '/', $url_detail); ?>"  style="display: inline-block; width: 44vw; vertical-align: text-top; margin: 0 2px;">
+                    <img style="width: 100%; height: 120px; border-radius: 10px; " src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>">
+                    <p style="text-decoration: none; color: black;">{{ $item->title }}</p>
+                  </a> 
+
+            <?php
+                }
               }
             ?>
-            <?php
-              $url_detail = route('/', $item->url_category.'/'.$item->alias);
-            ?>
-            <a href="<?php echo str_replace('?', '/', $url_detail); ?>"  style="display: inline-block; width: 44vw; vertical-align: text-top; margin: 0 2px;">
-            <?php
-              if($item->image_name != ''){
-            ?>
-              <img style="width: 100%; height: 120px; border-radius: 10px; " src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>">
-            <?php
-              }else{
-            ?>
-              <img style="width: 100%; height: 120px; border-radius: 10px; " src="https://cdn0-production-assets-kly.akamaized.net/medias/1217575/big/035195500_1461824817-ChGQVTVUUAEvYPy.jpg">
-            <?php
-              }
-            ?>
-              <h5 style="text-decoration: none; color: black;">{{ $item->title }}</h5>
-            </a> 
+
             @endforeach
           </div>
         </div>
@@ -154,22 +193,11 @@
           <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
             <div class="col-md-12">
                 <div class="row" style="vertical-align: text-top;">
-                    <div class="col-md-4" style="display: inline-block; width: 35vw; vertical-align: text-top;">
-                    <?php
-                        if($item->image_name != ''){
-                    ?>
-                        <img src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>" alt="" style="width: 100%; border-radius: 8px;">
-                    <?php
-                        }else{
-                    ?>
-                        <img src="https://images.pexels.com/photos/301703/pexels-photo-301703.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" style="width: 100%; border-radius: 8px;">
-                    <?php
-                        }
-                    ?>
-                    
+                    <div class="col-md-4" style="display: inline-block; width: 35vw; height: 95px; vertical-align: text-top; overflow: hidden;">
+                      <img src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>" alt="" style="width: auto; height: 100%; border-radius: 10px;">
                     </div>
                     <div class="col-md-8" style="display: inline-block; width: 55vw; vertical-align: text-top;">
-                    <b><h5 style="font-size: 100%; text-decoration: none; color: black;">{{ $item->title }}</h5></b>
+                    <b><h3 style="font-size: 100%; text-decoration: none; color: black;">{{ $item->title }}</h3></b>
                     </div>
                 </div>
             </div>
