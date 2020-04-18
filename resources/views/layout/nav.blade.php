@@ -68,15 +68,6 @@
                         ?>
                         <ul class="nav navbar-nav" id="list-menu">
                             <li class="active"><a href="{{ route('/') }}">Home</a></li>
-
-                            <!-- <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Page 1-1</a></li>
-                                    <li><a href="#">Page 1-2</a></li>
-                                    <li><a href="#">Page 1-3</a></li>
-                                </ul>
-                            </li> -->
                         </ul>
 
                         <ul class="nav navbar-nav navbar-right">
@@ -101,9 +92,8 @@
     <?php
         if(!$agent->isPhone()){
     ?>
-    <div id="container_nav" style="background-color: black; width: 100vw; padding: 80px 0; height: 50vh; position: absolute; z-index: 1; display: none;">
+    <div id="container_nav" style="background-color: black; width: 100vw; height: 50vh; position: absolute; z-index: 1; display: none;">
         <div class="container" id="dropdown_hover">
-        <br><br>
             
         </div>
     </div>
@@ -132,7 +122,7 @@
                     url = url.replace(':category', result[i]['url_title']);
                     url = url.replace('?', '/');
 
-                    var nav_container_hover =   '<div class="row" id="menu'+ result[i]['id'] +'" style="display: none;">'+
+                    var nav_container_hover =   '<div onmouseenter="hover_menu2('+ result[i]['id'] +')" onmouseleave="unhover_menu2('+ result[i]['id'] +')" class="row" id="menu'+ result[i]['id'] +'" style="display: none; padding: 40px 0;">'+
                                                     '<div class="col-md-4" >'+
                                                         '<div style="width: 100%; overflow: hidden; border-radius: 20px; display: inline-block;">'+
                                                             '<img src="http://shierproject.local/image/category/'+ result[i]['image'] +'" alt=""  style="width: 90%;">'+
@@ -141,10 +131,7 @@
                                                     '<div class="col-md-8" style="display: inline-block;"><h3>'+
                                                         '<div class="row" id="article_category_div'+ result[i]['id'] +'"></div>'
                                                     '</h3></div>'+
-
-                                                    // '<div class="col-md-4" style="display: inline-block;"><h3>'+ result[i]['title'] +'</h3></div>'+
-                                                    // '<div class="col-md-4"  style="display: inline-block;"><h3>'+ result[i]['title'] +'</div>'+
-                                                '</div>'
+                                                '</div>';
                     var user_agent = "<?php echo $agent->isPhone(); ?>";
                     var image_category = 'http://shierproject.local/image/category/'+result[i]['image'];
                     if(!user_agent){
@@ -162,9 +149,14 @@
                         dataType: 'json',
                         success: function(result_cat){
 
-                            for(var i = 0; i <= 6; i++){    
-                                var article_category = '<div class="col-md-6" style="display: inline-block;"><h4><b><a href=""> '+ result_cat[i]['title'] +'</a></b></h4></div>';
-                                $('#article_category_div' + result[i]['id']).append(article_category);
+                            var url_article     = url + '/';
+                            // url_article         = url_article.replace(':category', result[i]['url_title']);
+                            // url_article         = url_article.replace('?', '/');
+
+                            for(var j = 0; j <= 6; j++){    
+                                var article_category = '<div class="col-md-6" style=""><h4><b><a href=""> '+ alias +'</a></b></h4></div>';
+                                //$('#article_category_div' + result[i]['id']).append(article_category);
+                                $('#article_category_div1').append(article_category);
                             }
                         }
                     });
@@ -176,11 +168,21 @@
     });
 
     function hover_menu(id){
-        $('#container_nav').show();
-        $('#menu' + id).show();
+        $('#container_nav').hide();
+        $('#menu' + id).hide();
     }
 
     function unhover_menu(id){
+        $('#container_nav').hide();
+        $('#menu' + id).hide();
+    }
+
+    function hover_menu2(id){
+        $('#container_nav').hide();
+        $('#menu' + id).hide();
+    }
+
+    function unhover_menu2(id){
         $('#container_nav').hide();
         $('#menu' + id).hide();
     }
