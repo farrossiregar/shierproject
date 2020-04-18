@@ -133,7 +133,7 @@
                                                     '</h3></div>'+
                                                 '</div>';
                     var user_agent = "<?php echo $agent->isPhone(); ?>";
-                    var image_category = 'http://shierproject.local/image/category/'+result[i]['image'];
+                    var image_category = 'http://shierproject.com/image/category/'+result[i]['image'];
                     if(!user_agent){
                         $('#list-menu').append('<li onmouseenter="hover_menu('+ result[i]['id'] +')" onmouseleave="unhover_menu('+ result[i]['id'] +')" class="nav_hover"><a href="'+url+'">'+ result[i]['title'] +' </a></li>');
                     }else{
