@@ -5,7 +5,7 @@
 @section('content')
 
   <!--    MAIN    -->
-  <div class="main_img_mobile" style="background-image: url('<?php echo "http://cms.shierproject.com/image/content/".$foto_name; ?>'); ">
+  <div class="main_img_mobile" style=" height: 85vh; background-image: url('<?php echo "http://cms.shierproject.com/image/content/".$foto_name; ?>'); ">
     <div class="main_img_filter">
       <div style="position: relative; top: 20px; left: 10px;">
         <div class="row">

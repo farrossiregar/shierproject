@@ -38,7 +38,7 @@
 /* Mobile   */
 
 .main_img_mobile{
-    overflow: hidden; margin-top: -20px; height: 85vh; width: 100vw; background-position: center; background-size: cover; 
+    overflow: hidden; margin-top: -20px; width: 100vw; background-position: center; background-size: cover; 
 }
 
 .main_img_filter{
