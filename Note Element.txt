@@ -1,0 +1,11 @@
+<ul class="list-group list-group-flush">
+  <li class="list-group-item">Pemeran : Robert Downey Jr, Chris Evans, Chris Hemsworth, Mark Rufallo, Scarlett Johansson, Jeremy Renner</li>
+  <li class="list-group-item">Sutradara : Anthony dan Joe Russo</li>
+  <li class="list-group-item">Durasi : 3 Jam 2 Menit</li>
+  <li class="list-group-item">Rating : IMDb : 8.4/10, Rotten Tomatoes : 94%</li>
+  <li class="list-group-item">Studio : Walt Disney</li>
+  <li class="list-group-item">Pendapatan : $ 2.7 Miliar</li>
+</ul>
+
+
+<iframe width="1748" height="667" src="https://www.youtube.com/embed/TcMBFSGVi1c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

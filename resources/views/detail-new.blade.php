@@ -4,7 +4,22 @@
 
 @section('content')
 
-
+<style>
+  .yt-container {
+    position:relative;
+    padding-bottom:56.25%;
+    padding-top:30px;
+    height:0;
+    overflow:hidden;
+  }
+  .yt-container iframe, .yt-container object, .yt-container embed {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+  }
+</style>
 <!--    MAIN    -->
 <div style="height: 30vh;" class="row">
   <div class="col-md-12 main_img_web" style="background-image: url('{{ asset('image/category').'/'.$image_category }}');">
