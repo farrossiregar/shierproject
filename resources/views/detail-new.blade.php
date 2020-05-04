@@ -2,6 +2,12 @@
 
 @section('title', $title .' - Shier Project')
 
+<?php
+  $desc = substr($fulltexts, strripos($fulltexts, 'shierproject.com') + 33, 250);
+?>
+
+@section('metadesc', $desc)
+
 @section('content')
 
 <style>
@@ -73,6 +79,7 @@
             ?>
           </p>
         </div>
+        
       
 
         <!-- ADS BANNER 1 -->
@@ -93,7 +100,7 @@
       <div class="row">
         <div class="col-md-12 txt-article">
           <?php echo html_entity_decode($fulltexts); ?>
-
+          
           <br><br>
           <?php
             if($link != ''){
@@ -106,7 +113,47 @@
           ?>
           
         </div>
+        <br><br><br><br><br>
+
+        <style>
+          .tags_article{
+            border: 1px solid lightgray; border-radius: 10px; text-align: center; padding: 5px 5px; margin: 0 4px;
+          }
+        </style>
+        <div class="col-md-12" style="border: 0px solid lightgray; border-radius: 6px; margin: 60px 0;">
+          <h4><b>Tags</b></h4>
+          <hr>
+          <br>
+          <a href=""><div class="col-md-2 tags_article"><b>Marvel</b></div></a>
+          <a href=""><div class="col-md-2 tags_article"><b>Film</b></div></a>
+          <a href=""><div class="col-md-2 tags_article"><b>Hiburan</b></div></a>
+        </div>
+
+        <div class="col-md-12">
+          <h4><b>Tinggalkan Komentar</b></h4>
+          <hr>
+          <br>
+          <form action="">
+            <div class="form-group">
+              <label for="usr">Nama</label>
+              <input type="text" class="form-control" id="usr">
+            </div>
+            <div class="form-group">
+              <label for="usr">Email</label>
+              <input type="text" class="form-control" id="usr">
+            </div>
+            <div class="form-group">
+              <label for="comment">Komentar</label>
+              <textarea class="form-control" rows="5" id="comment"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-primary">Submit</button>
+              </div>
+          </form>
+        </div>
       </div>
+
+      
       <div class="row">
         <div class="col-md-12">
           @include('widget.artikel-terkait-widget', $artikelterkait)

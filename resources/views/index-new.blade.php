@@ -2,6 +2,8 @@
 
 @section('title', 'Shier Project')
 
+@section('metadesc', 'Shier Project menampilkan berita ringan seputar hiburan dan gaya hidup.')
+
 @section('content')
 
 

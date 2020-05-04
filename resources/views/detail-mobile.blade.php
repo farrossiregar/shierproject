@@ -2,6 +2,12 @@
 
 @section('title', $title .' - Shier Project')
 
+<?php
+  $desc = substr($fulltexts, strripos($fulltexts, 'shierproject.com') + 33, 250);
+?>
+
+@section('metadesc', $desc)
+
 @section('content')
 
   <!--    MAIN    -->
@@ -82,12 +88,56 @@
           <?php
             if($link != ''){
           ?>
-            <a href="{{$link}}" target="_blank">
-              <p style="color: gray;">Sumber : {{ $source }}</p>
-            </a>            
+            <div>
+              <a href="{{$link}}" target="_blank">
+                <p style="color: gray;">Sumber : {{ $source }}</p>
+              </a> 
+            </div>
+                       
           <?php
             }
           ?>
+
+          <br><br>
+
+          <style>
+            .tags_article{
+              border: 1px solid lightgray; border-radius: 10px; text-align: center; padding: 5px 5px; margin: 0 4px; display: inline-block;
+            }
+          </style>
+          <div style="border: 0px solid lightgray; border-radius: 6px; margin: 60px 0;">
+            <h4><b>Tags</b></h4>
+            <hr>
+            <br>
+            <a href=""><div class="col-md-2 tags_article"><b>Marvel</b></div></a>
+            <a href=""><div class="col-md-2 tags_article"><b>Film</b></div></a>
+            <a href=""><div class="col-md-2 tags_article"><b>Hiburan</b></div></a>
+          </div>
+
+
+          <div>
+            <h4><b>Tinggalkan Komentar</b></h4>
+            <hr>
+            <form action="">
+              <div class="form-group">
+                <label for="usr">Nama</label>
+                <input type="text" class="form-control" id="usr">
+              </div>
+              <div class="form-group">
+                <label for="usr">Email</label>
+                <input type="text" class="form-control" id="usr">
+              </div>
+              <div class="form-group">
+                <label for="comment">Komentar</label>
+                <textarea class="form-control" rows="5" id="comment"></textarea>
+              </div>
+              <div class="form-group">
+                <button type="button" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+          </div>
+          <br><br>
+
 
 
           @include('layout.about-author')
