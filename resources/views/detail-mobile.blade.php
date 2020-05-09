@@ -102,16 +102,16 @@
 
           <style>
             .tags_article{
-              border: 1px solid lightgray; border-radius: 10px; text-align: center; padding: 5px 5px; margin: 0 4px; display: inline-block;
+              border: 1px solid lightgray; border-radius: 6px; text-align: center; padding: 4px 8px; margin: 2px 2px; display: inline-block; font-size: 15px;
             }
           </style>
-          <div style="border: 0px solid lightgray; border-radius: 6px; margin: 60px 0;">
-            <h4><b>Tags</b></h4>
+          <div class="col-md-12" style="border: 0px solid lightgray; border-radius: 6px; margin: 60px 0;">
+            <h4><b><i>#</i>Tags</b></h4>
             <hr>
             <br>
-            <a href=""><div class="col-md-2 tags_article"><b>Marvel</b></div></a>
-            <a href=""><div class="col-md-2 tags_article"><b>Film</b></div></a>
-            <a href=""><div class="col-md-2 tags_article"><b>Hiburan</b></div></a>
+            @foreach($tags_article as $key => $item)
+            <div class="tags_article"><b><?php echo '#'.$item->title_tags; ?></b></div>
+            @endforeach
           </div>
 
 

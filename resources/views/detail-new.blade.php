@@ -117,7 +117,7 @@
 
         <style>
           .tags_article{
-            border: 1px solid lightgray; border-radius: 10px; text-align: center; padding: 5px 10px; margin: 0 3px; display: inline-block; font-size: 20px;
+            border: 1px solid lightgray; border-radius: 10px; text-align: center; padding: 5px 10px; margin: 3px 3px; display: inline-block; font-size: 20px;
           }
         </style>
         <div class="col-md-12" style="border: 0px solid lightgray; border-radius: 6px; margin: 60px 0;">
