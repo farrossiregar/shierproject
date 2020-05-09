@@ -92,8 +92,8 @@
     <?php
         if(!$agent->isPhone()){
     ?>
-    <div id="container_nav" style="background-color: black; width: 100vw; height: 50vh; position: absolute; z-index: 1; display: none;">
-        <div class="container" id="dropdown_hover">
+    <div id="container_nav" style="background-color: black; width: 100vw; height: 50vh; position: absolute; z-index: 1; display: none; overflow: hidden;">
+        <div class="container" id="dropdown_hover" style="overflow: hidden;">
             
         </div>
     </div>
@@ -116,75 +116,92 @@
             url: '{{ route('get-menu') }}',
             dataType: 'json',
             success: function(result){
+                console.log(result);
                 for(var i = 0; i <= result.length; i++){
                     
                     var url = '{{ route("/{category}", ":category") }}';
                     url = url.replace(':category', result[i]['url_title']);
                     url = url.replace('?', '/');
 
-                    var nav_container_hover =   '<div onmouseenter="hover_menu2('+ result[i]['id'] +')" onmouseleave="unhover_menu2('+ result[i]['id'] +')" class="row" id="menu'+ result[i]['id'] +'" style="display: none; padding: 40px 0;">'+
+                    var nav_container_hover =   '<div onmouseenter="hover_menu2('+ result[i]['id'] +', \''+ result[i]['url_title'] +'\')" onmouseleave="unhover_menu2('+ result[i]['id'] +')" class="row" id="menu'+ result[i]['id'] +'" style="display: none; padding: 40px 0;">'+
                                                     '<div class="col-md-4" >'+
                                                         '<div style="width: 100%; overflow: hidden; border-radius: 20px; display: inline-block;">'+
                                                             '<img src="http://shierproject.local/image/category/'+ result[i]['image'] +'" alt=""  style="width: 90%;">'+
                                                         '</div>'+
                                                     '</div>'+
                                                     '<div class="col-md-8" style="display: inline-block;"><h3>'+
-                                                        '<div class="row" id="article_category_div'+ result[i]['id'] +'"></div>'
+                                                        '<div class="row art_cat_div" id="article_category_div'+ result[i]['id'] +'"></div>'
                                                     '</h3></div>'+
                                                 '</div>';
                     var user_agent = "<?php echo $agent->isPhone(); ?>";
                     var image_category = 'http://shierproject.com/image/category/'+result[i]['image'];
                     if(!user_agent){
-                        $('#list-menu').append('<li onmouseenter="hover_menu('+ result[i]['id'] +')" onmouseleave="unhover_menu('+ result[i]['id'] +')" class="nav_hover"><a href="'+url+'">'+ result[i]['title'] +' </a></li>');
+                        $('#list-menu').append('<li onmouseenter="hover_menu('+ result[i]['id'] +', \''+ result[i]['url_title'] +'\')" onmouseleave="unhover_menu('+ result[i]['id'] +', '+ result[i]['title'] +')" class="nav_hover"><a href="'+url+'">'+ result[i]['title'] +' </a></li>');
                     }else{
-                        $('#list-menu').append('<li id="menu_mobile'+result[i]['id']+'" style="text-align: left; color: white; background-image: url(""); background-position: center;"><a href="'+url+'"><b style="color: black;">'+ result[i]['title'] +' </b></a></li>');
+                        $('#list-menu').append('<li id="menu_mobile'+result[i]['id']+'" style="text-align: left; color: white; background-image: url(""); background-position: center;"><a href="'+url+'"><b style="color: '+ result[i]['bgcolor_category'] +';">'+ result[i]['title'] +' </b></a></li>');
                         $('#menu_mobile'+result[i]['id']).css("background-image", "url('"+image_category+"')"); 
                     }
                     
                     $('#dropdown_hover').append(nav_container_hover);
-
-                    $.ajax({
-                        type: 'get',
-                        url: 'http://api.shierproject.com/data-category/base64:rx5lQkMlm1ZEKJRBp31M9rcLb5GPfhvXgTwyAYePVHs=/' + result[i]['url_title'],
-                        dataType: 'json',
-                        success: function(result_cat){
-
-                            var url_article     = url + '/';
-                            // url_article         = url_article.replace(':category', result[i]['url_title']);
-                            // url_article         = url_article.replace('?', '/');
-
-                            for(var j = 0; j <= 6; j++){    
-                                var article_category = '<div class="col-md-6" style=""><h4><b><a href=""> '+ alias +'</a></b></h4></div>';
-                                //$('#article_category_div' + result[i]['id']).append(article_category);
-                                $('#article_category_div1').append(article_category);
-                            }
-                        }
-                    });
-
 
                 }
             }
         });
     });
 
-    function hover_menu(id){
-        $('#container_nav').hide();
-        $('#menu' + id).hide();
+    function articleMenu(id, title){
+        console.log(id);
+        $.ajax({
+            type: 'get',
+            url: 'http://api.shierproject.com/data-category/base64:rx5lQkMlm1ZEKJRBp31M9rcLb5GPfhvXgTwyAYePVHs=/' + title,
+            dataType: 'json',
+            success: function(result_cat){
+                var cleandiv = $('.art_cat_div').not('#article_category_div' + id);
+                cleandiv.html("");
+                cleandiv.empty();
+
+                var url = '{{ route("/{category}", ":category") }}';
+                url = url.replace(':category', title);
+                url = url.replace('?', '/');
+
+                result_cat.forEach(function(item){
+                    console.log(item['title']);
+                    var article_category = '<div class="col-md-6" style=""><h4><b><a href="'+ url + '/' + item['alias'] +'" style="color: white;"> '+ item['title'] + '</a></b></h4></div>';
+                    $('#article_category_div' + id).append(article_category);
+                    
+                });   
+            }
+        });
+    }
+
+    function hover_menu(id, title){
+        // $('#container_nav').show();
+        // $('#menu' + id).show();
+
+        // articleMenu(id, title);
     }
 
     function unhover_menu(id){
-        $('#container_nav').hide();
-        $('#menu' + id).hide();
+        // $('#container_nav').hide();
+        // $('#menu' + id).hide();
+
+        // $('#article_category_div' + id).empty();
+        // $('#article_category_div' + id).html("");
     }
 
-    function hover_menu2(id){
-        $('#container_nav').hide();
-        $('#menu' + id).hide();
+    function hover_menu2(id, title){
+        // $('#container_nav').show();
+        // $('#menu' + id).show();
+
+        //articleMenu(id, title);
     }
 
     function unhover_menu2(id){
-        $('#container_nav').hide();
-        $('#menu' + id).hide();
+        // $('#container_nav').hide();
+        // $('#menu' + id).hide();
+
+        // $('#article_category_div' + id).empty();
+        // $('#article_category_div' + id).html("");
     }
 
 

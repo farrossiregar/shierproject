@@ -118,7 +118,7 @@
           <div>
             <h4><b>Tinggalkan Komentar</b></h4>
             <hr>
-            <form action="">
+            <!-- <form action="">
               <div class="form-group">
                 <label for="usr">Nama</label>
                 <input type="text" class="form-control" id="usr">
@@ -134,7 +134,8 @@
               <div class="form-group">
                 <button type="button" class="btn btn-primary">Submit</button>
               </div>
-            </form>
+            </form> -->
+            <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="5" data-width="750"></div>
           </div>
           <br><br>
 

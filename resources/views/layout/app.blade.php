@@ -5,10 +5,22 @@
     </head>
 
     <body style='background-color: white; width: 100vw; overflow-x: hidden;'>
+
       <!-- Google Tag Manager (noscript) -->
       <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N46NT7F"
       height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- End Google Tag Manager (noscript) -->
+
+
+      <!-- Facebook Comments -->
+      <!-- <div id="fb-root"></div>
+      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0"></script> -->
+
+      <div id="fb-root"></div>
+      <!-- <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v6.0"></script> -->
+      <script async defer src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v6.0"></script>
+      <!-- <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6"></script> -->
+
 
         @include('layout.nav')
 

@@ -117,21 +117,21 @@
 
         <style>
           .tags_article{
-            border: 1px solid lightgray; border-radius: 10px; text-align: center; padding: 5px 5px; margin: 0 4px;
+            border: 1px solid lightgray; border-radius: 10px; text-align: center; padding: 5px 10px; margin: 0 3px; display: inline-block; font-size: 20px;
           }
         </style>
         <div class="col-md-12" style="border: 0px solid lightgray; border-radius: 6px; margin: 60px 0;">
-          <h4><b>Tags</b></h4>
+          <h4><b><i>#</i>Tags</b></h4>
           <hr>
           <br>
-          <a href=""><div class="col-md-2 tags_article"><b>Marvel</b></div></a>
-          <a href=""><div class="col-md-2 tags_article"><b>Film</b></div></a>
-          <a href=""><div class="col-md-2 tags_article"><b>Hiburan</b></div></a>
+          @foreach($tags_article as $key => $item)
+          <div class="tags_article"><b><?php echo '#'.$item->title_tags; ?></b></div>
+          @endforeach
         </div>
 
         <div class="col-md-12">
           <h4><b>Tinggalkan Komentar</b></h4>
-          <hr>
+          <!-- <hr>
           <br>
           <form action="">
             <div class="form-group">
@@ -149,7 +149,15 @@
             <div class="form-group">
                 <button type="button" class="btn btn-primary">Submit</button>
               </div>
-          </form>
+          </form> -->
+
+          <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="5" data-width="720"></div>
+
+
+          <!-- <div class="fb-comment-embed"
+          data-href="https://www.facebook.com/zuck/posts/10102735452532991?comment_id=1070233703036185"
+          data-width="720"></div> -->
+
         </div>
       </div>
 

@@ -23,17 +23,12 @@ class ArticleController extends Controller
 
         $params['artikelterkait'] = $this->articleTerkait();
 
+        // $api_kawal_corona = file_get_contents('https://api.kawalcorona.com/indonesia');
+        // $params['parse'] = json_decode($api_kawal_corona, true);
+
         if($agent->isPhone()){
             return view('index-mobile-new')->with($params);
         }else{
-            //$api_kawal_corona = file_get_contents('https://api.kawalcorona.com/indonesia');
-
-            // if($api_kawal_corona == false){
-            //     $params['parse'] = '';
-            // }else{
-            //     $params['parse'] = json_decode($api_kawal_corona, true);
-            // }
-
             return view('index-new')->with($params);
         }
     }
@@ -80,6 +75,9 @@ class ArticleController extends Controller
         $params['image_caption'] = json_decode($article, true)['image_caption'];
 
         $params['artikelterkait'] = $this->relatedArticle($params['category'], $params['id']);
+
+        $get_api_tags = file_get_contents('http://api.shierproject.com/data-tags/'.env('APP_KEY').'/'.$params['id']);
+	    $params['tags_article'] = json_decode($get_api_tags);
 
         if($params['id_category'] == $params['category']){
             $agent = new Agent();
