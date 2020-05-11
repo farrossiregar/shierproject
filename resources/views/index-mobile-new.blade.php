@@ -137,7 +137,6 @@
           </div>
         </div>
         
-        
         <div class="row">
           <div class="col-md-12">
             <?php
@@ -147,11 +146,9 @@
             
             <?php
               if($key >= 3){
-
                 $idx = $idx + 1;
-
                 $url_detail = route('/', $item->url_category.'/'.$item->alias);
-
+                
                 if(($idx == 1) or ($idx % 5 == 1)){
 
             ?>

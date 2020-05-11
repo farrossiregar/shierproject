@@ -26,11 +26,29 @@ class ArticleController extends Controller
         // $api_kawal_corona = file_get_contents('https://api.kawalcorona.com/indonesia');
         // $params['parse'] = json_decode($api_kawal_corona, true);
 
+        $data_category = file_get_contents('http://api.shierproject.com/api-menu/'.env('APP_KEY'));
+        $params['data_category'] = json_decode($data_category);
+
+        // dd($params['data_category']);
+
         if($agent->isPhone()){
             return view('index-mobile-new')->with($params);
         }else{
             return view('index-new')->with($params);
         }
+    }
+
+    public function indexCategory($title_category=""){
+        $data_category = $this->getCategory($title_category);
+        $params['image_category'] = $data_category['data']->image;
+        $params['id_category'] = $data_category['data']->id;
+        $params['title_category'] = $data_category['data']->title;
+        $params['url_category'] = $data_category['data']->url_title;
+
+        $get_api = file_get_contents('http://api.shierproject.com/data-category/'.env('APP_KEY').'/'.$title_category);
+        $params['data'] = json_decode($get_api);
+
+        return $params;
     }
 
     public function category($title_category=""){
@@ -154,17 +172,8 @@ class ArticleController extends Controller
     public function getCategory($title_category){
         $get_api = file_get_contents('http://api.shierproject.com/category/'.env('APP_KEY').'/'.$title_category);
         $params['data'] = json_decode($get_api);
-        //$params['id_category'] = $params['data']->id;
-       // $params['image_category'] = $params['data'][0]->image;
         return $params;
 
-        // $agent = new Agent();
-        // $device = $agent->device();
-        // if($agent->isPhone()){
-        //     return view('category-mobile-new')->with($params);
-        // }else{
-        //     return view('category')->with($params);
-        // }
     }
 
     public function relatedArticle($category, $id_category){

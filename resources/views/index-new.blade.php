@@ -11,6 +11,7 @@
 <!--    MAIN    -->
 <div style="width: 100vw; background-color: #242424; padding: 80px 0;" class="row">
   <div class="container">
+    <h3 style="color: white;">Artikel <b><i>POPULER</i></b></h3>
     <!-- include('widget.index-banner-corona') -->
     <div class="col-md-6" style="height: 60vh; padding: 0 2px; overflow: hidden; background-image: url('{{ asset('image/shierproject-logo-black.jpg') }}')"></div>
     
@@ -84,11 +85,85 @@
       </div>
     </div> -->
 
-
     <div class="row">
       <div class="col-md-8">
+      <br>
         <div  class="col-md-12">
-          <!--  TERBARU -->
+          <br>
+          @foreach($data_category as $key => $item)
+            <hr>
+            <div class="row" style="margin: 50px 0;">
+              <a href="<?php echo str_replace('?', '/', route('/', $item->url_title)); ?>" style="text-decoration: none;">
+                <div style="text-align: center; overflow: hidden; padding-top: 7%; opacity: 0.7; background-image: url('<?php echo "http://shierproject.com/image/category/".category($item->url_title); ?>'); background-position: center; background-size: cover; width: 100%; height: 20vh;">
+                  <h1><b style="font-size: 120%; opacity: 1; color: black; text-decoration: none;">{{ strtoUpper($item->title) }}</b></h1>
+                </div>
+              </a>
+              
+              <div class="row">
+              <?php
+                $url_title = $item->url_title;
+                $idx = 0;
+                foreach(dataCategory($item->url_title) as $key => $item){
+                  $idx = $idx + 1;
+                  $url_detail = route('/', $url_title.'/'.$item->alias);
+                  
+                  if(($idx == 1) or ($idx % 5 == 1)){
+                ?>
+                  <br>
+                  <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
+                    <div class="col-md-12 terbaru-tile-parent" >
+                      <div class="terbaru-tile" style="background-image: url('<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>'); ">
+                        <div style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.6)); height: 100%; width: 100%; padding: -10px;">
+                          <div class="terbaru-title-tile" style="color: white;">
+                            <b style="font-size: 100%; text-decoration: none; color: <?php echo $item->bgcolor_category; ?>; margin-top: 2px; font-size: 18px;">{{ $item->title_category }}</b><br>
+                            <h3><b>{{ $item->title }}</b></h3>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                <?php
+                  }else{
+                ?>
+                  <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
+                    <div class="col-md-6 terbaru-tile-parent" >
+                      <div class="terbaru-tile" style="background-image: url('<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>'); ">
+                        <div style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.6)); height: 100%; width: 100%; padding: -10px;">
+                          <div class="terbaru-title-tile" style="color: white;">
+                            <b style="font-size: 100%; text-decoration: none; color: <?php echo $item->bgcolor_category; ?>; margin-top: 2px; font-size: 18px;">{{ $item->title_category }}</b><br>
+                            <h3><b>{{ $item->title }}</b></h3>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                <?php
+                  }
+                }
+              ?>
+              </div>
+            </div>
+          @endforeach
+
+        </div>
+      </div>
+
+      <!-- ANTARA NEWS -->
+      <div class="col-md-4">
+        <br>
+          <div class="row">
+            @include('widget.antaranewswidget')
+          </div>
+      </div>
+      <!-- ANTARA NEWS -->
+    </div>
+    
+    
+
+    <!-- <div class="row">
+      <div class="col-md-8">
+        <div  class="col-md-12">
+          
           <br>
           <div class="title-list" style="width: 92px; background-color: black;">
               <h4><b>Terbaru</b></h4>
@@ -144,19 +219,11 @@
             
             @endforeach
           </div>
-          <!--  TERBARU -->
         </div>
       </div>
-  
-      <!-- ANTARA NEWS -->
-      <div class="col-md-4">
-      <br>
-        <div class="row">
-          @include('widget.antaranewswidget')
-        </div>
-      </div>
-      <!-- ANTARA NEWS -->
-    </div>
+    </div> -->
+
+
   </div>
 </section>
 
