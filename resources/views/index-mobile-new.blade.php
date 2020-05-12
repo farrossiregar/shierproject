@@ -124,7 +124,99 @@
     </div> -->
 
     <div class="row">
-      <!--  TERBARU -->
+      <div  class="col-md-12">
+        <br>
+        @foreach($data_category as $key => $item)
+        <?php
+          $key_category = $key;
+        ?>
+          <hr>
+          <div class="row">
+            <a href="<?php echo str_replace('?', '/', route('/', $item->url_title)); ?>" style="text-decoration: none;">
+              <div style="text-align: center; overflow: hidden; padding-top: 4%; opacity: 0.7; background-image: url('<?php echo "http://shierproject.com/image/category/".category($item->url_title); ?>'); background-position: center; background-size: cover; width: 100%; height: 20vh;">
+                <h1><b style="font-size: 90%; opacity: 1; color: black; text-decoration: none;">{{ strtoUpper($item->title) }}</b></h1>
+              </div>
+            </a>
+          </div>
+          
+          <div class="row" style="margin: 50px 0; margin-top: 5px;">       
+            <div class="row">
+            <?php
+              $url_title = $item->url_title;
+              $idx = 0;
+              foreach(dataCategory($item->url_title) as $key => $item){
+                $idx = $idx + 1;
+                $url_detail = route('/', $url_title.'/'.$item->alias);
+                
+                if(($idx == 1) or ($idx % 5 == 1)){
+              ?>
+                <br>
+                <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
+                  <div class="col-md-12">
+                    <div style="width: 100%; background-image: url('<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>'); background-position: center; background-size: cover; height: 175px; border-radius: 10px; overflow: hidden; margin-bottom: 10px;">
+                      <div style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.6)); height: 100%; width: 120%; padding-right: 50px;">
+                        <div style="padding: 10px; padding-bottom: 0px;">
+                          <b style="font-size: 100%; text-decoration: none; color: <?php echo $item->bgcolor_category; ?>; margin-top: 2px; font-size: 10px;">{{ $item->title_category }}</b><br>
+                        </div>
+                        
+                        <div style="color: white; padding: 10px;">
+                          <h4><b>{{ $item->title }}</b></h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                
+              <?php
+                }else{
+              ?>
+                
+                <?php
+                  if($key_category % 2 == 0){
+                ?>
+                  <div class="col-md-6" style="display: inline-block;">
+                    <a href="<?php echo str_replace('?', '/', $url_detail); ?>"  style="display: inline-block; width: 40vw; vertical-align: text-top; margin: 0 2px;">
+                      <img style="width: 100%; height: 120px; border-radius: 10px; " src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>">
+                      <b style="font-size: 100%; text-decoration: none; color: <?php echo $item->bgcolor_category; ?>; margin-top: 2px; font-size: 10px;">{{ $item->title_category }}</b><br>
+                      <p style="text-decoration: none; color: black;"><b>{{ $item->title }}</b></p>
+                    </a> 
+                  </div>
+                
+
+                <?php
+                  }else{
+                ?>
+                <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
+                  <div class="col-md-12">
+                    <div class="row" style="vertical-align: text-top; padding-bottom: 10px; border-bottom: 1px solid gray;">
+                        <div class="col-md-4" style="display: inline-block; width: 35vw; height: 95px; vertical-align: text-top; overflow: hidden;">
+                          <img src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>" alt="" style="width: auto; height: 100%; border-radius: 10px;">
+                        </div>
+                        <div class="col-md-8" style="display: inline-block; width: 55vw; vertical-align: text-top;">
+                          <b style="font-size: 100%; text-decoration: none; color: <?php echo $item->bgcolor_category; ?>; margin-top: 2px; font-size: 10px;">{{ $item->title_category }}</b><br>
+                          <b style="font-size: 100%; text-decoration: none; color: black; margin: 10px 0; font-size: 15px;">{{ $item->title }}</b><br>
+                          <b style="font-size: 100%; text-decoration: none; margin-top: 5px; font-size: 10px; color: gray;"><i class="fa fa-clock-o"></i> {{ $item->publish_date }}</br><br>
+                        </div>
+                    </div>
+                  </div>
+                </a><br>
+                
+                <?php
+                  }
+                ?>
+                
+              <?php
+                }
+              }
+            ?>
+            </div>
+          </div>
+        @endforeach
+
+      </div>
+    </div>
+
+    <!-- <div class="row">
       <div class="col-md-12" style="border-right: 1px solid lightgray;">
         <div class="row">
           <div class="col-md-12">
@@ -137,6 +229,7 @@
           </div>
         </div>
         
+        
         <div class="row">
           <div class="col-md-12">
             <?php
@@ -146,9 +239,11 @@
             
             <?php
               if($key >= 3){
+
                 $idx = $idx + 1;
+
                 $url_detail = route('/', $item->url_category.'/'.$item->alias);
-                
+
                 if(($idx == 1) or ($idx % 5 == 1)){
 
             ?>
@@ -250,8 +345,7 @@
           @endforeach
         </div>
       </div>
-      <!--  TERBARU -->
-    </div>
+    </div> -->
     
   </div>
 
