@@ -13,59 +13,88 @@
   <div class="container">
     <h3 style="color: white;">Artikel <b><i>POPULER</i></b></h3>
     <!-- include('widget.index-banner-corona') -->
-    <div class="col-md-6" style="height: 60vh; padding: 0 2px; overflow: hidden; background-image: url('{{ asset('image/shierproject-logo-black.jpg') }}')"></div>
+
+    @foreach($data as $key => $item)
+      <?php
+        if($key >= 4){
+          break;
+        }
+
+        $url_detail = route('/', $item->url_category.'/'.$item->alias);
+        $image_popular = "http://cms.shierproject.com/image/content/".$item->image_name;
+        
+        if($key == 0){
+          
+          echo '<a href="'.str_replace('?', '/', $url_detail).'">
+                  <div class="col-md-6" style="height: 60vh; overflow: hidden; background-image: url('.$image_popular.'); background-size: cover; background-position: center;">
+                    <div style="width: 100%; height: 100%; background-color: rgba(0,0,0,0.6)">
+                      <div style="padding: 20px 20px;">
+                        <h3><b style="color: '.$item->bgcolor_category.'">'.$item->title_category.'</b></h3>
+                        <h1 style="margin-top: 0px;"><b style="color: white;">'.$item->title.'</b></h1>
+                      </div>
+                    </div>
+                  </div>
+                </a>';
+        }else{
+          
+          if($key == 1){
+            echo '<a href="'.str_replace('?', '/', $url_detail).'">
+                    <div class="col-md-6" style="height: 60vh; overflow: hidden;">
+                      <div class="row">
+                        <div class="col-md-12" style="height: 30vh; overflow: hidden; background-image: url('.$image_popular.'); background-size: cover; background-position: center;">
+                          <div style="width: 100%; height: 100%; background-color: rgba(0,0,0,0.6)">
+                            <div style="padding: 20px 20px;">
+                              <h4><b style="color: '.$item->bgcolor_category.'">'.$item->title_category.'</b></h4>
+                              <h3 style="margin-top: 0px;"><b style="color: white;">'.$item->title.'</b></h3>  
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>';
+          }else{
+            if($key == 2){              
+              echo '<div class="row">
+                      <a href="'.str_replace('?', '/', $url_detail).'">
+                        <div class="col-md-6" style="height: 30vh; overflow: hidden; background-image: url('.$image_popular.'); background-size: cover; background-position: center;">
+                          <div style="width: 100%; height: 100%; background-color: rgba(0,0,0,0.6)">  
+                            <div style="padding: 20px 20px;">
+                              <h4><b style="color: '.$item->bgcolor_category.'">'.$item->title_category.'</b></h4>
+                              <h3><b style="color: white;">'.$item->title.'</b></h3>
+                            </div>
+                          </div>
+                        </div>
+                      </a>';
+            }else{              
+              echo '<a href="'.str_replace('?', '/', $url_detail).'">
+                      <div class="col-md-6" style="height: 30vh; overflow: hidden; background-image: url('.$image_popular.'); background-size: cover; background-position: center;">
+                        <div style="width: 100%; height: 100%; background-color: rgba(0,0,0,0.6)">  
+                          <div style="padding: 20px 20px;">
+                            <h4><b style="color: '.$item->bgcolor_category.'">'.$item->title_category.'</b></h4>
+                            <h3><b style="color: white;">'.$item->title.'</b></h3>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+              </div>';
+            }
+            
+          }
+        }
+        // echo $item->title.' | '.$key;
+      ?>
+    @endforeach
+    <!-- <div class="col-md-6" style="height: 60vh; padding: 0 2px; overflow: hidden; background-image: url('{{ asset('image/shierproject-logo-black.jpg') }}')"></div>
     
     <div class="col-md-6" style="height: 60vh; padding: 0 2px; overflow: hidden;">
-      <div style="width: 100%;">
-        @foreach($data as $key => $item)
-        <?php
-          if($key >= 3){
-            break;
-          }
-
-          $url_detail = route('/', $item->url_category.'/'.$item->alias);
-        ?>
-        <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
-          <div class="mySlides">
-            <div class="numbertext" style="color: white; background-color: rgba(0,0,0,0.5); height: 100%; width: 50%; padding-left: 3vw;">
-              <div class="row">
-                <div class="col-md-4" style="display: inline-block;">
-                  <div style="background-color: black; border-radius: 5px; text-align: center; min-width">
-                    <!-- <h4 style="padding: 4px 4px; "><b><?php echo $item->title_category; ?></b></h4> -->
-                    <span class="btn btn-primary" style="background-color: <?php echo $item->bgcolor_category; ?>; padding: 2px 15px;">
-                      <h4><b><?php echo $item->title_category; ?></b></h4>
-                    </span>
-                  </div>
-                </div>
-                <div class="col-md-4" style="display: inline-block;"></div>
-                <div class="col-md-4" style="display: inline-block;"></div>
-              </div>
-              <h1><b><?php echo $item->title; ?></b></h1>
-              <br><br><br><br><br><br><br><br>
-              <?php
-                $intro = html_entity_decode($item->description);
-              ?>
-            </div>
-            <?php
-              $slideImage = 'http://cms.shierproject.com/image/content/'.$item->image_name;
-            ?>
-            <!-- <div style="background-image: url('".$slideImage.""');">
-            </div> -->
-            <img src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>" style="width:200%">
-          </div>
-        </a>
-          
-        @endforeach
-          
-        <a class="prev" onclick="plusSlides(-1)">❮</a>
-        <a class="next" onclick="plusSlides(1)">❯</a>
-        
-        <div class="caption-container">
-          <p id="caption"></p>
-        </div>
-          
+      <div class="row">
+        <div class="col-md-12" style="height: 30vh; padding: 0 2px; overflow: hidden; background-image: url('{{ asset('image/shierproject-logo-black.jpg') }}')"></div>
       </div>
-    </div>
+      <div class="row">
+        <div class="col-md-6" style="height: 30vh; padding: 0 2px; overflow: hidden; background-image: url('{{ asset('image/shierproject-logo-black.jpg') }}')"></div>
+        <div class="col-md-6" style="height: 30vh; padding: 0 2px; overflow: hidden; background-image: url('{{ asset('image/shierproject-logo-black.jpg') }}')"></div>
+      </div>
+    </div> -->
   </div>
   
 

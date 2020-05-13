@@ -13,143 +13,27 @@
 </style>
 <div class="col-md-12" style="width: 100vw; height: 100%; padding: 0 2px; display: inline-block; overflow: hidden;">
   <div style="width: 100%;">
-  
   <?php
     $no = 0;
   ?>
   @foreach($data as $key => $item)
   <?php
-    if($key >= 2){
+    if($key >= 3){
       break;
     }
     $no = $no + 1;
   ?>
   <?php
     $url_detail = route('/', $item->url_category.'/'.$item->alias);
-  
-    echo '<div class="mySlides headlineSlide" style="width: 100vw; height: 100vh; background-color: #242424;">';
-    echo '<div class="row">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-12">
-                  <h4 style="color: white;">Artikel <b><i>POPULER</i></b></h4>
-                </div>
-              </div>
-            </div>
-          </div>';
-    
-    if($key == 0){
-    
-      foreach($data as $key => $item){
-        $image_popular = "http://cms.shierproject.com/image/content/".$item->image_name;
-        $url_detail = route('/', $item->url_category.'/'.$item->alias);
-        if($key == 0){
-          echo '<div class="row">
-                  <a href="'.str_replace('?', '/', $url_detail).'">
-                    <div class="col-md-12">
-                      <div class="row">
-                        <div class="col-md-12" style="padding: 20px;">
-                          <div style="background-image: url('.$image_popular.'); background-position: center; background-size: cover; border-radius: 5px; height: 35vh;">
-                            <div style="width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); padding: 20px;">  
-                              <h5><b style="color: '.$item->bgcolor_category.';">'.$item->title_category.'</b></h5>
-                              <h4><b style="color: white;">'.$item->title.'</b></h4>
-                            </div>                              
-                          </div>                              
-                        </div>
-                      </div>                          
-                    </div>    
-                  </a>       
-                </div>';
-        }
-      }
-      
-      foreach($data as $key => $item){
-        $image_popular = "http://cms.shierproject.com/image/content/".$item->image_name;
-        $url_detail = route('/', $item->url_category.'/'.$item->alias);
-        if($key == 1){
-          echo '<div class="row">
-                  <a href="'.str_replace('?', '/', $url_detail).'">
-                    <div class="col-md-12">
-                      <div class="row">
-                        <div class="col-md-12" style="padding: 20px;">
-                          <div style="background-image: url('.$image_popular.'); background-position: center; background-size: cover; border-radius: 5px; height: 35vh;">
-                            <div style="width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); padding: 20px;">  
-                              <h5><b style="color: '.$item->bgcolor_category.';">'.$item->title_category.'</b></h5>
-                              <h4><b style="color: white;">'.$item->title.'</b></h4>
-                            </div>
-                          </div>                              
-                        </div>
-                      </div>                          
-                    </div>    
-                  </a>       
-                </div>';
-        }
-      }
-    }else{
-      foreach($data as $key => $item){
-        $image_popular = "http://cms.shierproject.com/image/content/".$item->image_name;
-        $url_detail = route('/', $item->url_category.'/'.$item->alias);
-        if($key == 2){
-          echo '<div class="row">
-                  <a href="'.str_replace('?', '/', $url_detail).'">
-                    <div class="col-md-12">
-                      <div class="row">
-                        <div class="col-md-12" style="padding: 20px;">
-                          <div style="background-image: url('.$image_popular.'); background-position: center; background-size: cover; border-radius: 5px; height: 35vh;">
-                            <div style="width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); padding: 20px;">  
-                              <h5><b style="color: '.$item->bgcolor_category.';">'.$item->title_category.'</b></h5>
-                              <h4><b style="color: white;">'.$item->title.'</b></h4>
-                            </div>
-                          </div>                              
-                        </div>
-                      </div>                          
-                    </div>    
-                  </a>       
-                </div>';
-        }
-      }
-
-      foreach($data as $key => $item){
-        $image_popular = "http://cms.shierproject.com/image/content/".$item->image_name;
-        $url_detail = route('/', $item->url_category.'/'.$item->alias);
-        if($key == 3){
-          echo '<div class="row">
-                  <a href="'.str_replace('?', '/', $url_detail).'">
-                    <div class="col-md-12">
-                      <div class="row">
-                        <div class="col-md-12" style="padding: 20px;">
-                          <div style="background-image: url('.$image_popular.'); background-position: center; background-size: cover; border-radius: 5px; height: 35vh;">
-                            <div style="width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); padding: 20px;">  
-                              <h5><b style="color: '.$item->bgcolor_category.';">'.$item->title_category.'</b></h5>
-                              <h4><b style="color: white;">'.$item->title.'</b></h4>
-                            </div>
-                          </div>                              
-                        </div>
-                      </div>                          
-                    </div>    
-                  </a>       
-                </div>';
-        }
-      }
-    }
-    echo '</div>';
-    ?>
-
-      
-      <!-- <div class="mySlides headlineSlide" style="width: 100vw; height: 100vh; ">
-        <div class="row">
-          <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
-            <div class="col-md-12"></div>   
-          </a>     
-        </div>
-        <div class="row">
-          <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
-            <div class="col-md-12"></div>   
-          </a>       
-        </div>
+  ?>
+    <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
+      <div class="mySlides headlineSlide">
         <div class="numbertext" style="color: white; background-color: rgba(0,0,0,0.5); height: 100%; width: 75%; padding-right: 5px; padding-left: 20px;">
           <div class="row">
-            <div class="col-md-6" style="display: inline-block;">              
+            <div class="col-md-6" style="display: inline-block;">
+              <!-- <div style="background-color: black; border-radius: 5px; text-align: center; min-width">
+                <h5 style="padding: 2px 4px; "><b><?php echo $item->title_category; ?></b></h5>
+              </div> -->
               <span class="btn btn-primary btn-xs" style="background-color: <?php echo $item->bgcolor_category; ?>; padding: 0 15px;">
                 <h5><b><?php echo $item->title_category; ?></b></h5>
               </span>
@@ -161,13 +45,22 @@
         </div>
 
         <div style="width:100%; height: 80vh; overflow: hidden;">
+          <!-- <div style="background-image: url('<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?> ?>'); background-position: center; background-size: cover;">
+          </div> -->
           <img src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>" style="width: auto; height: 120%;">
         </div>
-      </div> -->
+        <!-- <img src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>" style="width:auto; height: 70vh;"> -->
+          <!-- <div style="height: 100%; width: 100vw;">
+            <div style="text-align: right; height: 105%; width: 65%; position: relative; top: -425px; left: -1px; padding: 30px 10px; color: white; background-color: rgba(0,0,0,0.6);">
+              <h3><b>{{ $item->title }}</b></h3>
+            </div>
+          </div> -->
+      </div>
+    </a>
   @endforeach
 
-    <a class="prev" style="margin-top: 10%;" onclick="plusSlides(-1)">❮</a>
-    <a class="next" style="margin-top: 10%;" onclick="plusSlides(1)">❯</a>
+    <a class="prev" style="margin-top: 120px;" onclick="plusSlides(-1)">❮</a>
+    <a class="next" style="margin-top: 120px;" onclick="plusSlides(1)">❯</a>
 
     <!-- <div class="caption-container">
       <p id="caption"></p>

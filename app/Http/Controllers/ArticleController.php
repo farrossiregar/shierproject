@@ -34,7 +34,7 @@ class ArticleController extends Controller
         if($agent->isPhone()){
             return view('index-mobile-new')->with($params);
         }else{
-            return view('index-new')->with($params);
+            return view('index-new-old')->with($params);
         }
     }
 
