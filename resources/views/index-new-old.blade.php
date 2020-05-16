@@ -11,7 +11,7 @@
 <!--    MAIN    -->
 <div style="width: 100vw; background-color: #242424; padding: 80px 0;" class="row">
   <div class="container">
-    <h3 style="color: white;">Artikel <b><i>POPULER</i></b></h3>
+    <h3 style="color: white;">Artikel <b><i>POPULERsss</i></b></h3>
     <!-- include('widget.index-banner-corona') -->
 
     @foreach($data as $key => $item)

@@ -32,7 +32,7 @@
             <div class="container">
               <div class="row">
                 <div class="col-md-12">
-                  <h4 style="color: white;">Artikel <b><i>POPULER</i></b></h4>
+                  <h4 style="color: white; padding: 0 20px;">Artikel <b><i>POPULER</i></b></h4>
                 </div>
               </div>
             </div>
@@ -51,7 +51,7 @@
                         <div class="col-md-12" style="padding: 20px;">
                           <div style="background-image: url('.$image_popular.'); background-position: center; background-size: cover; border-radius: 5px; height: 35vh;">
                             <div style="width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); padding: 20px;">  
-                              <h5><b style="color: '.$item->bgcolor_category.';">'.$item->title_category.'</b></h5>
+                              <h5><b style="color: '.$item->bgcolor_category.'; font-weight: 1000;">'.$item->title_category.'</b></h5>
                               <h4><b style="color: white;">'.$item->title.'</b></h4>
                             </div>                              
                           </div>                              
@@ -74,7 +74,7 @@
                         <div class="col-md-12" style="padding: 20px;">
                           <div style="background-image: url('.$image_popular.'); background-position: center; background-size: cover; border-radius: 5px; height: 35vh;">
                             <div style="width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); padding: 20px;">  
-                              <h5><b style="color: '.$item->bgcolor_category.';">'.$item->title_category.'</b></h5>
+                              <h5><b style="color: '.$item->bgcolor_category.'; font-weight: 1000;">'.$item->title_category.'</b></h5>
                               <h4><b style="color: white;">'.$item->title.'</b></h4>
                             </div>
                           </div>                              
@@ -97,7 +97,7 @@
                         <div class="col-md-12" style="padding: 20px;">
                           <div style="background-image: url('.$image_popular.'); background-position: center; background-size: cover; border-radius: 5px; height: 35vh;">
                             <div style="width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); padding: 20px;">  
-                              <h5><b style="color: '.$item->bgcolor_category.';">'.$item->title_category.'</b></h5>
+                              <h5><b style="color: '.$item->bgcolor_category.'; font-weight: 1000;">'.$item->title_category.'</b></h5>
                               <h4><b style="color: white;">'.$item->title.'</b></h4>
                             </div>
                           </div>                              
@@ -120,7 +120,7 @@
                         <div class="col-md-12" style="padding: 20px;">
                           <div style="background-image: url('.$image_popular.'); background-position: center; background-size: cover; border-radius: 5px; height: 35vh;">
                             <div style="width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); padding: 20px;">  
-                              <h5><b style="color: '.$item->bgcolor_category.';">'.$item->title_category.'</b></h5>
+                              <h5><b style="color: '.$item->bgcolor_category.'; font-weight: 1000;">'.$item->title_category.'</b></h5>
                               <h4><b style="color: white;">'.$item->title.'</b></h4>
                             </div>
                           </div>                              
@@ -258,21 +258,43 @@
                 if(($idx == 1) or ($idx % 5 == 1)){
               ?>
                 <br>
+                <?php
+                  if($key_category % 2 == 0){
+                ?>
                 <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
                   <div class="col-md-12">
-                    <div style="width: 100%; background-image: url('<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>'); background-position: center; background-size: cover; height: 175px; border-radius: 10px; overflow: hidden; margin-bottom: 10px;">
+                    <div style="width: 100%; background-image: url('<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>'); background-position: center; background-size: cover; height: 240px; border-radius: 10px; overflow: hidden; margin-bottom: 10px;">
                       <div style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.6)); height: 100%; width: 120%; padding-right: 50px;">
                         <div style="padding: 10px; padding-bottom: 0px;">
-                          <b style="font-size: 100%; text-decoration: none; color: <?php echo $item->bgcolor_category; ?>; margin-top: 2px; font-size: 10px;">{{ $item->title_category }}</b><br>
+                          <b style=" font-size: 13px; text-decoration: none; color: <?php echo $item->bgcolor_category; ?>; margin-top: 2px; font-weight: 1000;">{{ $item->title_category }}</b> |
+                          <b style="font-size: 12px; text-decoration: none; margin-top: 5px; color: white;"><i class="fa fa-clock-o"></i> {{ $item->publish_date }}</b>
                         </div>
                         
-                        <div style="color: white; padding: 10px;">
-                          <h4><b>{{ $item->title }}</b></h4>
+                        <div style="color: white; padding: 10px; padding-top: 0px;">
+                          <h4><b style="font-size:18px; text-shadow: 1px 1px #000000;">{{ $item->title }}</b></h4>
                         </div>
                       </div>
+                      
                     </div>
                   </div>
                 </a>
+                <?php
+                  }else{
+                ?>
+                <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
+                    <div class="col-md-12" style="padding-bottom: 20px;">
+                        <div style="height: 180px; overflow: hidden; border-radius: 10px; vertical-align: baseline;">
+                            <img style="width: 100%; height: auto; margin: auto; border-radius: 10px; " src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>">
+                        </div>
+                        
+                        <b style="font-size: 13px; text-decoration: none; color: <?php echo $item->bgcolor_category; ?>; margin-top: 2px;">{{ $item->title_category }}</b> |
+                        <b style="font-size: 12px; text-decoration: none; margin-top: 5px; color: gray;"><i class="fa fa-clock-o"></i> {{ $item->publish_date }}</b><br>
+                        <p style="text-decoration: none; color: black;"><b style="font-size:18px;">{{ $item->title }}</b></p>
+                    </div>
+                </a> 
+                <?php
+                  }
+                ?>
                 
               <?php
                 }else{
@@ -281,11 +303,12 @@
                 <?php
                   if($key_category % 2 == 0){
                 ?>
-                  <div class="col-md-6" style="display: inline-block;">
-                    <a href="<?php echo str_replace('?', '/', $url_detail); ?>"  style="display: inline-block; width: 40vw; vertical-align: text-top; margin: 0 2px;">
+                  <div class="col-md-6" style="display: inline-block; padding-bottom: 20px;">
+                    <a href="<?php echo str_replace('?', '/', $url_detail); ?>"  style="display: inline-block; width: 40vw; vertical-align: text-top;;">
                       <img style="width: 100%; height: 120px; border-radius: 10px; " src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>">
-                      <b style="font-size: 100%; text-decoration: none; color: <?php echo $item->bgcolor_category; ?>; margin-top: 2px; font-size: 10px;">{{ $item->title_category }}</b><br>
-                      <p style="text-decoration: none; color: black;"><b>{{ $item->title }}</b></p>
+                      <b style="font-size: 13px; text-decoration: none; color: <?php echo $item->bgcolor_category; ?>; margin-top: 2px;">{{ $item->title_category }}</b> | 
+                      <b style="font-size: 10px; text-decoration: none; margin-top: 5px; color: gray;"><i class="fa fa-clock-o"></i> {{ $item->publish_date }}</b><br>
+                      <p style="text-decoration: none; color: black;"><b style="font-size:16px;">{{ $item->title }}</b></p>
                     </a> 
                   </div>
                 
@@ -295,18 +318,19 @@
                 ?>
                 <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
                   <div class="col-md-12">
-                    <div class="row" style="vertical-align: text-top; padding-bottom: 10px; border-bottom: 1px solid gray;">
-                        <div class="col-md-4" style="display: inline-block; width: 35vw; height: 95px; vertical-align: text-top; overflow: hidden;">
-                          <img src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>" alt="" style="width: auto; height: 100%; border-radius: 10px;">
+                    <div class="row" style="vertical-align: text-top; padding-bottom: 20px;">
+                        <div class="col-md-6" style="display: inline-block; width: 48vw; height: 120px; vertical-align: text-top; overflow: hidden; border-radius: 10px;">
+                          <!--img src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>" alt="" style="width: 100%; height: auto; overflow: hidden; border-radius: 10px;"-->
+                          <div style="background-image: url('<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>'); background-size: cover; background-position: cover; height: 120px; width: auto; border-radius: 10px;"></div>
                         </div>
-                        <div class="col-md-8" style="display: inline-block; width: 55vw; vertical-align: text-top;">
-                          <b style="font-size: 100%; text-decoration: none; color: <?php echo $item->bgcolor_category; ?>; margin-top: 2px; font-size: 10px;">{{ $item->title_category }}</b><br>
-                          <b style="font-size: 100%; text-decoration: none; color: black; margin: 10px 0; font-size: 15px;">{{ $item->title }}</b><br>
-                          <b style="font-size: 100%; text-decoration: none; margin-top: 5px; font-size: 10px; color: gray;"><i class="fa fa-clock-o"></i> {{ $item->publish_date }}</br><br>
+                        <div class="col-md-6" style="display: inline-block; width: 47vw; vertical-align: text-top;">
+                          <b style="font-size: 13px; text-decoration: none; color: <?php echo $item->bgcolor_category; ?>; margin-top: 2px;">{{ $item->title_category }}</b> | 
+                          <b style="font-size: 10px; text-decoration: none; margin-top: 5px; color: gray;"><i class="fa fa-clock-o"></i> {{ $item->publish_date }}</b><br>
+                          <b style="font-size: 16px; text-decoration: none; color: black; margin: 10px 0;">{{ $item->title }}</b><br>
                         </div>
                     </div>
                   </div>
-                </a><br>
+                </a>
                 
                 <?php
                   }
