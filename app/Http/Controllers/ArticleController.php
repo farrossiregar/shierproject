@@ -76,6 +76,7 @@ class ArticleController extends Controller
         $params['id_category'] = $data_category['data']->id;
         $params['title_category'] = $data_category['data']->title;
         $params['url_category'] = $data_category['data']->url_title;
+        $params['bgcolor_category'] = $data_category['data']->bgcolor_category;
 
         $article = file_get_contents('http://api.shierproject.com/api-detail-article/'.env('APP_KEY').'/'.$alias);
         $arr = json_encode(json_decode($article), TRUE);

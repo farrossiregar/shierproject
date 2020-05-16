@@ -27,20 +27,37 @@
   }
 </style>
 <!--    MAIN    -->
-<div style="height: 30vh;" class="row">
-  <div class="col-md-12 main_img_web" style="background-image: url('{{ asset('image/category').'/'.$image_category }}');">
+<div style="height: 35vh; background-color: {{ $bgcolor_category }}" class="row">
+  
+  <!-- <div class="col-md-12 main_img_web" style="background-image: url('{{ asset('image/category').'/'.$image_category }}');">
     <div class="main_img_web_filter"></div>
+  </div> -->
+  <div class="col-md-12" style="height: 80%; width: 100vw; background-image: url('{{ asset('image/category').'/'.$image_category }}'); background-position: center; background-size: cover; border-bottom-right-radius: 40px;">
+  </div>
+  
+  <div class="container">
+    <div class="row">
+    <br>
+      <div class="col-md-12">
+        <?php
+            $url_detail = route('/', $url_category.'/'.$alias);
+            $url_detail = str_replace('?', '/', $url_detail);
+          ?>
+        <h4><b><a href="{{ route('/') }}" style="text-decoration: none; color: black;"><?php echo strtoupper('Shierproject'); ?></a> >> <a href="<?php str_replace('?', '/', route('/', $url_category)); ?>" style="text-decoration: none; color: black;"><?php echo strtoupper('Hiburan'); ?></a> >> <a style="text-decoration: none; color: black;" href="<?php echo $url_detail; ?>"><?php echo strtoupper($title); ?></a></b></h4>
+      </div>
+    </div>
   </div>
 </div>
 
 <!--    END MAIN    -->
-
+<div style="background-color: {{ $bgcolor_category }}; height: 10vh; width: 100vw;">
+  <div style="background-color: white; height: 10vh; width: 100vw; border-top-left-radius: 40px;">
+  </div>
+</div>
 <div class="container" style="background-color: white;">
-
   <div class="row">
     <!--  TERBARU -->
     <div class="col-md-12">
-      <!-- <p style="font-size: 12px;"><b><a href="{{ route('/') }}" style="text-decoration: none; color: black;"><?php echo strtoupper('Shierproject'); ?></a>  | <a href="{{ route('get-category', $category) }}" style="text-decoration: none; color: black;"><?php echo strtoupper('Hiburan'); ?></a> | <?php echo strtoupper($title); ?></b></p> -->
       <div class="row">
         <div class="col-md-8">
           <h1><b>{{ $title }}</b></h1>
@@ -50,26 +67,42 @@
     </div>
     <div class="col-md-8" style="border-right: 1px solid white;">
       <div class="row">
-        <div class="col-md-12" style="top: -200px;">
+        <div class="col-md-12" style="top: -200px; overflow: hidden;">
           <div class="row share_btn_article_pos">
           <?php
             $url_detail = route('/', $url_category.'/'.$alias);
             $url_detail = str_replace('?', '/', $url_detail);
           ?>
             <div class="col-md-12" style="">
-              <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $url_detail; ?>" target="_blank"><div class="fb_share share_btn_article"><i class="fa fa-facebook" style="font-size: 25px; color: white;"></i></div></a>
+              <div class="fb_share share_btn_article">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $url_detail; ?>" target="_blank">
+                  <i class="fa fa-facebook" style="font-size: 25px; color: white;"></i>
+                </a>
+              </div>
               <br>
-              <a href="https://www.instagram.com/shierproject" target="_blank"><div class="ig_share share_btn_article"><i class="fa fa-instagram" style="font-size: 25px; color: white;"></i></div></a>
+              <div class="ig_share share_btn_article">
+                <a href="https://www.instagram.com/shierproject" target="_blank">
+                  <i class="fa fa-instagram" style="font-size: 25px; color: white;"></i>
+                </a>
+              </div>
               <br>
-              <a href="https://twitter.com/share?url=<?php echo $url_detail; ?>" target="_blank"><div class="twr_share share_btn_article"><i class="fa fa-twitter" style="font-size: 25px; color: white;"></i></div></a>
+              <div class="twr_share share_btn_article">
+                <a href="https://twitter.com/share?url=<?php echo $url_detail; ?>" target="_blank">
+                  <i class="fa fa-twitter" style="font-size: 25px; color: white;"></i>
+                </a>
+              </div>              
               <br>
-              <a href="https://api.whatsapp.com/send?&text=<?php echo $url_detail; ?>" target="_blank"><div class="wa_share share_btn_article"><i class="fa fa-whatsapp" style="font-size: 25px; color: white;"></i></div></a>
+              <div class="wa_share share_btn_article">
+                <a href="https://api.whatsapp.com/send?&text=<?php echo $url_detail; ?>" target="_blank">
+                  <i class="fa fa-whatsapp" style="font-size: 25px; color: white;"></i>
+                </a>
+              </div>
             </div>
           </div>
           <div style="border-radius: 10px; overflow: hidden;">
-            <img style="width: 100%;" src="<?php echo "http://cms.shierproject.com/image/content/".$foto_name; ?>">
+            <!-- <img style="width: 100%; height: 540px;" src="<?php echo "http://cms.shierproject.com/image/content/".$foto_name; ?>"> -->
+            <div style="width: 100%; height: 540px; background-image: url('<?php echo "http://cms.shierproject.com/image/content/".$foto_name; ?>'); background-position: center; background-size: cover;"></div>
           </div>
-          <!-- <img style="width: 100%; border-radius: 10px;" src="<?php echo "http://cms.shierproject.com/image/content/".$foto_name; ?>"> -->
           <p>{{ $image_caption }}</p>
           <p>
             <?php
