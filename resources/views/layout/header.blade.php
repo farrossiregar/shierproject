@@ -17,6 +17,12 @@
   })(window,document,'script','dataLayer','GTM-N46NT7F');</script>
   <!-- End Google Tag Manager -->
 </script>
+
+<!-- Google Adsense -->
+<script data-ad-client="pub-1888100979760960" async src="https://pagead2.googlesyndication.com/
+pagead/js/adsbygoogle.js"></script>
+
+
 <title>@yield('title')</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
