@@ -19,8 +19,9 @@
 </script>
 
 <!-- Google Adsense -->
-<script data-ad-client="pub-1888100979760960" async src="https://pagead2.googlesyndication.com/
-pagead/js/adsbygoogle.js"></script>
+<script data-ad-client="pub-1888100979760960" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<script data-ad-client="ca-pub-1888100979760960" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
 <title>@yield('title')</title>
