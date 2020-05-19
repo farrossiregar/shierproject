@@ -11,7 +11,7 @@
 <!--    MAIN    -->
 <div style="width: 100vw; background-color: #242424; padding: 80px 0;" class="row">
   <div class="container">
-    <h3 style="color: white;">Artikel <b><i>POPULER</i></b></h3>
+    <h3 style="color: white;">Artikel <b><i>TERBARU</i></b></h3>
     <!-- include('widget.index-banner-corona') -->
 
     @foreach($data as $key => $item)
@@ -104,6 +104,7 @@
     <div class="col-md-1">test</div>
 </div-->
   <div class="container" >
+    
     <!-- <div class="row">
       <div class="col-md-12">
         include('widget.index-banner-corona')
@@ -112,129 +113,124 @@
 
     <div class="row">
       <div class="col-md-8">
-      <br>
-        <div  class="col-md-12">
-          <br>
-          @foreach($data_category as $key => $item)
-          <?php
-            $key_category = $key;
-          ?>
-            <hr>
-            <div class="row" style="margin: 50px 0;">
-              <a href="<?php echo str_replace('?', '/', route('/', $item->url_title)); ?>" style="text-decoration: none;">
-                <div style="text-align: center; overflow: hidden; padding-top: 7%; opacity: 0.7; background-image: url('<?php echo "http://shierproject.com/image/category/".category($item->url_title); ?>'); background-position: center; background-size: cover; width: 100%; height: 20vh;">
-                  <h1><b style="font-size: 120%; opacity: 1; color: black; text-decoration: none;">{{ strtoUpper($item->title) }}</b></h1>
-                </div>
-              </a>
-              
-              <div class="row">
-              <?php
-                $url_title = $item->url_title;
-                $idx = 0;
-                foreach(dataCategory($item->url_title) as $key => $item){
-                  $idx = $idx + 1;
-                  $url_detail = route('/', $url_title.'/'.$item->alias);
-                  
-                  if(($idx == 1) or ($idx % 5 == 1)){
+        <h3 style="color: black;">Artikel <b><i>KATEGORI</i></b></h3>
+        @foreach($data_category as $key => $item)
+        <?php
+          $key_category = $key;
+        ?>
+          <hr>
+          <div class="row" style="margin: 50px 0;">
+            <a href="<?php echo str_replace('?', '/', route('/', $item->url_title)); ?>" style="text-decoration: none;">
+              <div style="text-align: center; overflow: hidden; padding-top: 7%; opacity: 0.7; background-image: url('<?php echo "http://shierproject.com/image/category/".category($item->url_title); ?>'); background-position: center; background-size: cover; width: 100%; height: 20vh;">
+                <h1><b style="font-size: 120%; opacity: 1; color: black; text-decoration: none;">{{ strtoUpper($item->title) }}</b></h1>
+              </div>
+            </a>
+            
+            <div class="row">
+            <?php
+              $url_title = $item->url_title;
+              $idx = 0;
+              foreach(dataCategory($item->url_title) as $key => $item){
+                $idx = $idx + 1;
+                $url_detail = route('/', $url_title.'/'.$item->alias);
+                
+                if(($idx == 1) or ($idx % 5 == 1)){
+              ?>
+                <br>
+                <?php
+                  if($key_category % 2 == 0){
                 ?>
-                  <br>
-                  <?php
-                    if($key_category % 2 == 0){
-                  ?>
-                  <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
-                    <div class="col-md-12 terbaru-tile-parent" >
-                      <div class="terbaru-tile" style="background-image: url('<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>'); ">
-                        <div style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.6)); height: 100%; width: 100%; padding: -10px;">
-                          <div class="terbaru-title-tile" style="color: white;">
-                            <b style="font-size: 100%; text-decoration: none; color: <?php echo $item->bgcolor_category; ?>; margin-top: 2px; font-size: 18px;">{{ $item->title_category }}</b>|
-                            <b style="font-size: 13px; text-decoration: none; margin-top: 5px; color: white;"><i class="fa fa-clock-o"></i>{{ $item->publish_date }}</b></br>
-                            <h3 style="margin-top: 0px;"><b style="text-decoration: none; color: white;">{{ $item->title }}</b></h3>
-                          </div>
+                <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
+                  <div class="col-md-12 terbaru-tile-parent" >
+                    <div class="terbaru-tile" style="background-image: url('<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>'); ">
+                      <div style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.6)); height: 100%; width: 100%; padding: -10px;">
+                        <div class="terbaru-title-tile" style="color: white;">
+                          <b style="font-size: 100%; text-decoration: none; color: <?php echo $item->bgcolor_category; ?>; margin-top: 2px; font-size: 18px;">{{ $item->title_category }}</b>|
+                          <b style="font-size: 13px; text-decoration: none; margin-top: 5px; color: white;"><i class="fa fa-clock-o"></i>{{ $item->publish_date }}</b></br>
+                          <h3 style="margin-top: 0px;"><b style="text-decoration: none; color: white;">{{ $item->title }}</b></h3>
                         </div>
                       </div>
                     </div>
-                  </a>
-                  <?php
-                    }else{
-                  ?>
-                  <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
-                    <div class="col-md-12" >
-                        <div style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.6)); height: 300px; width: 100%; padding: -10px; border-radius: 10px; overflow: hidden;">
-                            <div style="background-image: url('<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>'); background-position: center; background-size: cover; height: 100%; ">
-                            </div>
-                        </div>
-                        <div>
-                            <b style="font-size: 14px; text-decoration: none; color: <?php echo $item->bgcolor_category; ?>; margin-top: 2px;">{{ $item->title_category }}</b> |
-                            <b style="font-size: 13px; text-decoration: none; margin-top: 5px; color: gray;"><i class="fa fa-clock-o"></i>{{ $item->publish_date }}</b><br>
-                            <h3 style="margin-top: 0px;"><b style="text-decoration: none; color: black;">{{ $item->title }}</b></h3>
-                        </div>
-                    </div>
-                  </a>
-                  <?php
-                    }
-                  ?>
-                  
+                  </div>
+                </a>
                 <?php
                   }else{
                 ?>
-                  <?php
-                    if($key_category % 2 == 0){
-                  ?>
-
-                  <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
-                    <div class="col-md-6 terbaru-tile-parent" >
-                      <div class="terbaru-tile" style="background-image: url('<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>'); ">
-                        <div style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.6)); height: 100%; width: 100%; padding: -10px;">
-                          <div class="terbaru-title-tile" style="color: white;">
-                            <b style="font-size: 100%; text-decoration: none; color: <?php echo $item->bgcolor_category; ?>; margin-top: 2px; font-size: 18px;">{{ $item->title_category }}</b>|
-                            <b style="font-size: 13px; text-decoration: none; margin-top: 5px; color: white;"><i class="fa fa-clock-o"></i>{{ $item->publish_date }}</b></br>
-                            <h3 style="margin-top: 0px;"><b>{{ $item->title }} <?php echo $key_category; ?></b></h3>
+                <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
+                  <div class="col-md-12" >
+                      <div style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.6)); height: 300px; width: 100%; padding: -10px; border-radius: 10px; overflow: hidden;">
+                          <div style="background-image: url('<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>'); background-position: center; background-size: cover; height: 100%; ">
                           </div>
-                        </div>
                       </div>
-                    </div>
-                  </a>
-
-                  <?php
-                    }else{
-                  ?>
-
-                  <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
-                    <div class="col-md-12">
-                      <div class="row " style="padding: 20px 0;">
-                        <div class="col-md-4">
-                          <img class="image-list" src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>">
-                        </div>
-                        <div class="col-md-8" style="text-decoration: none; color: black;">
-                          
-                          <b style="font-size: 15px; text-decoration: none; color: <?php echo $item->bgcolor_category; ?>; margin-top: 2px;">{{ $item->title_category }}</b>|
-                          <b style="font-size: 13px; text-decoration: none; margin-top: 5px; color: gray;"><i class="fa fa-clock-o"></i>{{ $item->publish_date }}</b></br>
-                          <b style="font-size: 100%; text-decoration: none; color: black; margin: 10px 0; font-size: 23px;">{{ $item->title }}</b><br>
-                        </div>
+                      <div>
+                          <b style="font-size: 14px; text-decoration: none; color: <?php echo $item->bgcolor_category; ?>; margin-top: 2px;">{{ $item->title_category }}</b> |
+                          <b style="font-size: 13px; text-decoration: none; margin-top: 5px; color: gray;"><i class="fa fa-clock-o"></i>{{ $item->publish_date }}</b><br>
+                          <h3 style="margin-top: 0px;"><b style="text-decoration: none; color: black;">{{ $item->title }}</b></h3>
                       </div>
-                    </div>
-                  </a><br>
-
-                  <?php
-                    }
-                  ?>
-                  
+                  </div>
+                </a>
                 <?php
                   }
-                }
+                ?>
+                
+              <?php
+                }else{
               ?>
-              </div>
-            </div>
-          @endforeach
+                <?php
+                  if($key_category % 2 == 0){
+                ?>
 
-        </div>
+                <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
+                  <div class="col-md-6 terbaru-tile-parent" >
+                    <div class="terbaru-tile" style="background-image: url('<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>'); ">
+                      <div style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.6)); height: 100%; width: 100%; padding: -10px;">
+                        <div class="terbaru-title-tile" style="color: white;">
+                          <b style="font-size: 100%; text-decoration: none; color: <?php echo $item->bgcolor_category; ?>; margin-top: 2px; font-size: 18px;">{{ $item->title_category }}</b>|
+                          <b style="font-size: 13px; text-decoration: none; margin-top: 5px; color: white;"><i class="fa fa-clock-o"></i>{{ $item->publish_date }}</b></br>
+                          <h3 style="margin-top: 0px;"><b>{{ $item->title }} <?php echo $key_category; ?></b></h3>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+
+                <?php
+                  }else{
+                ?>
+
+                <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
+                  <div class="col-md-12">
+                    <div class="row " style="padding: 20px 0;">
+                      <div class="col-md-4">
+                        <img class="image-list" src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>">
+                      </div>
+                      <div class="col-md-8" style="text-decoration: none; color: black;">
+                        
+                        <b style="font-size: 15px; text-decoration: none; color: <?php echo $item->bgcolor_category; ?>; margin-top: 2px;">{{ $item->title_category }}</b>|
+                        <b style="font-size: 13px; text-decoration: none; margin-top: 5px; color: gray;"><i class="fa fa-clock-o"></i>{{ $item->publish_date }}</b></br>
+                        <b style="font-size: 100%; text-decoration: none; color: black; margin: 10px 0; font-size: 23px;">{{ $item->title }}</b><br>
+                      </div>
+                    </div>
+                  </div>
+                </a><br>
+
+                <?php
+                  }
+                ?>
+                
+              <?php
+                }
+              }
+            ?>
+            </div>
+          </div>
+        @endforeach
       </div>
 
       <!-- ANTARA NEWS -->
       <div class="col-md-4">
-        <br>
           <div class="row">
-            @include('widget.antaranewswidget')
+            @include('widget.artikel-populer-widget', $toparticle)
           </div>
       </div>
       <!-- ANTARA NEWS -->

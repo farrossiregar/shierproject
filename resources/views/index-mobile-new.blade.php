@@ -32,7 +32,7 @@
             <div class="container">
               <div class="row">
                 <div class="col-md-12">
-                  <h4 style="color: white; padding: 0 20px;">Artikel <b><i>POPULER</i></b></h4>
+                  <h4 style="color: white; padding: 0 20px;">Artikel <b><i>TERBARU</i></b></h4>
                 </div>
               </div>
             </div>
@@ -232,7 +232,7 @@
 
     <div class="row">
       <div  class="col-md-12">
-        <br>
+        <h4 style="color: black;">Artikel <b><i>KATEGORI</i></b></h4>
         @foreach($data_category as $key => $item)
         <?php
           $key_category = $key;

@@ -21,6 +21,11 @@ class ArticleController extends Controller
         $get_api = file_get_contents('http://api.shierproject.com/api-index-article/'.env('APP_KEY'));
         $params['data'] = json_decode($get_api);
 
+        $top_article = file_get_contents('http://api.shierproject.com/data-top-article/'.env('APP_KEY'));
+        $params['toparticle'] = json_decode($top_article);
+
+        // dd($params['toparticle']);
+
         $params['artikelterkait'] = $this->articleTerkait();
 
         // $api_kawal_corona = file_get_contents('https://api.kawalcorona.com/indonesia');
@@ -58,6 +63,9 @@ class ArticleController extends Controller
         $params['title_category'] = $data_category['data']->title;
         $params['url_category'] = $data_category['data']->url_title;
 
+        $top_article = file_get_contents('http://api.shierproject.com/data-top-article/'.env('APP_KEY'));
+        $params['toparticle'] = json_decode($top_article);
+
         $get_api = file_get_contents('http://api.shierproject.com/data-category/'.env('APP_KEY').'/'.$title_category);
         $params['data'] = json_decode($get_api);
 
@@ -80,6 +88,9 @@ class ArticleController extends Controller
 
         $article = file_get_contents('http://api.shierproject.com/api-detail-article/'.env('APP_KEY').'/'.$alias);
         $arr = json_encode(json_decode($article), TRUE);
+
+        $top_article = file_get_contents('http://api.shierproject.com/data-top-article/'.env('APP_KEY'));
+        $params['toparticle'] = json_decode($top_article);
 
         $params['id'] = json_decode($article, true)['id'];
         $params['alias'] = json_decode($article, true)['alias'];

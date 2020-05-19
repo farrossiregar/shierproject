@@ -210,8 +210,10 @@
       
 
       <br><br>
-      <div class="row">
-        @include('widget.antaranewswidget')
+      <div class="row" >
+        <div class="col-md-12" id="top-article">
+          @include('widget.artikel-populer-widget', $toparticle)
+        </div>
       </div>
     </div>
     <!--  POPULER -->
@@ -219,5 +221,25 @@
   </div>
   <br><br><br>
 </div>
+
+
+<script>
+  // window.addEventListener("scroll", function() {
+  //   var elementTarget = document.getElementById("top-article");
+  //   if (window.scrollY > (elementTarget.offsetTop + elementTarget.offsetHeight)) {
+  //       //alert("You've scrolled past the second div");
+  //       $('#top-article').addClass("col-md-12 toparticlefixed");
+  //   }else{
+  //       $('#top-article').removeClass("col-md-12 toparticlefixed");
+  //   }
+  // });
+</script>
+
+<style>
+  .toparticlefixed{
+    position: fixed;
+    top: 10px;
+  }
+</style>
 
 @endsection

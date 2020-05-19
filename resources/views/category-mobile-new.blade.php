@@ -26,10 +26,8 @@
           <div class="col-md-12">
             <br><br>
             <br>
-            <div style="padding: 1px 6px; background-color: black; width: 115px; border-radius: 10px 10px 0px 0px; color: white;">
-              <h4><b>Terbaru</b></h4>
-            </div>
-            <div style="border: 2px solid black;"></div>
+            <h4 style="color: black;">Artikel <b><i>KATEGORI</i></b></h4>
+            <hr>
             <br>
           </div>
         </div>

@@ -22,10 +22,8 @@
       <div class="row">
         <div class="col-md-12">
           <br>
-          <div style="padding: 1px 6px; background-color: black; width: 115px; border-radius: 10px 10px 0px 0px; color: white;">
-            <h4><b>Terbaru</b></h4>
-          </div>
-          <div style="border: 2px solid black;"></div>
+          <h3 style="color: black;">Artikel <b><i>KATEGORI</i></b></h3>
+          <hr>
           <br>
           <div class="row">
             <?php
@@ -103,8 +101,10 @@
     <div class="col-md-4">
     <br>
       <div class="row">
-        @include('widget.antaranewswidget')
+        <div class="col-md-12">
+          @include('widget.artikel-populer-widget', $toparticle)
 
+        </div>
       </div>
     </div>
     <!-- ANTARA NEWS -->
