@@ -126,7 +126,7 @@
                     var nav_container_hover =   '<div onmouseenter="hover_menu2('+ result[i]['id'] +', \''+ result[i]['url_title'] +'\')" onmouseleave="unhover_menu2('+ result[i]['id'] +')" class="row" id="menu'+ result[i]['id'] +'" style="display: none; padding: 40px 0;">'+
                                                     '<div class="col-md-4" >'+
                                                         '<div style="width: 100%; overflow: hidden; border-radius: 20px; display: inline-block;">'+
-                                                            '<img src="http://shierproject.local/image/category/'+ result[i]['image'] +'" alt=""  style="width: 90%;">'+
+                                                            '<img src="http://shierproject.com/image/category/'+ result[i]['image'] +'" alt=""  style="width: 90%;">'+
                                                         '</div>'+
                                                     '</div>'+
                                                     '<div class="col-md-8" style="display: inline-block;"><h3>'+

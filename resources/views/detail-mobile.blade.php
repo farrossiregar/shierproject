@@ -31,10 +31,35 @@
       <div class="row">
         <div class="col-md-12">
           <?php
-              $url_detail = route('/', $url_category.'/'.$alias);
-              $url_detail = str_replace('?', '/', $url_detail);
-            ?>
-          <p><b><a href="{{ route('/') }}" style="text-decoration: none; color: black; font-size: 9px; padding: 0 5px;"><?php echo strtoupper('Shierproject'); ?></a> <i style="font-size: 10px;"><b>>></b></i> <a href="<?php str_replace('?', '/', route('/', $url_category)); ?>" style="text-decoration: none; color: black; font-size: 9px;  padding: 0 4px;"><?php echo strtoupper('Hiburan'); ?></a> <i style="font-size: 10px;"><b>>></b></i> <a style="text-decoration: none; color: black; font-size: 9px; padding: 0 4px;" href="<?php echo $url_detail; ?>"><?php echo strtoupper($title); ?></a></b></p>
+            $url_detail = route('/', $url_category.'/'.$alias);
+            $url_detail = str_replace('?', '/', $url_detail);
+
+            $link_category = route('/', $url_category);
+            $link_category = str_replace('?', '/', $link_category);
+          ?>
+          <style>
+            div.scrollmenu {
+              /* background-color: #333; */
+              overflow: auto;
+              white-space: nowrap;
+            }
+
+            div.scrollmenu a {
+              display: inline-block;
+              color: white;
+              text-align: center;
+              padding: 20px 5px;
+              text-decoration: none;
+            }
+          </style>
+          <div class="scrollmenu">
+            <a href="{{ route('/') }}" style="text-decoration: none; color: black; font-size: 10px; padding: 5px 5px;"><?php echo strtoupper('Shierproject'); ?></a>
+            <a href="#left" style="padding: 5px 2px;"><i class="fa fa-angle-right" style="font-size: 10px; font-weight: 1000; color: black"></i></a>
+            <!-- <a href="<?php str_replace('?', '/', route('/', $url_category)); ?>" style="text-decoration: none; color: black; font-size: 10px;  padding: 5px 4px;"><?php echo strtoupper('Hiburan'); ?></a> -->
+            <a href="<?php echo $link_category; ?>" style="text-decoration: none; color: black; font-size: 10px;  padding: 5px 4px;"><?php echo strtoupper('Hiburan'); ?></a>
+            <a href="#left" style="padding: 5px 2px;"><i class="fa fa-angle-right" style="font-size: 10px; font-weight: 1000; color: black"></i></a>
+            <a href="<?php echo $url_detail; ?>" style="text-decoration: none; color: black; font-size: 10px; padding: 5px 4px;" ><?php echo strtoupper($title); ?></a>
+          </div>
         </div>
       </div>
   </div>
@@ -161,19 +186,51 @@
 
           <br><br><br>
           <hr>
-          <div class="artikel_terkait row">
-            @include('widget.artikel-terkait-widget-mobile', $artikelterkait)
-          </div>
-        </div>
 
+        </div>
       </div>
     </div>
     <!--  TERBARU -->
 
   </div>
   <br><br><br>
-
 </div>
+
+<div class="row">
+  <div style="padding: 5vh 0; background-color: #242424;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          @include('widget.artikel-terkait-widget-mobile', $artikelterkait)
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div style="padding: 5vh 0; background-color: black;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-3"></div>
+        <div class="col-md-3"></div>
+      </div>
+      <div class="row">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <?php echo 'Copyright © Shier Project'.' '.date('Y'); ?>
+            </div>
+            <div class="col-md-4"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
 @endsection

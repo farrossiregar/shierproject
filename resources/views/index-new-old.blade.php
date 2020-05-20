@@ -12,7 +12,6 @@
 <div style="width: 100vw; background-color: #242424; padding: 80px 0;" class="row">
   <div class="container">
     <h3 style="color: white;">Artikel <b><i>TERBARU</i></b></h3>
-    <!-- include('widget.index-banner-corona') -->
 
     @foreach($data as $key => $item)
       <?php
@@ -97,19 +96,24 @@
 <!--    END MAIN    -->
 
 <section>
-<!--div class="row">
+<?php
+
+/*<div class="row">
     <div class="col-md-1">test</div>
     <div class="col-md-5">test</div>
     <div class="col-md-5">test</div>
     <div class="col-md-1">test</div>
-</div-->
+</div>*/
+?>
   <div class="container" >
-    
-    <!-- <div class="row">
+  <?php
+
+  /*<div class="row">
       <div class="col-md-12">
         include('widget.index-banner-corona')
       </div>
-    </div> -->
+    </div> */
+  ?>
 
     <div class="row">
       <div class="col-md-8">
@@ -187,7 +191,7 @@
                         <div class="terbaru-title-tile" style="color: white;">
                           <b style="font-size: 100%; text-decoration: none; color: <?php echo $item->bgcolor_category; ?>; margin-top: 2px; font-size: 18px;">{{ $item->title_category }}</b>|
                           <b style="font-size: 13px; text-decoration: none; margin-top: 5px; color: white;"><i class="fa fa-clock-o"></i>{{ $item->publish_date }}</b></br>
-                          <h3 style="margin-top: 0px;"><b>{{ $item->title }} <?php echo $key_category; ?></b></h3>
+                          <h3 style="margin-top: 0px;"><b>{{ $item->title }}</b></h3>
                         </div>
                       </div>
                     </div>
@@ -240,7 +244,9 @@
 </section>
 
   
-    <br><br><br>           
+    <br><br><br>   
+    <?php
+    /*        
     <!-- ADS BANNER INDEX DESKTOP -->
     <!-- <div class="row" style="padding-left: 90px;">
       <div class="col-md-12" style="width: 970px; height: 250px; background: lightgray; text-align: center; padding: auto;">
@@ -249,42 +255,9 @@
     </div> -->
     <!-- ADS BANNER INDEX DESKTOP -->
     <br><br>  
-    
-<!-- <section style="width: 100vw; background-color: #242424; padding: 80px 0;">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="col-md-12">
-          <br>
-          <div class="title-list" style="background-color: black; width: 122px;">
-            <h4><b>Terpopuler</b></h4>
-          </div>
-          <div style="border: 2px solid black;"></div>
-          <br>
-          <div class="row" style="vertical-align: text-top;">
-            @foreach($data as $key => $item)
-            <?php
-              if($key >= 4){
-                break;
-              }
-            ?>
-
-            <?php
-              $url_detail = route('/', $item->url_category.'/'.$item->alias);
-            ?>
-            <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
-              <div class="col-md-3" style="display: inline-block; vertical-align: text-top;">
-                <img style="width: 100%; border-radius: 10px;  height: 160px;" src="<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>">
-                <h5 style="text-decoration: none; color: white;">{{ $item->title }}</h5>
-              </div>
-            </a>
-            @endforeach
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
+    */
+    ?>
+  
   
 
     @endsection

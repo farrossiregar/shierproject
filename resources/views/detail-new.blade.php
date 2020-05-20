@@ -40,10 +40,35 @@
     <br>
       <div class="col-md-12">
         <?php
-            $url_detail = route('/', $url_category.'/'.$alias);
-            $url_detail = str_replace('?', '/', $url_detail);
-          ?>
-        <h4><b><a href="{{ route('/') }}" style="text-decoration: none; color: black;"><?php echo strtoupper('Shierproject'); ?></a> >> <a href="<?php str_replace('?', '/', route('/', $url_category)); ?>" style="text-decoration: none; color: black;"><?php echo strtoupper('Hiburan'); ?></a> >> <a style="text-decoration: none; color: black;" href="<?php echo $url_detail; ?>"><?php echo strtoupper($title); ?></a></b></h4>
+          $url_detail = route('/', $url_category.'/'.$alias);
+          $url_detail = str_replace('?', '/', $url_detail);
+
+          $link_category = route('/', $url_category);
+          $link_category = str_replace('?', '/', $link_category);
+        ?>
+        <!-- <h4><b><a href="{{ route('/') }}" style="text-decoration: none; color: black;"><?php echo strtoupper('Shierproject'); ?></a> >> <a href="<?php str_replace('?', '/', route('/', $url_category)); ?>" style="text-decoration: none; color: black;"><?php echo strtoupper('Hiburan'); ?></a> >> <a style="text-decoration: none; color: black;" href="<?php echo $url_detail; ?>"><?php echo strtoupper($title); ?></a></b></h4> -->
+          <style>
+            div.scrollmenu {
+              /* background-color: #333; */
+              overflow: auto;
+              white-space: nowrap;
+            }
+
+            div.scrollmenu a {
+              display: inline-block;
+              color: white;
+              text-align: center;
+              padding: 20px 5px;
+              text-decoration: none;
+            }
+          </style>
+          <div class="scrollmenu">
+            <a href="{{ route('/') }}" style="text-decoration: none; color: black; font-size: 15px; font-weight: 600; padding: 5px 5px;"><?php echo strtoupper('Shierproject'); ?></a>
+            <a href="#left" style="padding: 5px 2px;"><i class="fa fa-angle-right" style="font-size: 15px; font-weight: 600; color: black"></i></a>
+            <a href="<?php echo $link_category; ?>" style="text-decoration: none; color: black; font-size: 15px; font-weight: 600; padding: 5px 4px;"><?php echo strtoupper('Hiburan'); ?></a>
+            <a href="#left" style="padding: 5px 2px;"><i class="fa fa-angle-right" style="font-size: 15px; font-weight: 600; font-weight: 1000; color: black"></i></a>
+            <a href="<?php echo $url_detail; ?>" style="text-decoration: none; color: black; font-size: 15px; font-weight: 600; padding: 5px 4px;" ><?php echo strtoupper($title); ?></a>
+          </div>
       </div>
     </div>
   </div>
@@ -114,7 +139,8 @@
         </div>
         
       
-
+        <?php
+        /*
         <!-- ADS BANNER 1 -->
         <!-- <div class="row">
           <div class="col-md-12">
@@ -126,7 +152,8 @@
           </div>
         </div> -->
         
-        <!-- ADS BANNER 1 -->
+        <!-- ADS BANNER 1 -->*/
+        ?>
       </div>
       <hr>
       
@@ -195,11 +222,11 @@
       </div>
 
       
-      <div class="row">
+      <!-- <div class="row" id="related-article-position">
         <div class="col-md-12">
-          @include('widget.artikel-terkait-widget', $artikelterkait)
+          include('widget.artikel-terkait-widget', $artikelterkait)
         </div>
-      </div>
+      </div> -->
     </div>
     <!--  TERBARU -->
 
@@ -210,8 +237,8 @@
       
 
       <br><br>
-      <div class="row" >
-        <div class="col-md-12" id="top-article">
+      <div class="row" id="top-article-container">
+        <div class="col-md-12">
           @include('widget.artikel-populer-widget', $toparticle)
         </div>
       </div>
@@ -222,23 +249,69 @@
   <br><br><br>
 </div>
 
+<div style="padding: 5vh 0; background-color: #242424;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        @include('widget.artikel-terkait-widget', $artikelterkait)
+      </div>
+    </div>
+  </div>
+</div>
+
+<section style="padding: 5vh 0; background-color: black;">
+    <div class="container">
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-3"></div>
+          <div class="col-md-3"></div>
+        </div>
+        <div class="row">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-4">
+                <?php echo 'Copyright © Shier Project'.' '.date('Y'); ?>
+              </div>
+              <div class="col-md-4"></div>
+            </div>
+            
+          </div>
+        </div>
+    </div>
+</section>
+
 
 <script>
-  // window.addEventListener("scroll", function() {
-  //   var elementTarget = document.getElementById("top-article");
-  //   if (window.scrollY > (elementTarget.offsetTop + elementTarget.offsetHeight)) {
-  //       //alert("You've scrolled past the second div");
-  //       $('#top-article').addClass("col-md-12 toparticlefixed");
-  //   }else{
-  //       $('#top-article').removeClass("col-md-12 toparticlefixed");
-  //   }
-  // });
+  window.addEventListener("scroll", function() {
+    var elementTarget = document.getElementById("top-article-container");
+    var relatedArticle = document.getElementById("related-article-position");
+
+    // if (window.scrollY > (elementTarget.offsetTop + elementTarget.offsetHeight)) {
+    //   $('#top-article-container').addClass("toparticlefixed");
+    // }else{
+    //   if (window.scrollY > (elementTarget.offsetTop + elementTarget.offsetHeight) && window.scrollY < (relatedArticle.offsetTop + relatedArticle.offsetHeight)) {
+    //     $('#top-article-container').addClass("toparticlefixed");
+    //   }else{
+    //     $('#top-article-container').removeClass("toparticlefixed");
+    //   }
+      
+    // }
+
+    
+    // if (window.scrollY > (relatedArticle.offsetTop + relatedArticle.offsetHeight)) {
+    //     $('#top-article-container').removeClass("toparticlefixed");
+    // }else{
+    //     $('#top-article-container').addClass("toparticlefixed");
+    // }
+  });
 </script>
 
 <style>
   .toparticlefixed{
     position: fixed;
-    top: 10px;
+    top: 3vh;
+    width: 390px;
   }
 </style>
 

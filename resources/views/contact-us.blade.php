@@ -29,11 +29,8 @@
       <div class="row">
         <div class="col-md-12">
           <br><br><br>
-          <div style="padding: 1px 3px; background-color: black; color: white; width: 130px; border-radius: 10px 10px 0px 0px;">
-              <h4><b>Kontak Kami</b></h4>
-          </div>
-          <div style="border: 2px solid black;">
-          </div>
+          <h3 style="color: black;">Kontak <b><i>KAMI</i></b></h3>
+
           <hr style="color: black;">
           <div class="row">
             <div class="col-md-12">
@@ -41,7 +38,7 @@
                 <tr>
                   <td style="width:10%;"><h4>Alamat</h4></td>
                   <td>:</td>
-                  <td><h4>Jalan Melati No 130, Blok C-A, RT/RW 003/006, Perumahan Ciputat Baru, Tangerang Selatan, Banten, 15413.</h4></td>
+                  <td><h4>Jakarta, Indonesia</h4></td>
                 </tr>
                 <tr>
                   <td>&nbsp</td>
@@ -94,11 +91,7 @@
           </div>
 
           <br><br>
-          <div style="padding: 1px 3px; background-color: black; color: white; width: 175px; border-radius: 10px 10px 0px 0px;">
-              <h4><b>Pemasangan Iklan</b></h4>
-          </div>
-          <div style="border: 2px solid black;">
-          </div>
+          <h3 style="color: black;">Pemasangan <b><i>IKLAN</i></b></h3>
           <div class="row">
             <div class="col-md-12">
             <br><br>
