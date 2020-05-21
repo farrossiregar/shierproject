@@ -146,7 +146,7 @@
               border: 1px solid lightgray; border-radius: 6px; text-align: center; padding: 4px 8px; margin: 2px 2px; display: inline-block; font-size: 15px;
             }
           </style>
-          <div class="col-md-12" style="border: 0px solid lightgray; border-radius: 6px; margin: 60px 0;">
+          <div class="row" style="border: 0px solid lightgray; border-radius: 6px; margin: 60px 0;">
             <h4><b><i>#</i>Tags</b></h4>
             <hr>
             <br>
@@ -154,6 +154,7 @@
             <div class="tags_article"><b><?php echo '#'.$item->title_tags; ?></b></div>
             @endforeach
           </div>
+          <br>
 
 
           <div>
@@ -208,27 +209,8 @@
   </div>
 </div>
 
-<div class="row">
-  <div style="padding: 5vh 0; background-color: black;">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-3"></div>
-        <div class="col-md-3"></div>
-      </div>
-      <div class="row">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-4">
-              <?php echo 'Copyright © Shier Project'.' '.date('Y'); ?>
-            </div>
-            <div class="col-md-4"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="row footer">
+  @include('layout.footer')
 </div>
 
 

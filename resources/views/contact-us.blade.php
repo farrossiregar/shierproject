@@ -25,9 +25,23 @@
 
 <div class="container" style="background-color: white; padding-bottom: 15vh;">
   <div class="row">
-    <div class="col-md-8" style="border-right: 1px solid lightgray;">
+    <div class="col-md-8">
       <div class="row">
         <div class="col-md-12">
+
+          <br><br>
+          <h3 style="color: black;">Tentang <b><i>KAMI</i></b></h3>
+          <hr style="color: black;">
+          <div class="row">
+            <div class="col-md-12">
+            <br><br>
+              <h4>
+                Shierproject.com membagikan konten berisi informasi yang menarik mengenai Jalan-jalan, Tokoh Berpengaruh, Tekno, 
+                Hiburan dan Lifestyle yang ringan namun juga padat dan berusaha mengambil sudut pandang yang berbeda dari yang lain.
+              </h4>
+            </div>
+          </div>
+
           <br><br><br>
           <h3 style="color: black;">Kontak <b><i>KAMI</i></b></h3>
 
@@ -92,6 +106,7 @@
 
           <br><br>
           <h3 style="color: black;">Pemasangan <b><i>IKLAN</i></b></h3>
+          <hr style="color: black;">
           <div class="row">
             <div class="col-md-12">
             <br><br>

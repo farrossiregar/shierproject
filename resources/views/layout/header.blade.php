@@ -1,3 +1,9 @@
+<?php
+  $app = $_SERVER['HTTP_HOST'];
+  $sub = 'demo.shierproject';
+  
+  if(!preg_match("/{$sub}/i", $app)) {
+?>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158536946-1"></script>
 <script>
@@ -17,6 +23,9 @@
   })(window,document,'script','dataLayer','GTM-N46NT7F');</script>
   <!-- End Google Tag Manager -->
 </script>
+<?php
+  }
+?>
 
 <!-- Google Adsense -->
 <?php

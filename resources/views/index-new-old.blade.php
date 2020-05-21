@@ -125,8 +125,8 @@
           <hr>
           <div class="row" style="margin: 50px 0;">
             <a href="<?php echo str_replace('?', '/', route('/', $item->url_title)); ?>" style="text-decoration: none;">
-              <div style="text-align: center; overflow: hidden; padding-top: 7%; opacity: 0.7; background-image: url('<?php echo "http://shierproject.com/image/category/".category($item->url_title); ?>'); background-position: center; background-size: cover; width: 100%; height: 20vh;">
-                <h1><b style="font-size: 120%; opacity: 1; color: black; text-decoration: none;">{{ strtoUpper($item->title) }}</b></h1>
+              <div style="text-align: center; overflow: hidden; padding-top: 7%; opacity: 0.9; background-image: url('<?php echo "http://shierproject.com/image/category/".category($item->url_title); ?>'); background-position: center; background-size: cover; width: 100%; height: 20vh;">
+                <h1><b style="font-size: 120%; opacity: 1; color: white; text-decoration: none; text-shadow: 2px 2px black;">{{ strtoUpper($item->title) }}</b></h1>
               </div>
             </a>
             
@@ -146,12 +146,12 @@
                 ?>
                 <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
                   <div class="col-md-12 terbaru-tile-parent" >
-                    <div class="terbaru-tile" style="background-image: url('<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>'); ">
-                      <div style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.6)); height: 100%; width: 100%; padding: -10px;">
+                    <div style="border-radius: 10px; background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.6)); height: 100%; width: 100%; padding: -10px;">
+                      <div class="terbaru-tile" style="background-image: url('<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>'); ">
                         <div class="terbaru-title-tile" style="color: white;">
                           <b style="font-size: 100%; text-decoration: none; color: <?php echo $item->bgcolor_category; ?>; margin-top: 2px; font-size: 18px;">{{ $item->title_category }}</b>|
                           <b style="font-size: 13px; text-decoration: none; margin-top: 5px; color: white;"><i class="fa fa-clock-o"></i>{{ $item->publish_date }}</b></br>
-                          <h3 style="margin-top: 0px;"><b style="text-decoration: none; color: white;">{{ $item->title }}</b></h3>
+                          <h3 style="margin-top: 0px;"><b style="text-decoration: none; color: white; text-shadow: 2px 2px black;">{{ $item->title }}</b></h3>
                         </div>
                       </div>
                     </div>
@@ -186,12 +186,12 @@
 
                 <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
                   <div class="col-md-6 terbaru-tile-parent" >
-                    <div class="terbaru-tile" style="background-image: url('<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>'); ">
-                      <div style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.6)); height: 100%; width: 100%; padding: -10px;">
+                    <div style="border-radius: 10px; background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.6)); height: 100%; width: 100%; padding: -10px;">
+                      <div class="terbaru-tile" style="background-image: url('<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>'); ">
                         <div class="terbaru-title-tile" style="color: white;">
                           <b style="font-size: 100%; text-decoration: none; color: <?php echo $item->bgcolor_category; ?>; margin-top: 2px; font-size: 18px;">{{ $item->title_category }}</b>|
                           <b style="font-size: 13px; text-decoration: none; margin-top: 5px; color: white;"><i class="fa fa-clock-o"></i>{{ $item->publish_date }}</b></br>
-                          <h3 style="margin-top: 0px;"><b>{{ $item->title }}</b></h3>
+                          <h3 style="margin-top: 0px; text-shadow: 2px 2px black;"><b>{{ $item->title }}</b></h3>
                         </div>
                       </div>
                     </div>
@@ -243,22 +243,24 @@
   </div>
 </section>
 
-  
-    <br><br><br>   
-    <?php
-    /*        
-    <!-- ADS BANNER INDEX DESKTOP -->
-    <!-- <div class="row" style="padding-left: 90px;">
-      <div class="col-md-12" style="width: 970px; height: 250px; background: lightgray; text-align: center; padding: auto;">
-        <h1 style="margin-top: 90px;">Available Space 970 X 250</h1>
-      </div>
-    </div> -->
-    <!-- ADS BANNER INDEX DESKTOP -->
-    <br><br>  
-    */
-    ?>
-  
+<br><br><br>   
+<?php
+/*        
+<!-- ADS BANNER INDEX DESKTOP -->
+<!-- <div class="row" style="padding-left: 90px;">
+  <div class="col-md-12" style="width: 970px; height: 250px; background: lightgray; text-align: center; padding: auto;">
+    <h1 style="margin-top: 90px;">Available Space 970 X 250</h1>
+  </div>
+</div> -->
+<!-- ADS BANNER INDEX DESKTOP -->
+<br><br>  
+*/
+?>
   
 
-    @endsection
+<section class="footer">
+  @include('layout.footer')
+</section>  
+
+@endsection
   

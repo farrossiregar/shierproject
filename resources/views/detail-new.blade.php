@@ -259,27 +259,10 @@
   </div>
 </div>
 
-<section style="padding: 5vh 0; background-color: black;">
-    <div class="container">
-        <div class="row">
-          <div class="col-md-3"></div>
-          <div class="col-md-3"></div>
-          <div class="col-md-3"></div>
-        </div>
-        <div class="row">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-4"></div>
-              <div class="col-md-4">
-                <?php echo 'Copyright © Shier Project'.' '.date('Y'); ?>
-              </div>
-              <div class="col-md-4"></div>
-            </div>
-            
-          </div>
-        </div>
-    </div>
+<section class="footer">
+  @include('layout.footer')
 </section>
+
 
 
 <script>
