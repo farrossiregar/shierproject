@@ -65,10 +65,12 @@
     </div>
 
     <!--  TERBARU -->
-
-
   </div>
-  
 </div>
+
+<div class="footer">
+  @include('layout.footer')
+</div>
+
 
 @endsection
