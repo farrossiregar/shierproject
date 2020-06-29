@@ -145,8 +145,8 @@
                   if($key_category % 2 == 0){
                 ?>
                 <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
-                  <div class="col-md-12 terbaru-tile-parent" >
-                    <div style="border-radius: 10px; background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.6)); height: 100%; width: 100%; padding: -10px;">
+                  <div class="col-md-12 terbaru-tile-parent">
+                    <div  style="box-shadow: 5px 5px 5px #aaaaaa; border-radius: 10px; background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.6)); height: 100%; width: 100%; padding: -10px;">
                       <div class="terbaru-tile" style="background-image: url('<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>'); ">
                         <div class="terbaru-title-tile" style="color: white;">
                           <b style="font-size: 100%; text-decoration: none; color: <?php echo $item->bgcolor_category; ?>; margin-top: 2px; font-size: 18px;">{{ $item->title_category }}</b>|
@@ -161,18 +161,24 @@
                   }else{
                 ?>
                 <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
-                  <div class="col-md-12" >
+                  <div class="col-md-12">
+                    <div style="box-shadow: 5px 5px 5px #aaaaaa; border-radius: 10px;">
                       <div style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.6)); height: 300px; width: 100%; padding: -10px; border-radius: 10px; overflow: hidden;">
                           <div style="background-image: url('<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>'); background-position: center; background-size: cover; height: 100%; ">
                           </div>
                       </div>
-                      <div>
+                      <div class="row">
+                        <div class="col-md-12">
                           <b style="font-size: 14px; text-decoration: none; color: <?php echo $item->bgcolor_category; ?>; margin-top: 2px;">{{ $item->title_category }}</b> |
                           <b style="font-size: 13px; text-decoration: none; margin-top: 5px; color: gray;"><i class="fa fa-clock-o"></i>{{ $item->publish_date }}</b><br>
                           <h3 style="margin-top: 0px;"><b style="text-decoration: none; color: black;">{{ $item->title }}</b></h3>
+                        </div>
                       </div>
+                      <br>
+                    </div>
                   </div>
                 </a>
+                <br>
                 <?php
                   }
                 ?>
@@ -185,10 +191,10 @@
                 ?>
 
                 <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
-                  <div class="col-md-6 terbaru-tile-parent" >
-                    <div style="border-radius: 10px; background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.6)); height: 100%; width: 100%; padding: -10px;">
+                  <div class="col-md-4 terbaru-tile-parent" >
+                    <div style="box-shadow: 5px 5px 5px #aaaaaa; border-radius: 10px; background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.6)); height: 100%; width: 100%;">
                       <div class="terbaru-tile" style="background-image: url('<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>'); ">
-                        <div class="terbaru-title-tile" style="color: white;">
+                        <div class="terbaru-title-tile" style="color: white; width: 230px;">
                           <b style="font-size: 100%; text-decoration: none; color: <?php echo $item->bgcolor_category; ?>; margin-top: 2px; font-size: 18px;">{{ $item->title_category }}</b>|
                           <b style="font-size: 13px; text-decoration: none; margin-top: 5px; color: white;"><i class="fa fa-clock-o"></i>{{ $item->publish_date }}</b></br>
                           <h3 style="margin-top: 0px; text-shadow: 2px 2px black;"><b>{{ $item->title }}</b></h3>
@@ -231,31 +237,29 @@
         @endforeach
       </div>
 
-      <!-- ANTARA NEWS -->
+      <!-- SIDE CONTENT -->
       <div class="col-md-4">
           <div class="row">
             @include('widget.artikel-populer-widget', $toparticle)
           </div>
+
+          <br><br><br>
+          <div class="row">
+            <a href="https://www.instagram.com/the_b_kopi/" target="_blank">
+              <div style="width: 80%; margin: auto;">
+                <img src="http://cms.shierproject.com/image/ads/the-brians-coffee.gif" style="width: 100%; margin: auto;">
+              </div>
+            </a>
+          </div>
       </div>
-      <!-- ANTARA NEWS -->
+      <!-- SIDE CONTENT -->
     </div>
     
   </div>
 </section>
 
 <br><br><br>   
-<?php
-/*        
-<!-- ADS BANNER INDEX DESKTOP -->
-<!-- <div class="row" style="padding-left: 90px;">
-  <div class="col-md-12" style="width: 970px; height: 250px; background: lightgray; text-align: center; padding: auto;">
-    <h1 style="margin-top: 90px;">Available Space 970 X 250</h1>
-  </div>
-</div> -->
-<!-- ADS BANNER INDEX DESKTOP -->
-<br><br>  
-*/
-?>
+
   
 
 <section class="footer">

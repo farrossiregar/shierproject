@@ -274,7 +274,6 @@
                           <h4><b style="font-size:18px; text-shadow: 1px 1px #000000;">{{ $item->title }}</b></h4>
                         </div>
                       </div>
-                      
                     </div>
                   </div>
                 </a>

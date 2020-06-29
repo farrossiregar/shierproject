@@ -120,24 +120,96 @@
       <!-- ADS BANNER 1 -->
       <br><br>
 
+      
+      <div class="row">
+        <a href="https://www.instagram.com/galerimenawan/" target="_blank">
+          <div style="width: 100%;">
+            <img src="http://cms.shierproject.com/image/ads/galeri-menawan.jpeg" style="width: 100%;">
+          </div>
+        </a>
+      </div>
+      <br><br><br>
+
 
       <div class="row">
-        <div class="col-md-12" style="font-size: 17px; padding: 20px;">
-          <?php echo html_entity_decode($fulltexts); ?>
+        <div class="col-md-12">
+          <div class="txt-article">
+            <div class="row" style="font-size: 17px; padding: 20px;">
+              <?php
+                $pArticle = explode("<p>",html_entity_decode($fulltexts));
 
-          <br><br>
-          <?php
-            if($link != ''){
-          ?>
-            <div>
-              <a href="{{$link}}" target="_blank">
-                <p style="color: gray;">Sumber : {{ $source }}</p>
-              </a> 
+                $half = count($pArticle)/ 2;
+                for($i = 0; $i <= round($half); $i++){
+                  // echo str_replace("</strong>", '</strong><br>', $pArticle[$i]);
+                  echo $pArticle[$i];
+                }
+
+              ?>
             </div>
-                       
-          <?php
-            }
-          ?>
+            
+            <div class="row" style="background-color: #f0f0f0; padding: 25px 0; margin-top: 20px; margin-bottom: 20px;">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                    <a href="https://www.instagram.com/the_b_kopi/" target="_blank">
+                      <div style="width: 100%;">
+                        <img src="http://cms.shierproject.com/image/ads/the-brians-coffee.gif" style="width: 100%;">
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row" style="font-size: 17px; padding: 20px;">
+              <?php
+                if(fmod($half, 1) !== 0.00){
+                  $half = $half + 0.5;
+                }else{
+                  $half = $half;
+                }
+
+                for($j = $half; $j < count($pArticle); $j++){
+                  // echo str_replace('</strong>"', '</strong><br>"', $pArticle[$j]);
+                  echo $pArticle[$j];
+                }
+              ?>
+              <?php //echo html_entity_decode($fulltexts); ?>
+
+              <br><br>
+              <?php
+                if($link != ''){
+              ?>
+                <div>
+                  <a href="{{$link}}" target="_blank">
+                    <p style="color: gray;">Sumber : {{ $source }}</p>
+                  </a> 
+                </div>
+                          
+              <?php
+                }
+              ?>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12" style="height: 60px; background-color: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0.5), rgba(0,0,0,0.3));"></div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="col-md-12">
+                <div class="col-md-12">
+                  <div id="load_more" class="col-md-12" style="border: 1px solid #969696; text-align: center;">
+                    <h4 style="color: #969696;">Baca Lebih Banyak</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+
+          
 
           <br><br>
 
@@ -212,6 +284,18 @@
 <div class="row footer">
   @include('layout.footer')
 </div>
+
+
+<script>
+  $(window).on('load', function() {
+    $('.txt-article').css({'height': '150vh', 'overflow': 'hidden'});
+  });
+
+  $('#load_more').on('click', function(){
+    $('.txt-article').css({'height': '', 'overflow': ''});
+    $(this).hide();
+  });
+</script>
 
 
 

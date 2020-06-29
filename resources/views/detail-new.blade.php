@@ -156,6 +156,18 @@
         ?>
       </div>
       <hr>
+
+      <div class="row">
+        <br><br>
+        <div class="col-md-12">
+          <a href="https://www.instagram.com/galerimenawan/" target="_blank">
+            <div style="width: 100%;">
+              <img src="http://cms.shierproject.com/image/ads/galeri-menawan.jpeg" style="width: 100%;">
+            </div>
+          </a>
+        </div>
+      </div>
+      <br><br><br>
       
       <div class="row">
         <div class="col-md-12 txt-article">
@@ -232,7 +244,7 @@
 
     <!--  POPULER -->
     <div class="col-md-4">
-    <br>
+      <br>
       @include('layout.about-author')
       
 
@@ -240,6 +252,18 @@
       <div class="row" id="top-article-container">
         <div class="col-md-12">
           @include('widget.artikel-populer-widget', $toparticle)
+        </div>
+      </div>
+
+      <br><br><br>
+      <div class="row">
+        <!-- <h4 style="text-align: center;">Iklan</h4> -->
+        <div class="col-md-12">
+          <a href="https://www.instagram.com/the_b_kopi/" target="_blank">
+            <div style="width: 80%; margin: auto;">
+              <img src="http://cms.shierproject.com/image/ads/the-brians-coffee.gif" style="width: 100%;">
+            </div>
+          </a>
         </div>
       </div>
     </div>
