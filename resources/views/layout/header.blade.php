@@ -41,6 +41,8 @@
 
 <meta name="description" content="@yield('metadesc')">
 
+<meta name="news_keywords" content="Ramalan Zodiak, Ramalan zodiak cinta Senin 25 Mei 2020, Taurus, Sagitarius, Gemini, Aries, Leo, Libra, Aquarius, ramalan zodiak cinta, Pisces, Virgo, Cancer, Millennial, Life">
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>

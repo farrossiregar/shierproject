@@ -202,6 +202,49 @@
         </div>
 
         <div class="col-md-12">
+          <iframe id="youtube_smart_embed" width="560"
+            height="315"
+            src="https://www.youtube.com/smart_embed?chann
+            els=UCmxAIW7RDDC88EPk4ry16Kg" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media;gyroscope; picture-in-picture"
+            allowfullscreen="">
+          </iframe>
+        </div>
+
+        <div style="width:100%">
+          <iframe id="youtube_smart_embed" width="560"
+            height="315"
+            src="https://www.youtube.com/smart_embed?chann
+            els=UCmxAIW7RDDC88EPk4ry16Kg" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media;gyroscope; picture-in-picture"
+            allowfullscreen="">
+          </iframe>
+        </div>
+
+        <script type="text/javascript">
+          var player;
+          var tag = document.createElement('script');
+          tag.src = "https://www.youtube.com/iframe_api";
+          var firstScriptTag = document.getElementsByTagName('script')[0];
+          firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+          var observeryt = new IntersectionObserver(function (entries) {
+            // callback code
+            entries.forEach((entry, index) => {
+              if (entry.target.id === "youtube_smart_embed") {
+                if (entry.isIntersecting === true) {
+                  player.playVideo();
+                }
+              }
+            });
+          }, { root: null, threshold: [1] });
+          observeryt.observe(document.querySelector("#youtube_smart_embed"));
+
+          function onYouTubePlayerAPIReady() {
+            player = new YT.Player('youtube_smart_embed');
+          }
+        </script>
+
+        <div class="col-md-12">
           <h4><b>Tinggalkan Komentar</b></h4>
           <!-- <hr>
           <br>
