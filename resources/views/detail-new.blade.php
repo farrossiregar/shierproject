@@ -158,6 +158,10 @@
       <hr>
 
       <div class="row">
+        <?php
+            /*
+        ?>
+        <!--
         <br><br>
         <div class="col-md-12">
           <a href="https://www.instagram.com/galerimenawan/" target="_blank">
@@ -166,6 +170,10 @@
             </div>
           </a>
         </div>
+        -->
+        <?php
+            */
+        ?>
       </div>
       <br><br><br>
       
@@ -255,6 +263,10 @@
         </div>
       </div>
 
+    <?php
+        /*
+    ?>
+      <!--
       <br><br><br>
       <div class="row">
         <!-- <h4 style="text-align: center;">Iklan</h4> -->
@@ -266,6 +278,10 @@
           </a>
         </div>
       </div>
+      -->
+    <?php
+        */
+    ?>
     </div>
     <!--  POPULER -->
 

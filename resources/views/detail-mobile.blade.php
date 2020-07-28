@@ -118,9 +118,12 @@
         </div>
       </div> -->
       <!-- ADS BANNER 1 -->
-      <br><br>
-
       
+      <?php
+        /*
+      ?>
+      <!--
+      <br><br>
       <div class="row">
         <a href="https://www.instagram.com/galerimenawan/" target="_blank">
           <div style="width: 100%;">
@@ -128,6 +131,10 @@
           </div>
         </a>
       </div>
+      -->
+      <?php
+        */
+      ?>
       <br><br><br>
 
 
@@ -147,6 +154,10 @@
               ?>
             </div>
             
+            <?php
+                /*
+            ?>
+            <!--
             <div class="row" style="background-color: #f0f0f0; padding: 25px 0; margin-top: 20px; margin-bottom: 20px;">
               <div class="container">
                 <div class="row">
@@ -160,6 +171,10 @@
                 </div>
               </div>
             </div>
+            -->
+            <?php
+                */
+            ?>
 
             <div class="row" style="font-size: 17px; padding: 20px;">
               <?php

@@ -242,7 +242,10 @@
           <div class="row">
             @include('widget.artikel-populer-widget', $toparticle)
           </div>
-
+        <?php
+            /*
+        ?>
+          <!--
           <br><br><br>
           <div class="row">
             <a href="https://www.instagram.com/the_b_kopi/" target="_blank">
@@ -251,6 +254,10 @@
               </div>
             </a>
           </div>
+          -->
+          <?php
+            */
+        ?>
       </div>
       <!-- SIDE CONTENT -->
     </div>
