@@ -243,7 +243,9 @@
           </div>
           <br>
 
-
+        <?php
+            /*
+        ?>
           <div>
             <h4><b>Tinggalkan Komentar</b></h4>
             <hr>
@@ -267,6 +269,9 @@
             <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="5" data-width="750"></div>
           </div>
           <br><br>
+          <?php
+            */
+        ?>
 
 
 

@@ -209,6 +209,9 @@
           @endforeach
         </div>
 
+        <?php
+            /*
+        ?>
         <div class="col-md-12">
           <h4><b>Tinggalkan Komentar</b></h4>
           <!-- <hr>
@@ -239,6 +242,9 @@
           data-width="720"></div> -->
 
         </div>
+        <?php
+            */
+        ?>
       </div>
 
       

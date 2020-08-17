@@ -116,7 +116,7 @@
             url: '{{ route('get-menu') }}',
             dataType: 'json',
             success: function(result){
-                console.log(result);
+                //console.log(result);
                 for(var i = 0; i <= result.length; i++){
                     
                     var url = '{{ route("/{category}", ":category") }}';
@@ -136,7 +136,8 @@
                     var user_agent = "<?php echo $agent->isPhone(); ?>";
                     var image_category = 'http://shierproject.com/image/category/'+result[i]['image'];
                     if(!user_agent){
-                        $('#list-menu').append('<li onmouseenter="hover_menu('+ result[i]['id'] +', \''+ result[i]['url_title'] +'\')" onmouseleave="unhover_menu('+ result[i]['id'] +', '+ result[i]['title'] +')" class="nav_hover"><a href="'+url+'">'+ result[i]['title'] +' </a></li>');
+                        //$('#list-menu').append('<li onmouseenter="hover_menu('+ result[i]['id'] +', \''+ result[i]['url_title'] +'\')" onmouseleave="unhover_menu('+ result[i]['id'] +', '+ result[i]['title'] +')" class="nav_hover"><a href="'+url+'">'+ result[i]['title'] +' </a></li>');
+                        $('#list-menu').append('<li class="nav_hover"><a href="'+url+'">'+ result[i]['title'] +' </a></li>');
                     }else{
                         $('#list-menu').append('<li id="menu_mobile'+result[i]['id']+'" style="text-align: left; color: white; background-image: url(""); background-position: center;"><a href="'+url+'"><b style="color: '+ result[i]['bgcolor_category'] +';">'+ result[i]['title'] +' </b></a></li>');
                         $('#menu_mobile'+result[i]['id']).css("background-image", "url('"+image_category+"')"); 
