@@ -22,14 +22,26 @@
             <br><br>
                 <div class="row">
                     <div class="col-md-12">
-                        <b><h4><a href="{{ route('/') }}" style="color: white;">shierproject.com</a></h4></b>
+                        <h4><a href="{{ route('/') }}" style="color: #333;"><b>shierproject.com</b></a></h4>
+                        <h4><a href="<?php echo str_replace("?", "/", route('/', 'jalan-jalan')); ?>" style="color: #333;"><b>Jalan-jalan</b></a></h4>
+                        <h4><a href="<?php echo str_replace("?", "/", route('/', 'tokoh-berpengaruh')); ?>" style="color: #333;"><b>Tokoh Berpengaruh</b></a></h4>
+                        <h4><a href="<?php echo str_replace("?", "/", route('/', 'tekno')); ?>" style="color: #333;"><b>Tekno</b></a></h4>
+                        <h4><a href="<?php echo str_replace("?", "/", route('/', 'hiburan')); ?>" style="color: #333;"><b>Hiburan</b></a></h4>
+                        <h4><a href="<?php echo str_replace("?", "/", route('/', 'lifestyle')); ?>" style="color: #333;"><b>Lifestyle</b></a></h4>
                     </div>
                     <!-- <ul>
                         <a href="{{ route('/') }}"><li><a href="" style="color: white;">Kontak Kami</a></li></a>
                     </ul> -->
                 </div>
             </div>
-            <div class="col-md-4"></div>
+            <div class="col-md-4">
+            <br><br>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4><a href="<?php echo str_replace("?", "/", route('/', 'contact-us')); ?>" style="color: #333;"><b>Kontak Kami</b></a></h4>
+                </div>
+            </div>
+            </div>
         </div>
         <br>
         <br>
