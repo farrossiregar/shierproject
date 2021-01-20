@@ -137,9 +137,13 @@
               foreach(dataCategory($item->url_title) as $key => $item){
                 $idx = $idx + 1;
                 $url_detail = route('/', $url_title.'/'.$item->alias);
-                
-                if(($idx == 1) or ($idx % 7 == 1)){
-              ?>
+                if($key_category % 2 == 0){
+                  $br = 7;
+                }else{
+                  $br = 5;
+                }
+                if(($idx == 1) or ($idx % $br == 1)){
+            ?>
                 <br>
                 <?php
                   if($key_category % 2 == 0){
