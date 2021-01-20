@@ -138,7 +138,7 @@
                 $idx = $idx + 1;
                 $url_detail = route('/', $url_title.'/'.$item->alias);
                 
-                if(($idx == 1) or ($idx % 5 == 1)){
+                if(($idx == 1) or ($idx % 7 == 1)){
               ?>
                 <br>
                 <?php
