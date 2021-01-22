@@ -181,14 +181,6 @@
         </div>
       </div>
 
-      <!-- ANTARA NEWS -->
-      <div class="col-md-4">
-        <br>
-          <div class="row">
-            @include('widget.antaranewswidget')
-          </div>
-      </div>
-      <!-- ANTARA NEWS -->
     </div>
     
   </div>
