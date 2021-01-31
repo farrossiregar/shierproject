@@ -248,7 +248,7 @@
           </div>
 
           <div class="row">
-            @include('instagram-embed-widget')
+            @include('widget.instagram-embed-widget')
           </div>
           
         <?php
