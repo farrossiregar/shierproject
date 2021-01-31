@@ -142,11 +142,12 @@
               border: 1px solid lightgray; border-radius: 10px; text-align: center; padding: 5px 10px; margin: 3px 3px; display: inline-block; font-size: 20px;
             }
           </style>
-          
-            <h4><b><i>#</i>Tags : </b></h4>
-            @foreach($tags_article as $key => $item)
-            <div class="tags_article"><b><?php echo '#'.$item->title_tags; ?></b></div>
-            @endforeach
+          <br>
+          <h4><b><i>#</i>Tags </b></h4>
+          <hr>
+          @foreach($tags_article as $key => $item)
+          <div class="tags_article"><b><?php echo '#'.$item->title_tags; ?></b></div>
+          @endforeach
           
         </div>
         
