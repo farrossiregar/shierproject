@@ -269,6 +269,10 @@
         </div>
       </div>
 
+      <div class="row">
+        @include('widget.instagram-embed-widget')
+      </div>
+
     <?php
         /*
     ?>
