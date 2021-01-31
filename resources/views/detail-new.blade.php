@@ -191,7 +191,7 @@
       <br><br><br>
       
       <div class="row">
-        <div class="col-md-12 txt-article" style="font-family: Georgia,Times,Times New Roman,seri; font-size: 1.3em;">
+        <div class="col-md-12 txt-article" style="font-size: 1.3em;">
           <?php echo html_entity_decode($fulltexts); ?>
           
           <br><br>
