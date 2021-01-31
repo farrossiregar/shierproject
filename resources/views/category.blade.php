@@ -97,7 +97,7 @@
 
     <!--  TERBARU -->
 
-    <!-- ANTARA NEWS -->
+    
     <div class="col-md-4">
     <br>
       <div class="row">
@@ -106,8 +106,12 @@
 
         </div>
       </div>
+
+      <div class="row">
+        @include('widget.instagram-embed-widget')
+      </div>
     </div>
-    <!-- ANTARA NEWS -->
+    
 
   </div>
   
