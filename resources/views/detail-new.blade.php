@@ -143,8 +143,7 @@
             }
           </style>
           <div class="col-md-12" style="border: 0px solid lightgray; border-radius: 6px; margin: 20px 0;">
-            <h4><b><i>#</i>Tags</b></h4>
-            <hr>
+            <h4><b><i>#</i>Tags : </b></h4>
             @foreach($tags_article as $key => $item)
             <div class="tags_article"><b><?php echo '#'.$item->title_tags; ?></b></div>
             @endforeach
