@@ -238,7 +238,17 @@
           $key_category = $key;
         ?>
           <hr>
-          <?php echo $key; ?>
+          <?php 
+            if($key == 2){
+          ?>  
+          <div class="row">
+              <div class="col-md-12" style="background-color: rgb(36, 36, 36); padding: 20px 0; color: white;">
+                test
+              </div>
+          </div>
+          <?php
+            }
+          ?>
           <div class="row">
             <a href="<?php echo str_replace('?', '/', route('/', $item->url_title)); ?>" style="text-decoration: none;">
               <div style="text-align: center; overflow: hidden; padding-top: 4%; opacity: 0.9; background-image: url('<?php echo "http://shierproject.com/image/category/".category($item->url_title); ?>'); background-position: center; background-size: cover; width: 100%; height: 20vh;">
