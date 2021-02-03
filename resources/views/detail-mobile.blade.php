@@ -244,7 +244,10 @@
           <br><br>
 
           <div class="row">
-            <div id="SC_TBlock_830978"></div>
+            <div class="col-md-12">
+              <div id="SC_TBlock_830978"></div>
+            </div>
+            
           </div>
 
         <?php
