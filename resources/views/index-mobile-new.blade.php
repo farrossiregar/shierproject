@@ -242,8 +242,8 @@
             if($key == 2){
           ?>  
           <div class="row">
-              <div class="col-md-12" style="background-color: rgb(36, 36, 36); padding: 20px 0; color: white;">
-                test
+              <div class="col-md-12" style="background-color: rgb(36, 36, 36); padding: 20px; color: white;">
+                <div id="SC_TBlock_830981"></div>
               </div>
           </div>
           <?php
@@ -361,5 +361,14 @@
   <section class="footer">
     @include('layout.footer')
   </section>  
+
+
+  <script type="text/javascript">
+(sc_adv_out = window.sc_adv_out || []).push({
+    id: 830981,
+    domain: "n.ads1-adnow.com",
+});
+</script>
+<script type="text/javascript" src="//st-n.ads1-adnow.com/js/a.js" async></script>
 
   @endsection
