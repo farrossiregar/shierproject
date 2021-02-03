@@ -246,6 +246,14 @@
           <div class="row">
             @include('widget.artikel-populer-widget', $toparticle)
           </div>
+          <br>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div id="SC_TBlock_830981"></div>  
+            </div>
+          </div>
+          <br>
 
           <div class="row">
             @include('widget.instagram-embed-widget')
@@ -281,6 +289,15 @@
 <section class="footer">
   @include('layout.footer')
 </section>  
+
+
+<script type="text/javascript">
+(sc_adv_out = window.sc_adv_out || []).push({
+    id: 830981,
+    domain: "n.ads5-adnow.com",
+});
+</script>
+<script type="text/javascript" src="//st-n.ads5-adnow.com/js/a.js" async></script>
 
 @endsection
   
