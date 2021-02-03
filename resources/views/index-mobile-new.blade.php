@@ -44,7 +44,7 @@
         $image_popular = "http://cms.shierproject.com/image/content/".$item->image_name;
         $url_detail = route('/', $item->url_category.'/'.$item->alias);
         if($key == 0){
-          echo '<div class="row" value="'.$key.'">
+          echo '<div class="row">
                   <a href="'.str_replace('?', '/', $url_detail).'">
                     <div class="col-md-12">
                       <div class="row">
@@ -238,6 +238,7 @@
           $key_category = $key;
         ?>
           <hr>
+          <?php echo $key; ?>
           <div class="row">
             <a href="<?php echo str_replace('?', '/', route('/', $item->url_title)); ?>" style="text-decoration: none;">
               <div style="text-align: center; overflow: hidden; padding-top: 4%; opacity: 0.9; background-image: url('<?php echo "http://shierproject.com/image/category/".category($item->url_title); ?>'); background-position: center; background-size: cover; width: 100%; height: 20vh;">
