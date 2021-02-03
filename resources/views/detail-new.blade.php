@@ -208,6 +208,9 @@
         </div>
         <br><br><br><br><br>
 
+        <div class="col-md-12">
+          <div id="SC_TBlock_830978"></div>
+        </div>
 
         <?php
             /*
@@ -347,5 +350,14 @@
     width: 390px;
   }
 </style>
+
+
+<script type="text/javascript">
+(sc_adv_out = window.sc_adv_out || []).push({
+    id: 830978,
+    domain: "n.ads5-adnow.com",
+});
+</script>
+<script type="text/javascript" src="//st-n.ads5-adnow.com/js/a.js" async></script>
 
 @endsection
