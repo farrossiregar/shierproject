@@ -246,14 +246,14 @@
           <div class="row">
             @include('widget.artikel-populer-widget', $toparticle)
           </div>
-          <br>
+          <br><br>
 
           <div class="row">
             <div class="col-md-12">
               <div id="SC_TBlock_830981"></div>  
             </div>
           </div>
-          <br>
+          <br><br>
 
           <div class="row">
             @include('widget.instagram-embed-widget')
