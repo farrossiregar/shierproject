@@ -239,7 +239,7 @@
         ?>
           <hr>
           <?php 
-            if($key == 2 && $key == 4){
+            if($key == 2){
           ?>  
           <div class="row">
               <div class="col-md-12" style="background-color: rgb(36, 36, 36); padding: 20px; color: white;">
