@@ -239,10 +239,10 @@
         ?>
           <hr>
           <?php 
-            if($key == 2){
+            if($key == 3){
           ?>  
           <div class="row">
-              <div class="col-md-12" style="background-color: rgb(36, 36, 36); padding: 20px; color: white;">
+              <div class="col-md-12" style="padding: 20px;">
                 <div id="SC_TBlock_830981"></div>
               </div>
           </div>
