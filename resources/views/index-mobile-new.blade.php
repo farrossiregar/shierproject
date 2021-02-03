@@ -44,7 +44,7 @@
         $image_popular = "http://cms.shierproject.com/image/content/".$item->image_name;
         $url_detail = route('/', $item->url_category.'/'.$item->alias);
         if($key == 0){
-          echo '<div class="row">
+          echo '<div class="row" value="'.$key.'">
                   <a href="'.str_replace('?', '/', $url_detail).'">
                     <div class="col-md-12">
                       <div class="row">
