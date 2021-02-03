@@ -241,14 +241,14 @@
             <div class="tags_article"><b><?php echo '#'.$item->title_tags; ?></b></div>
             @endforeach
           </div>
-          <br><br>
+          <br>
 
           <div class="row">
             <div class="col-md-12">
               <div id="SC_TBlock_830978"></div>
             </div>
-            
           </div>
+          <br>
 
         <?php
             /*
