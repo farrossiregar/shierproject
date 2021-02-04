@@ -8,11 +8,11 @@
                     $agent = new Agent();
                     if(!$agent->isPhone()){
                 ?>
-                    <img src="{{ asset('image/shierproject-logo-png-black.png') }}" alt="shierproject-logo" style="width: 75%;">
+                    <img src="{{ asset('image/shierproject-logo-black.png') }}" alt="shierproject-logo" style="width: 75%;">
                 <?php
                     }else{
                 ?>
-                    <img src="{{ asset('image/shierproject-logo-png-black.png') }}" alt="shierproject-logo" style="width: 40%;">
+                    <img src="{{ asset('image/shierproject-logo-black.png') }}" alt="shierproject-logo" style="width: 40%;">
                 <?php
                     }
                 ?>

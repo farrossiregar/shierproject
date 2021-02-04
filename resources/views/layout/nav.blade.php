@@ -12,7 +12,7 @@
                 <div class="col-md-2"></div>
                 <div class="col-md-4">
                     <a href="{{ route('/') }}">
-                        <img src="{{ asset('image/shierproject-logo-black.jpg') }}" alt="" style="width: 320px; height: auto;">
+                        <img src="{{ asset('image/shierproject-logo-black.png') }}" alt="" style="width: 320px; height: auto;">
                     </a>
                 </div>
                 <div class="col-md-6" style="padding-top: 30px;">
@@ -43,7 +43,7 @@
                         if($agent->isPhone()){
                     ?>
                     <a class="navbar-brand" href="{{ route('/') }}">
-                        <img src="{{ asset('image/shierproject-logo-darkgrey.jpg') }}" alt="" style="width: 120px; height: auto; top: -5px;">
+                        <img src="{{ asset('image/shierproject-logo-darkgrey.png') }}" alt="" style="width: 120px; height: auto; top: -5px;">
                     </a>
                     <?php
                         }
