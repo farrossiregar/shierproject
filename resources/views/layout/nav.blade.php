@@ -43,7 +43,7 @@
                         if($agent->isPhone()){
                     ?>
                     <a class="navbar-brand" href="{{ route('/') }}">
-                        <img src="{{ asset('image/shierproject-logo-black.jpg') }}" alt="" style="width: 120px; height: auto; top: -5px;">
+                        <img src="{{ asset('image/shierproject-logo-darkgrey.jpg') }}" alt="" style="width: 120px; height: auto; top: -5px;">
                     </a>
                     <?php
                         }
