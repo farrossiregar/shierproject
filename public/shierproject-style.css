@@ -8,7 +8,7 @@
 }
 
 .terbaru-tile-parent > div{
-    box-shadow: 5px 5px 5px #aaaaaa; border-radius: 5px; background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.6)); height: 100%; width: 100%; padding: -10px;
+    border-radius: 5px; background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.6)); height: 100%; width: 100%; padding: -10px;
 }
 
 .article-cat-title{
@@ -33,7 +33,7 @@
 
 
 .terbaru-tile-2{
-    background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.6)); height: 300px; width: 100%; padding: -10px; border-radius: 10px; overflow: hidden;
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.6)); height: 300px; width: 100%; padding: -10px; border-radius: 5px; overflow: hidden;
 }
 
 
