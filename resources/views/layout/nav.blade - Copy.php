@@ -66,19 +66,9 @@
                         <?php
                             }
                         ?>
-
-                        <ul class="nav navbar-nav navbar-left">
-                            <li>
-                                <a href="{{ route('/') }}">
-                                    <img src="{{ asset('image/shierproject-logo-black-rect.png') }}" alt="" style="width: 320px; height: auto;">
-                                </a>
-                            </li>
-                        </ul>
-                        
                         <ul class="nav navbar-nav" id="list-menu">
                             <li class="active"><a href="{{ route('/') }}">Home</a></li>
                         </ul>
-
 
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="{{ route('contact-us') }}"><i class="glyphicon glyphicon-user"></i> Kontak Kami</a></li>
