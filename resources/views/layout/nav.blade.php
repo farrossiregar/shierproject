@@ -1,3 +1,11 @@
+<style>
+    .navbar-nav.navbar-center {
+        position: absolute;
+        left: 50%;
+        transform: translatex(-50%);
+    }
+</style>
+
 <div style="width: 100vw; overflow: hidden;">
     
     <?php
