@@ -17,7 +17,7 @@
     height: 60vh; overflow: hidden; background-size: cover; background-position: center;
 }
 
-.latest-2 .latest-3 , .latest-4{
+.latest-2, .latest-3 , .latest-4{
     height: 30vh; overflow: hidden; background-size: cover; background-position: center;
 }
 
