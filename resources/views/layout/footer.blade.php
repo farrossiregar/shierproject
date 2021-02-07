@@ -9,6 +9,17 @@
                     if(!$agent->isPhone()){
                 ?>
                     <img src="{{ asset('image/shierproject-logo-black-rect.png') }}" alt="shierproject-logo" style="width: 75%;">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <i class="fa fa-facebook"></i>
+                        </div>
+                        <div class="col-md-2">
+                            <i class="fa fa-twitter"></i>
+                        </div>
+                        <div class="col-md-2">
+                            <i class="fa fa-instagram"></i>
+                        </div>
+                    </div>
                 <?php
                     }else{
                 ?>
