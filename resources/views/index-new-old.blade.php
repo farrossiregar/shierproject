@@ -158,8 +158,8 @@
                 ?>
                 <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
                   <div class="col-md-12">
-                    <div style="box-shadow: 5px 5px 5px #aaaaaa; border-radius: 10px;">
-                      <div style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.6)); height: 300px; width: 100%; padding: -10px; border-radius: 10px; overflow: hidden;">
+                    <div style="border-radius: 5px;">
+                      <div class="terbaru-tile-2">
                           <div style="background-image: url('<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>'); background-position: center; background-size: cover; height: 100%; ">
                           </div>
                       </div>
