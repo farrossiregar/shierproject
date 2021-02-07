@@ -18,13 +18,13 @@
                         <div class="col-md-4"></div>
                         <div class="col-md-4">
                             <div class="col-md-2">
-                                <i class="fa fa-facebook"></i>
+                                <a href="https://www.facebook.com/shierproject/" target="_blank"><i class="fa fa-facebook"></i></a>
                             </div>
                             <div class="col-md-2">
-                                <i class="fa fa-twitter"></i>
+                                <a href="https://twitter.com/ShierProject" target="_blank"><i class="fa fa-twitter"></i></a>
                             </div>
                             <div class="col-md-2">
-                                <i class="fa fa-instagram"></i>
+                                <a href="https://www.instagram.com/shierproject" target="_blank"><i class="fa fa-instagram"></i></a>
                             </div>
                         </div>
                         <div class="col-md-4"></div>
@@ -37,9 +37,9 @@
                     <div class="row">
                         <div class="col-md-4"></div>
                         <div class="col-md-4">
-                            <i class="fa fa-facebook"></i>
-                            <i class="fa fa-twitter"></i>
-                            <i class="fa fa-instagram"></i>
+                            <a href="https://www.facebook.com/shierproject/" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="https://twitter.com/ShierProject" target="_blank"><i class="fa fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/shierproject" target="_blank"><i class="fa fa-instagram"></i></a>
                         </div>
                         <div class="col-md-4"></div>
                     </div>
