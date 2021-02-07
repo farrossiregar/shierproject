@@ -165,8 +165,8 @@
                       </div>
                       <div class="row">
                         <div class="col-md-12">
-                          <b style="font-size: 14px; text-decoration: none; color: <?php echo $item->bgcolor_category; ?>; margin-top: 2px;">{{ $item->title_category }}</b> |
-                          <b style="font-size: 13px; text-decoration: none; margin-top: 5px; color: gray;"><i class="fa fa-clock-o"></i>{{ $item->publish_date }}</b><br>
+                          <b class="article-cat-title2" style="color: <?php echo $item->bgcolor_category; ?>;">{{ $item->title_category }}</b> |
+                          <b class=""><i class="fa fa-clock-o"></i>{{ $item->publish_date }}</b><br>
                           <h3 style="margin-top: 0px;"><b style="text-decoration: none; color: black;">{{ $item->title }}</b></h3>
                         </div>
                       </div>
@@ -188,7 +188,7 @@
 
                 <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
                   <div class="col-md-4 terbaru-tile-parent" >
-                    <div style="box-shadow: 5px 5px 5px #aaaaaa; border-radius: 10px; background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.6)); height: 100%; width: 100%;">
+                    <div style="border-radius: 5px; background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.6)); height: 100%; width: 100%;">
                       <div class="terbaru-tile" style="background-image: url('<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>'); ">
                         <div class="terbaru-title-tile" style="color: white; width: 230px;">
                           <b style="font-size: 100%; text-decoration: none; color: <?php echo $item->bgcolor_category; ?>; margin-top: 2px; font-size: 18px;">{{ $item->title_category }}</b>|

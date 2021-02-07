@@ -32,6 +32,13 @@
     background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.6)); height: 300px; width: 100%; padding: -10px; border-radius: 10px; overflow: hidden;
 }
 
+.article-cat-title{
+    font-size: 14px; text-decoration: none; margin-top: 2px;
+}
+
+.article-cat-date2{
+    font-size: 13px; text-decoration: none; margin-top: 5px; color: gray;
+}
 
 .latest-1{
     height: 60vh; overflow: hidden; background-size: cover; background-position: center;
