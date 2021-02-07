@@ -85,7 +85,7 @@
                         </ul>
                         
                         <ul class="nav navbar-nav navbar-center" id="list-menu">
-                            
+                            <li class="active"><a href="{{ route('/') }}">Home</a></li>
                         </ul>
 
 
