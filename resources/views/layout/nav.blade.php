@@ -126,7 +126,7 @@
             url: '{{ route('get-menu') }}',
             dataType: 'json',
             success: function(result){
-                //console.log(result);
+                
                 for(var i = 0; i <= result.length; i++){
                     
                     var url = '{{ route("/{category}", ":category") }}';
