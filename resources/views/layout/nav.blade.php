@@ -9,20 +9,20 @@
     <div class="row" style="background-color: black; overflow: hidden; width:100vw;">
         <div class="container" style="overflow: hidden; width:100vw;">
             <div class="row">
-                <div class="col-md-2"></div>
+                <!-- <div class="col-md-2"></div>
                 <div class="col-md-4">
                     <a href="{{ route('/') }}">
                         <img src="{{ asset('image/shierproject-logo-black-rect.png') }}" alt="" style="width: 320px; height: auto;">
                     </a>
                 </div>
-                <div class="col-md-6" style="padding-top: 30px;">
+                <div class="col-md-6" style="padding-top: 30px;"> -->
                     <!-- <form class="form-inline">
                         <div class="form-group col-md-6 input-group-lg">
                             <input type="text" class="form-control" id="" placeholder="Search...">
                         </div>
                         <div type="submit" class="btn btn-primary" style="padding: 9px 12px;"><i class="fa fa-search" style="font-size: 25px;"></i></div>
                     </form> -->
-                </div>
+                <!-- </div> -->
             </div>
         </div>
     </div>
@@ -70,7 +70,7 @@
                         <ul class="nav navbar-nav navbar-left">
                             <li>
                                 <a href="{{ route('/') }}">
-                                    <img src="{{ asset('image/shierproject-logo-darkgrey-rect.png') }}" alt="" style="width: 120px; height: auto;">
+                                    <img src="{{ asset('image/shierproject-logo-darkgrey-rect.png') }}" alt="" style="width: 100px; height: auto;">
                                 </a>
                             </li>
                         </ul>
