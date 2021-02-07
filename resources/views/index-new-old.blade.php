@@ -25,8 +25,8 @@
         if($key == 0){
           
           echo '<a href="'.str_replace('?', '/', $url_detail).'">
-                  <div class="col-md-6" style="height: 60vh; overflow: hidden; background-image: url('.$image_popular.'); background-size: cover; background-position: center;">
-                    <div style="width: 100%; height: 100%; background-color: rgba(0,0,0,0.6)">
+                  <div class="col-md-6 latest-1" style="background-image: url('.$image_popular.'); ">
+                    <div>
                       <div style="padding: 20px 20px;">
                         <h3><b style="color: '.$item->bgcolor_category.'">'.$item->title_category.'</b></h3>
                         <h1 style="margin-top: 0px;"><b style="color: white;">'.$item->title.'</b></h1>

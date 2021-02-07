@@ -10,15 +10,20 @@
                 ?>
                     <img src="{{ asset('image/shierproject-logo-black-rect.png') }}" alt="shierproject-logo" style="width: 75%;">
                     <div class="row">
-                        <div class="col-md-2">
-                            <i class="fa fa-facebook"></i>
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
+                            <div class="col-md-2">
+                                <i class="fa fa-facebook"></i>
+                            </div>
+                            <div class="col-md-2">
+                                <i class="fa fa-twitter"></i>
+                            </div>
+                            <div class="col-md-2">
+                                <i class="fa fa-instagram"></i>
+                            </div>
                         </div>
-                        <div class="col-md-2">
-                            <i class="fa fa-twitter"></i>
-                        </div>
-                        <div class="col-md-2">
-                            <i class="fa fa-instagram"></i>
-                        </div>
+                        <div class="col-md-4"></div>
+                        
                     </div>
                 <?php
                     }else{
