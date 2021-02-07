@@ -4,6 +4,9 @@
 <br>
 @foreach($data as $key => $item)
 <?php
+    if($key >= 6){
+        break;
+    }
     $url_detail = route('/', $url_category.'/'.$item->alias);
 ?>
 
