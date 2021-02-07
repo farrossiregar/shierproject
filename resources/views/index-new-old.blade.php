@@ -7,7 +7,93 @@
 @section('content')
 
 
+<style>
+  .terbaru-tile{
+    height: 36vh; 
+    background-position: center; border-radius: 5px; background-size: cover; padding: 2%; margin: 2% 0;
+}
 
+.terbaru-tile-parent{
+    display: inline-block;
+}
+
+.terbaru-tile-parent > div{
+    border-radius: 5px; background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.6)); height: 100%; width: 100%; padding: -10px;
+}
+
+.article-cat-title{
+    font-size: 100%; text-decoration: none; margin-top: 2px; font-size: 18px;
+}
+
+.article-cat-date{
+    font-size: 13px; text-decoration: none; margin-top: 5px; color: white;
+}
+
+.article-title-judul{
+    text-decoration: none; color: white; text-shadow: 2px 2px black;
+}
+
+.terbaru-title-tile{
+    color: white; position: absolute; bottom: 2%; padding: 2%; font-size: 120%;
+}
+
+.terbaru-title-tile2{
+    margin-top: 0px; text-shadow: 2px 2px black;
+}
+
+
+.terbaru-tile-2{
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.6)); height: 300px; width: 100%; padding: -10px; border-radius: 5px; overflow: hidden;
+}
+
+
+.terbaru-title-parent-div{
+    border-radius: 5px; background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.6)); height: 100%; width: 100%;
+}
+
+.article-cat-title2{
+    font-size: 14px; text-decoration: none; margin-top: 2px;
+}
+
+.article-cat-date2{
+    font-size: 13px; text-decoration: none; margin-top: 5px; color: gray;
+}
+
+.latest-1{
+    height: 60vh; overflow: hidden; background-size: cover; background-position: center;
+}
+
+.latest-2, .latest-3 , .latest-4{
+    overflow: hidden; background-size: cover; background-position: center;
+}
+
+.latest-1 > div, .latest-2 > div, .latest-3 > div{
+    width: 100%; height: 100%; background-color: rgba(0,0,0,0.6)
+}
+
+
+.title-cat-banner{
+    text-align: center; overflow: hidden; padding-top: 7%; opacity: 0.9; background-position: center; background-size: cover; width: 100%; height: 20vh;
+}
+
+
+.title-cat{
+    font-size: 120%; opacity: 1; color: white; text-decoration: none; text-shadow: 2px 2px black;
+}
+
+.image-list-article-title{
+    font-size: 100%; text-decoration: none; color: black; margin: 10px 0; font-size: 23px;
+}
+
+.image-list-date{
+    font-size: 13px; text-decoration: none; margin-top: 5px; color: gray;
+}
+
+.image-list-cat-title{
+    font-size: 15px; text-decoration: none;  margin-top: 2px;
+}
+
+</style>
 <!--    MAIN    -->
 <div style="width: 100vw; background-color: #242424; padding: 80px 0;" class="row">
   <div class="container">
