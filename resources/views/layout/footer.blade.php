@@ -8,19 +8,22 @@
                     $agent = new Agent();
                     if(!$agent->isPhone()){
                 ?>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="{{ asset('image/shierproject-logo-black-rect.png') }}" alt="shierproject-logo" style="width: 75%;">
+                        </div>
+                    </div>
                     
                     <div class="row">
                         <div class="col-md-4"></div>
                         <div class="col-md-4">
-                            <img src="{{ asset('image/shierproject-logo-black-rect.png') }}" alt="shierproject-logo" style="width: 75%;">
-                            <br>
-                            <div class="col-md-4">
+                            <div class="col-md-2">
                                 <i class="fa fa-facebook"></i>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-2">
                                 <i class="fa fa-twitter"></i>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-2">
                                 <i class="fa fa-instagram"></i>
                             </div>
                         </div>
@@ -32,16 +35,20 @@
                 ?>
                     <img src="{{ asset('image/shierproject-logo-black-rect.png') }}" alt="shierproject-logo" style="width: 40%;">
                     <div class="row">
-                        <div class="col-md-2">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
                             <i class="fa fa-facebook"></i>
-                        </div>
-                        <div class="col-md-2">
                             <i class="fa fa-twitter"></i>
-                        </div>
-                        <div class="col-md-2">
                             <i class="fa fa-instagram"></i>
                         </div>
+                        <div class="col-md-4"></div>
                     </div>
+
+                    <style>
+                        .font-footer-site > h4 > a{
+                            font-size: 14px;
+                        }
+                    </style>
                 <?php
                     }
                 ?>
@@ -50,7 +57,7 @@
             <div class="col-md-4">
             <br><br>
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12 font-footer-site">
                         <h4><a href="{{ route('/') }}" style="color: #333;"><b>shierproject.com</b></a></h4>
                         <h4><a href="<?php echo str_replace("?", "/", route('/', 'jalan-jalan')); ?>" style="color: #333;"><b>Jalan-jalan</b></a></h4>
                         <h4><a href="<?php echo str_replace("?", "/", route('/', 'tokoh-berpengaruh')); ?>" style="color: #333;"><b>Tokoh Berpengaruh</b></a></h4>
@@ -66,7 +73,7 @@
             <div class="col-md-4">
             <br><br>
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12 font-footer-site">
                         <h4><a href="<?php echo str_replace("?", "/", route('/', 'contact-us')); ?>" style="color: #333;"><b>Kontak Kami</b></a></h4>
                 </div>
             </div>
