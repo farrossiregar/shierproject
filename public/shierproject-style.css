@@ -18,9 +18,19 @@
 }
 
 .latest-2, .latest-3 , .latest-4{
-    height: 30vh; overflow: hidden; background-size: cover; background-position: center;
+    overflow: hidden; background-size: cover; background-position: center;
 }
 
 .latest-1 > div, .latest-2 > div, .latest-3 > div{
     width: 100%; height: 100%; background-color: rgba(0,0,0,0.6)
+}
+
+
+.title-cat-banner{
+    text-align: center; overflow: hidden; padding-top: 7%; opacity: 0.9;  background-position: center; background-size: cover; width: 100%; height: 20vh;
+}
+
+
+.title-cat{
+    font-size: 120%; opacity: 1; color: white; text-decoration: none; text-shadow: 2px 2px black;
 }

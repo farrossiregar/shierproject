@@ -117,8 +117,8 @@
           <hr>
           <div class="row" style="margin: 50px 0;">
             <a href="<?php echo str_replace('?', '/', route('/', $item->url_title)); ?>" style="text-decoration: none;">
-              <div style="text-align: center; overflow: hidden; padding-top: 7%; opacity: 0.9; background-image: url('<?php echo "http://shierproject.com/image/category/".category($item->url_title); ?>'); background-position: center; background-size: cover; width: 100%; height: 20vh;">
-                <h1><b style="font-size: 120%; opacity: 1; color: white; text-decoration: none; text-shadow: 2px 2px black;">{{ strtoUpper($item->title) }}</b></h1>
+              <div class="title-cat-banner" style="background-image: url('<?php echo "http://shierproject.com/image/category/".category($item->url_title); ?>');">
+                <h1><b class="title-cat">{{ strtoUpper($item->title) }}</b></h1>
               </div>
             </a>
             
