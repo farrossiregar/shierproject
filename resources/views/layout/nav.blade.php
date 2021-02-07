@@ -39,7 +39,7 @@
     ?>
 
     <div style="width: 100vw; overflow: hidden;">
-        <nav class="navbar navbar-inverse" style="margin-bottom: 0px; margin-top: 0px; width: 100vw; overflow: hidden;">
+        <nav class="navbar navbar-inverse" style="margin-bottom: 0px; margin-top: 0px; width: 100vw; overflow: hidden; position: fixed;">
             <div class="container-fluid" style="width: 100vw; overflow: hidden;">
                 <div class="navbar-header" style="overflow: hidden;">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
