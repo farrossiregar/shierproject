@@ -249,7 +249,7 @@
           <br><br>
 
           <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12" style="z-index: 1;">
               <div id="SC_TBlock_830981"></div>  
             </div>
           </div>

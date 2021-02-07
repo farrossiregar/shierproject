@@ -18,7 +18,10 @@
                             <i class="fa fa-facebook"></i>
                         </div>
                         <div class="col-md-2">
-                            <i class="fa fa-facebook"></i>
+                            <i class="fa fa-twitter"></i>
+                        </div>
+                        <div class="col-md-2">
+                            <i class="fa fa-instagram"></i>
                         </div>
                     </div>
                 <?php
