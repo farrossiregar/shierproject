@@ -68,10 +68,11 @@
                         ?>
 
                         <ul class="nav navbar-nav navbar-left">
-                            <li style="background-image: url({{ asset('image/shierproject-logo-darkgrey-rect-nav.png') }});">
-                                <!-- <a href="{{ route('/') }}">
-                                    <img src="{{ asset('image/shierproject-logo-darkgrey-rect-nav.png') }}" alt="" style="width: 80px;">
-                                </a> -->
+                            <li>
+                                <a href="{{ route('/') }}">
+                                    <div style="background-image: url({{ asset('image/shierproject-logo-darkgrey-rect-nav.png') }});"></div>
+                                    <!-- <img src="{{ asset('image/shierproject-logo-darkgrey-rect-nav.png') }}" alt="" style="width: 80px;"> -->
+                                </a>
                             </li>
                         </ul>
                         
