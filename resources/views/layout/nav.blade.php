@@ -91,10 +91,12 @@
                         <ul class="nav navbar-nav navbar-center" id="list-menu">
 
                         <?php
-                            }
+                            }else{
                         ?>
                         <ul class="nav navbar-nav" id="list-menu">
-                            
+                        <?php
+                            }
+                        ?>
                         </ul>
 
 
