@@ -63,6 +63,7 @@
                             if($agent->isPhone()){
                         ?>
                         <br>
+                        
                         <div class="row">
                             <!-- <div class="col-md-10" style="display: inline-block;">
                                 <input type="text" class="form-control" id="" placeholder="Search...">
@@ -90,8 +91,9 @@
 
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="{{ route('contact-us') }}"><i class="glyphicon glyphicon-user"></i> Kontak Kami</a></li>
-                            <!-- <li><a href="#"><i class="fa fa-instagram" style="font-size: 20px;"></i></a></li>
-                            <li><a href="#"><i class="fa fa-facebook" style="font-size: 20px;"></i></a></li> -->
+                            <?php
+                                /*
+                            ?>
                             <!-- <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Daftar / Masuk<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
@@ -100,6 +102,9 @@
                                     <li><a href="#"><i class="glyphicon glyphicon-user"></i> Kontak Kami</a></li>
                                 </ul>
                             </li> -->
+                            <?php
+                                */
+                            ?>
                         </ul>
                     </div>
                 </div>

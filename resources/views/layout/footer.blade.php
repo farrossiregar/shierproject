@@ -13,6 +13,14 @@
                     }else{
                 ?>
                     <img src="{{ asset('image/shierproject-logo-black-rect.png') }}" alt="shierproject-logo" style="width: 40%;">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <i class="fa fa-facebook"></i>
+                        </div>
+                        <div class="col-md-2">
+                            <i class="fa fa-facebook"></i>
+                        </div>
+                    </div>
                 <?php
                     }
                 ?>
