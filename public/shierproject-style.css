@@ -7,6 +7,21 @@
     display: inline-block;
 }
 
+.terbaru-tile-parent > div{
+    box-shadow: 5px 5px 5px #aaaaaa; border-radius: 10px; background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.6)); height: 100%; width: 100%; padding: -10px;
+}
+
+.article-cat-title{
+    font-size: 100%; text-decoration: none; margin-top: 2px; font-size: 18px;
+}
+
+.article-cat-date{
+    font-size: 13px; text-decoration: none; margin-top: 5px; color: white;
+}
+
+.article-title-judul{
+    text-decoration: none; color: white; text-shadow: 2px 2px black;
+}
 
 .terbaru-title-tile{
     color: white; position: absolute; bottom: 2%; padding: 2%; font-size: 120%;
@@ -27,7 +42,7 @@
 
 
 .title-cat-banner{
-    text-align: center; overflow: hidden; padding-top: 7%; opacity: 0.9;  background-position: center; background-size: cover; width: 100%; height: 20vh;
+    text-align: center; overflow: hidden; padding-top: 7%; opacity: 0.9; background-position: center; background-size: cover; width: 100%; height: 20vh;
 }
 
 

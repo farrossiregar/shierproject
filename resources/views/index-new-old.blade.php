@@ -142,12 +142,12 @@
                 ?>
                 <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
                   <div class="col-md-12 terbaru-tile-parent">
-                    <div  style="box-shadow: 5px 5px 5px #aaaaaa; border-radius: 10px; background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.6)); height: 100%; width: 100%; padding: -10px;">
+                    <div>
                       <div class="terbaru-tile" style="background-image: url('<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>'); ">
                         <div class="terbaru-title-tile" style="color: white;">
-                          <b style="font-size: 100%; text-decoration: none; color: <?php echo $item->bgcolor_category; ?>; margin-top: 2px; font-size: 18px;">{{ $item->title_category }}</b>|
-                          <b style="font-size: 13px; text-decoration: none; margin-top: 5px; color: white;"><i class="fa fa-clock-o"></i>{{ $item->publish_date }}</b></br>
-                          <h3 style="margin-top: 0px;"><b style="text-decoration: none; color: white; text-shadow: 2px 2px black;">{{ $item->title }}</b></h3>
+                          <b class="article-cat-title" style="color: <?php echo $item->bgcolor_category; ?>;">{{ $item->title_category }}</b>|
+                          <b class="article-cat-date"><i class="fa fa-clock-o"></i>{{ $item->publish_date }}</b></br>
+                          <h3 style="margin-top: 0px;"><b style="article-title-judul">{{ $item->title }}</b></h3>
                         </div>
                       </div>
                     </div>
