@@ -11,7 +11,7 @@
 @section('content')
 
   <!--    MAIN    -->
-  <div style="height: 85vh; width: 100vw; background-color: {{ $bgcolor_category }}; ">
+  <div style="height: 85vh; margin-top: 70px; width: 100vw; background-color: {{ $bgcolor_category }}; ">
     <div class="main_img_mobile" style=" height: 90%; background-image: url('<?php echo "http://cms.shierproject.com/image/content/".$foto_name; ?>'); border-bottom-right-radius: 40px;">
       <!-- <div class="main_img_filter"> -->
       <div style="background-color: rgba(0,0,0,0.5);
