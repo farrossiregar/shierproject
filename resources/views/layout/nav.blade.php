@@ -71,7 +71,7 @@
                             <li>
                                 <a href="{{ route('/') }}">
                                     <!-- <div style="background-image: url('{{ asset('image/shierproject-logo-darkgrey-rect-nav.png') }}'); background-position: center; width: 120px; height: auto;"></div> -->
-                                    <img src="{{ asset('image/shierproject-logo-darkgrey-rect-nav.png') }}" alt="" style="width: 100px;">
+                                    <img src="{{ asset('image/shierproject-logo-darkgrey-rect-nav.png') }}" alt="" style="width: 100px; margin: 0px;">
                                 </a>
                             </li>
                         </ul>
