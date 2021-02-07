@@ -188,12 +188,12 @@
 
                 <a href="<?php echo str_replace('?', '/', $url_detail); ?>">
                   <div class="col-md-4 terbaru-tile-parent" >
-                    <div style="border-radius: 5px; background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.6)); height: 100%; width: 100%;">
+                    <div class="terbaru-title-parent-div">
                       <div class="terbaru-tile" style="background-image: url('<?php echo "http://cms.shierproject.com/image/content/".$item->image_name; ?>'); ">
                         <div class="terbaru-title-tile" style="color: white; width: 230px;">
-                          <b style="font-size: 100%; text-decoration: none; color: <?php echo $item->bgcolor_category; ?>; margin-top: 2px; font-size: 18px;">{{ $item->title_category }}</b>|
-                          <b style="font-size: 13px; text-decoration: none; margin-top: 5px; color: white;"><i class="fa fa-clock-o"></i>{{ $item->publish_date }}</b></br>
-                          <h3 style="margin-top: 0px; text-shadow: 2px 2px black;"><b>{{ $item->title }}</b></h3>
+                          <b class="article-cat-title" style="color: <?php echo $item->bgcolor_category; ?>;">{{ $item->title_category }}</b>|
+                          <b class="article-cat-date"><i class="fa fa-clock-o"></i>{{ $item->publish_date }}</b></br>
+                          <h3 class="terbaru-title-tile2"><b>{{ $item->title }}</b></h3>
                         </div>
                       </div>
                     </div>

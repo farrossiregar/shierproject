@@ -27,9 +27,18 @@
     color: white; position: absolute; bottom: 2%; padding: 2%; font-size: 120%;
 }
 
+.terbaru-title-tile2{
+    margin-top: 0px; text-shadow: 2px 2px black;
+}
+
 
 .terbaru-tile-2{
     background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.6)); height: 300px; width: 100%; padding: -10px; border-radius: 10px; overflow: hidden;
+}
+
+
+.terbaru-title-parent-div{
+    border-radius: 5px; background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.6)); height: 100%; width: 100%;
 }
 
 .article-cat-title2{
