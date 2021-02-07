@@ -166,7 +166,7 @@
                       <div class="row">
                         <div class="col-md-12">
                           <b class="article-cat-title2" style="color: <?php echo $item->bgcolor_category; ?>;">{{ $item->title_category }}</b> |
-                          <b class=""><i class="fa fa-clock-o"></i>{{ $item->publish_date }}</b><br>
+                          <b class="article-cat-date2"><i class="fa fa-clock-o"></i>{{ $item->publish_date }}</b><br>
                           <h3 style="margin-top: 0px;"><b style="text-decoration: none; color: black;">{{ $item->title }}</b></h3>
                         </div>
                       </div>
