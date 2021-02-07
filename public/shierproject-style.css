@@ -7,14 +7,20 @@
     display: inline-block;
 }
 
+
+.terbaru-title-tile{
+    color: white; position: absolute; bottom: 2%; padding: 2%; font-size: 120%;
+}
+
+
 .latest-1{
     height: 60vh; overflow: hidden; background-size: cover; background-position: center;
 }
 
-.latest-1 > div{
-    width: 100%; height: 100%; background-color: rgba(0,0,0,0.6)
+.latest-2 .latest-3 , .latest-4{
+    height: 30vh; overflow: hidden; background-size: cover; background-position: center;
 }
 
-.terbaru-title-tile{
-    color: white; position: absolute; bottom: 2%; padding: 2%; font-size: 120%;
+.latest-1 > div, .latest-2 > div, .latest-3 > div{
+    width: 100%; height: 100%; background-color: rgba(0,0,0,0.6)
 }

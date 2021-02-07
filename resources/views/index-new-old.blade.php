@@ -40,8 +40,8 @@
             echo '<a href="'.str_replace('?', '/', $url_detail).'">
                     <div class="col-md-6" style="height: 60vh; overflow: hidden;">
                       <div class="row">
-                        <div class="col-md-12" style="height: 30vh; overflow: hidden; background-image: url('.$image_popular.'); background-size: cover; background-position: center;">
-                          <div style="width: 100%; height: 100%; background-color: rgba(0,0,0,0.6)">
+                        <div class="col-md-12 latest-2" style="background-image: url('.$image_popular.'); ">
+                          <div>
                             <div style="padding: 20px 20px;">
                               <h4><b style="color: '.$item->bgcolor_category.'">'.$item->title_category.'</b></h4>
                               <h3 style="margin-top: 0px;"><b style="color: white;">'.$item->title.'</b></h3>  
@@ -54,8 +54,8 @@
             if($key == 2){              
               echo '<div class="row">
                       <a href="'.str_replace('?', '/', $url_detail).'">
-                        <div class="col-md-6" style="height: 30vh; overflow: hidden; background-image: url('.$image_popular.'); background-size: cover; background-position: center;">
-                          <div style="width: 100%; height: 100%; background-color: rgba(0,0,0,0.6)">  
+                        <div class="col-md-6 latest-3" style="background-image: url('.$image_popular.');">
+                          <div>  
                             <div style="padding: 20px 20px;">
                               <h4><b style="color: '.$item->bgcolor_category.'">'.$item->title_category.'</b></h4>
                               <h3><b style="color: white;">'.$item->title.'</b></h3>
@@ -65,8 +65,8 @@
                       </a>';
             }else{              
               echo '<a href="'.str_replace('?', '/', $url_detail).'">
-                      <div class="col-md-6" style="height: 30vh; overflow: hidden; background-image: url('.$image_popular.'); background-size: cover; background-position: center;">
-                        <div style="width: 100%; height: 100%; background-color: rgba(0,0,0,0.6)">  
+                      <div class="col-md-6 latest-4" style="background-image: url('.$image_popular.');">
+                        <div>  
                           <div style="padding: 20px 20px;">
                             <h4><b style="color: '.$item->bgcolor_category.'">'.$item->title_category.'</b></h4>
                             <h3><b style="color: white;">'.$item->title.'</b></h3>
@@ -106,14 +106,6 @@
 </div>*/
 ?>
   <div class="container" >
-  <?php
-
-  /*<div class="row">
-      <div class="col-md-12">
-        include('widget.index-banner-corona')
-      </div>
-    </div> */
-  ?>
 
     <div class="row">
       <div class="col-md-8">
