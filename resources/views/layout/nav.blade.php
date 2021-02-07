@@ -70,14 +70,13 @@
                         <ul class="nav navbar-nav navbar-left">
                             <div>
                                 <a href="{{ route('/') }}">
-                                    <!-- <div style="background-image: url('{{ asset('image/shierproject-logo-darkgrey-rect-nav.png') }}'); background-position: center; width: 120px; height: auto;"></div> -->
                                     <img src="{{ asset('image/shierproject-logo-darkgrey-rect-nav.png') }}" alt="" style="width: 130px;">
                                 </a>
                             </div>
                         </ul>
                         
-                        <ul class="nav navbar-nav" id="list-menu">
-                            <!-- <li class="active"><a href="{{ route('/') }}">Home</a></li> -->
+                        <ul class="nav navbar-nav navbar-center" id="list-menu">
+                            
                         </ul>
 
 
