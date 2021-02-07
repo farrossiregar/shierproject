@@ -1,10 +1,3 @@
-<style>
-    .navbar-nav.navbar-center {
-        position: absolute;
-        left: 50%;
-        transform: translatex(-50%);
-    }
-</style>
 
 <div style="width: 100vw; overflow: hidden;">
     
@@ -76,6 +69,9 @@
                             }
                         ?>
 
+                        <?php
+                            if(!$agent->isPhone()){
+                        ?>
                         <ul class="nav navbar-nav navbar-left">
                             <div>
                                 <a href="{{ route('/') }}">
@@ -84,8 +80,21 @@
                             </div>
                         </ul>
                         
+                        <style>
+                            .navbar-nav.navbar-center {
+                                position: absolute;
+                                left: 50%;
+                                transform: translatex(-50%);
+                            }
+                        </style>
+
                         <ul class="nav navbar-nav navbar-center" id="list-menu">
-                            <li class="active"><a href="{{ route('/') }}">Home</a></li>
+
+                        <?php
+                            }
+                        ?>
+                        <ul class="nav navbar-nav" id="list-menu">
+                            
                         </ul>
 
 
