@@ -212,9 +212,9 @@
                       </div>
                       <div class="col-md-8" style="text-decoration: none; color: black;">
                         
-                        <b style="font-size: 15px; text-decoration: none; color: <?php echo $item->bgcolor_category; ?>; margin-top: 2px;">{{ $item->title_category }}</b>|
-                        <b style="font-size: 13px; text-decoration: none; margin-top: 5px; color: gray;"><i class="fa fa-clock-o"></i>{{ $item->publish_date }}</b></br>
-                        <b style="font-size: 100%; text-decoration: none; color: black; margin: 10px 0; font-size: 23px;">{{ $item->title }}</b><br>
+                        <b class="image-list-cat-title" style="color: <?php echo $item->bgcolor_category; ?>;">{{ $item->title_category }}</b>|
+                        <b class="image-list-date"><i class="fa fa-clock-o"></i>{{ $item->publish_date }}</b></br>
+                        <b class="image-list-article-title">{{ $item->title }}</b><br>
                       </div>
                     </div>
                   </div>

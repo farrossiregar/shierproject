@@ -70,3 +70,15 @@
 .title-cat{
     font-size: 120%; opacity: 1; color: white; text-decoration: none; text-shadow: 2px 2px black;
 }
+
+.image-list-article-title{
+    font-size: 100%; text-decoration: none; color: black; margin: 10px 0; font-size: 23px;
+}
+
+.image-list-date{
+    font-size: 13px; text-decoration: none; margin-top: 5px; color: gray;
+}
+
+.image-list-cat-title{
+    font-size: 15px; text-decoration: none;  margin-top: 2px;
+}
