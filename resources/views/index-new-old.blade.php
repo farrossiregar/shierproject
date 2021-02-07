@@ -40,7 +40,7 @@
             echo '<a href="'.str_replace('?', '/', $url_detail).'">
                     <div class="col-md-6" style="height: 60vh; overflow: hidden;">
                       <div class="row">
-                        <div class="col-md-12 latest-2" style="background-image: url('.$image_popular.'); ">
+                        <div class="col-md-12 latest-2" style="height: 30vh; background-image: url('.$image_popular.'); ">
                           <div>
                             <div style="padding: 20px 20px;">
                               <h4><b style="color: '.$item->bgcolor_category.'">'.$item->title_category.'</b></h4>
@@ -54,7 +54,7 @@
             if($key == 2){              
               echo '<div class="row">
                       <a href="'.str_replace('?', '/', $url_detail).'">
-                        <div class="col-md-6 latest-3" style="background-image: url('.$image_popular.');">
+                        <div class="col-md-6 latest-3" style="height: 30vh; background-image: url('.$image_popular.');">
                           <div>  
                             <div style="padding: 20px 20px;">
                               <h4><b style="color: '.$item->bgcolor_category.'">'.$item->title_category.'</b></h4>
@@ -65,7 +65,7 @@
                       </a>';
             }else{              
               echo '<a href="'.str_replace('?', '/', $url_detail).'">
-                      <div class="col-md-6 latest-4" style="background-image: url('.$image_popular.');">
+                      <div class="col-md-6 latest-4" style="height: 30vh;  background-image: url('.$image_popular.');">
                         <div>  
                           <div style="padding: 20px 20px;">
                             <h4><b style="color: '.$item->bgcolor_category.'">'.$item->title_category.'</b></h4>
