@@ -68,10 +68,10 @@
                         ?>
 
                         <ul class="nav navbar-nav navbar-left">
-                            <li>
+                            <li style="padding: 0px;">
                                 <a href="{{ route('/') }}">
                                     <!-- <div style="background-image: url('{{ asset('image/shierproject-logo-darkgrey-rect-nav.png') }}'); background-position: center; width: 120px; height: auto;"></div> -->
-                                    <img src="{{ asset('image/shierproject-logo-darkgrey-rect-nav.png') }}" alt="" style="width: 100px; margin: 0px;">
+                                    <img src="{{ asset('image/shierproject-logo-darkgrey-rect-nav.png') }}" alt="" style="width: 100px;">
                                 </a>
                             </li>
                         </ul>
